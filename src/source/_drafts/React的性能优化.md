@@ -34,7 +34,7 @@ const Main: FC = () => {
 };
 ```
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307061103775.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061103775.png)
 
 如上，虽然`Test1`组件和`value`状态并无关系，但每一次输入都会导致`Test1`组件的重新渲染。如果`Test1`组件的逻辑和渲染够复杂，那么很容易影响性能。
 
@@ -64,6 +64,6 @@ const Main: FC = () => {
 };
 ```
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307061111086.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061111086.png)
 
 如上，连续输入 abc，并不触发`Test1`的多次执行，`Input1`组件在一个独立的 Fiber 结构中，它的状态更新便不会影响到`Main`函数。

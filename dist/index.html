@@ -123,12 +123,12 @@
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">Popover</span> <span class="keyword">from</span> <span class="string">&quot;@radix-ui/react-popover&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Trigger</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Popover.Content</span> <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          要显示的内容</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>在上面的代码中，组装 Radix 提供的 popover 组件的颗粒，不加任意 className 就得到一个简单的 tooltip，并且”点击我”可进行交互。如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271427990.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png"></p>
 <p>接着，我随便加了点 tailwindcss。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Popover.Trigger</span> <span class="attr">className</span>=<span class="string">&quot;text-red&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Content</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">className</span>=<span class="string">&quot;border border-solid border-black&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      &gt;</span></span></span><br><span class="line"><span class="language-xml">        要显示的内容</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>就得到如图的效果：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271430207.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271430207.png"></p>
 <p>Radix 的组件将几乎所有的 state 变化，反馈到<code>data-state</code>上方便你精细的定制样式了。</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Radix 提供了很多小细节让你可以优雅的封装组件，不限于：</p>
 <ul>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqitcsd000paxrr807p0qv7" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqqy00c001fgvrre4mlfork" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -208,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Reflect_And_Object/" data-id="cljqitcs7000aaxrrgn5x5kt3" data-title="Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Reflect_And_Object/" data-id="cljqqy006000zgvrr0itr10gq" data-title="Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -269,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/using_Proxy/" data-id="cljqitcs60009axrrhg9be2fd" data-title="Proxy的应用场景" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/using_Proxy/" data-id="cljqqy0080017gvrrh79d1hlq" data-title="Proxy的应用场景" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -329,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Map/" data-id="cljqitcs40006axrrhz455o5x" data-title="Map真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Map/" data-id="cljqqy004000sgvrrepz28c8l" data-title="Map真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -389,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Set/" data-id="cljqitcs9000gaxrr6glu7jkz" data-title="Set真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Set/" data-id="cljqqy00d001kgvrrblyc4a5l" data-title="Set真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -456,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Symbol/" data-id="cljqitcsa000kaxrr2lqpfiez" data-title="聊一聊Symbol" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Symbol/" data-id="cljqqy0070012gvrr1g2q1p34" data-title="聊一聊Symbol" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -513,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_operator/" data-id="cljqitcs00003axrr68cw0vvb" data-title="ES6新增的运算符" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_operator/" data-id="cljqqy002000kgvrr7qfkaghl" data-title="ES6新增的运算符" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -579,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_destructuring_assignment/" data-id="cljqitcsb000maxrr0ttbdsfc" data-title="ES6的解构赋值" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_destructuring_assignment/" data-id="cljqqy003000ngvrrf9zt84yx" data-title="ES6的解构赋值" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -663,7 +663,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Promise_ignore_points_and_methods/" data-id="cljqitcs8000daxrrh9dveud0" data-title="Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Promise_ignore_points_and_methods/" data-id="cljqqy005000vgvrr2a052ye7" data-title="Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -719,7 +719,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_intro/" data-id="cljqitcs20005axrrdeb702j5" data-title="ES6是什么" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_intro/" data-id="cljqqy000000ggvrr5anaa20z" data-title="ES6是什么" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       

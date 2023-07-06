@@ -113,23 +113,23 @@ const Main: FC = () => {
 
 **首先不点击按钮，观察 5 秒，没有卡顿现象，性能表现如图：**
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041609217.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041609217.png)
 
 可以看到有几个微微凸起的黄色点，对应着每次的`hello`状态更新和渲染，它们的执行时间都在 1ms，没有超过一帧的时间。
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041610767.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041610767.png)
 
 选取其中一个黄色的点，查看它的详情。React 的调度器、协调器、渲染器创建了对应的任务，分步执行了任务，具体可阅读 React 架构的相关文章。
 
 **然后连续点几次按钮，`hello`的渲染出现明显的卡顿，性能表现如图：**
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041608992.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041608992.png)
 
 在性能图中截取的一段时间中，黄色是脚本执行时间，灰色是 UI 渲染时间，白色是空闲时间（我停止点击了一会儿），在每帧里，要跑完所有的状态变更和 UI 渲染，`datas`系列的状态变更和渲染占据了大量的时间，基本是阻塞了`hello`的状态变更和渲染。
 
 **只点击一次，性能表现如图：**
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041625903.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041625903.png)
 
 可以看到几个 Task，第一个 Task 就是在更新`datas`系列状态和渲染，它占据了太多帧的时间，导致`hello`的状态变更和渲染被推迟到后面的帧。
 
@@ -156,13 +156,13 @@ const onClick1 = useCallback(() => {
 
 **再次连续点击按钮，卡顿现象明显减轻很多，性能表现如下：**
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041629743.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041629743.png)
 
 一看起来，执行时间还是很长，那么为什么`hello`渲染看起来不卡顿呢？
 
 **只点一次，看看性能表现：**
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202307041631650.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041631650.png)
 
 查看几个 Task 的详情，发现`datas`系列状态的更新，被分配在了多个 Task 中，中间还穿插了`hello`的状态更新的任务。这也印证了`useTransition`的实现背景：将不重要的任务通过时间切片架构，分配到多帧中，优先执行其他任务，从而实现不卡顿的目的。
 

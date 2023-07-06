@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
 <meta property="og:description" content="组件的困扰在更早以前，网页应用很简单，开发者自己维护简单的交互组件，通过入参去控制组件有不一样的渲染、样式、交互。后来 React&#x2F;Vue 等框架的到来，使网页应用变得愈发复杂，于是使用 Element、Ant、Mui 之类的 UI 组件来提高开发效率，但使用后发现一些问题，其中常见的是：  难以改变样式。 几乎不能改变 dom 结构。  虽然很多组件库提供了 css variables">
 <meta property="og:locale">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271427990.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271430207.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271430207.png">
 <meta property="article:published_time" content="2023-06-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-05T07:38:59.868Z">
+<meta property="article:modified_time" content="2023-07-06T06:07:34.203Z">
 <meta property="article:author" content="taoliujun">
 <meta property="article:tag" content="radix">
 <meta property="article:tag" content="组件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271427990.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="TaoLiuJun's Blog" type="application/atom+xml">
   
@@ -127,12 +127,12 @@
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">Popover</span> <span class="keyword">from</span> <span class="string">&quot;@radix-ui/react-popover&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Trigger</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Popover.Content</span> <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          要显示的内容</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>在上面的代码中，组装 Radix 提供的 popover 组件的颗粒，不加任意 className 就得到一个简单的 tooltip，并且”点击我”可进行交互。如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271427990.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png"></p>
 <p>接着，我随便加了点 tailwindcss。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Popover.Trigger</span> <span class="attr">className</span>=<span class="string">&quot;text-red&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Popover.Content</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">className</span>=<span class="string">&quot;border border-solid border-black&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      &gt;</span></span></span><br><span class="line"><span class="language-xml">        要显示的内容</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>就得到如图的效果：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271430207.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271430207.png"></p>
 <p>Radix 的组件将几乎所有的 state 变化，反馈到<code>data-state</code>上方便你精细的定制样式了。</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Radix 提供了很多小细节让你可以优雅的封装组件，不限于：</p>
 <ul>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqitcsd000paxrr807p0qv7" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqqy00c001fgvrre4mlfork" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       

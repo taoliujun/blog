@@ -68,7 +68,7 @@ export const Main: FC = () => {
 
 在上面的代码中，组装 Radix 提供的 popover 组件的颗粒，不加任意 className 就得到一个简单的 tooltip，并且"点击我"可进行交互。如图：
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271427990.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png)
 
 接着，我随便加了点 tailwindcss。
 
@@ -91,7 +91,7 @@ return (
 
 就得到如图的效果：
 
-![](https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306271430207.png)
+![](https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271430207.png)
 
 Radix 的组件将几乎所有的 state 变化，反馈到`data-state`上方便你精细的定制样式了。
 

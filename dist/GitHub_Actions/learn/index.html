@@ -13,16 +13,16 @@
 <meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
 <meta property="og:description" content="官方文档：https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;actions&#x2F;learn-github-actions&#x2F;understanding-github-actions 官方文档有点长，阅读了两天，容易让人阅读瞌睡，除了要熟知术语部分，其他部分看一遍知道有这些东西就行了，回头使用的时候翻看官方文档即可。 理解 GitHub Actions 和术语GitHub Actions 就是通过事件">
 <meta property="og:locale">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281126235.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281127958.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281127692.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281126235.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127958.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127692.png">
 <meta property="article:published_time" content="2022-07-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-05T07:42:45.991Z">
+<meta property="article:modified_time" content="2023-07-06T06:07:34.489Z">
 <meta property="article:author" content="taoliujun">
 <meta property="article:tag" content="github actions">
 <meta property="article:tag" content="ci">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281126235.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281126235.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="TaoLiuJun's Blog" type="application/atom+xml">
   
@@ -140,11 +140,11 @@
 <p>如果官方的机器不能满足你，也可以自动自己的机器来跑工作流，后续会讲到。</p>
 <h2 id="使用-Actions"><a href="#使用-Actions" class="headerlink" title="使用 Actions"></a>使用 Actions</h2><p>上面说到 Actions 是脚本的封装，它可以是社区市场中的 Actions，也可以是自定义 Actions，甚至是一个 Docker 镜像。</p>
 <h3 id="Marketplace-方式"><a href="#Marketplace-方式" class="headerlink" title="Marketplace 方式"></a>Marketplace 方式</h3><p>Github 提供了界面操作，让我们可以方便的在工作流中维护 Actions，只要我们在浏览器中编辑 yml 文件，右侧就出现了 Actions 市场，可以点开某个 Actions，查看它的详细配置。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281126235.png"><br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281127958.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281126235.png"><br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127958.png"></p>
 <p>对照着 Actions 的文档，我在 Workflow 中插入 node。现在，我的配置文件长这样：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">lint</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">eslint:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Check</span> <span class="string">out</span> <span class="string">repository</span> <span class="string">code</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">use</span> <span class="string">node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v3.3.0</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">latest</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">node</span> <span class="string">-v</span></span><br></pre></td></tr></table></figure>
 
-<p>然后，查看执行结果。<br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/taoliujun.github.io/assets/202306281127692.png"></p>
+<p>然后，查看执行结果。<br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127692.png"></p>
 <h3 id="自己的-Actions"><a href="#自己的-Actions" class="headerlink" title="自己的 Actions"></a>自己的 Actions</h3><p>还可以在自己的仓库里添加 Actions，这里就贴官方原例子了。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- root (repository)</span><br><span class="line">|   |__ .github</span><br><span class="line">|       └── workflows</span><br><span class="line">|           └── my-first-workflow.yml</span><br><span class="line">|       └── actions</span><br><span class="line">|           |__ hello-world-action</span><br><span class="line">|               └── action.yml</span><br></pre></td></tr></table></figure>
 
@@ -196,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/GitHub_Actions/learn/" data-id="cljqitcsg0012axrr4gm31ikb" data-title="2. GitHub Actions - Learn" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/GitHub_Actions/learn/" data-id="cljqqxzzs0003gvrrdck4h2fr" data-title="2. GitHub Actions - Learn" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
