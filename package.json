@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "cd src && pnpm run start && cd ..",
     "build": "cd src && pnpm run build && cd .."
   }
 }
