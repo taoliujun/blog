@@ -3,14 +3,12 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const io = require('@actions/io');
 
-const main = async () => {
-    const issue_number = core.getInput('issue_number');
-    const token = core.getInput('token');
-    const owner = github.context.payload.repository.owner.login;
-    const repo = github.context.payload.repository.name;
+/** @type ReturnType<typeof github.getOctokit> */
+let octokit;
+let owner = '';
+let repo = '';
 
-    const octokit = github.getOctokit(token);
-
+const generateIssue = async (issue_number) => {
     const issue = await octokit.rest.issues.get({
         owner,
         repo,
@@ -22,13 +20,13 @@ const main = async () => {
     const bodyMatch = body.match(/<!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
     if (!bodyMatch) {
         core.setFailed('no hexo data');
-        return;
+        throw new Error('no hexo data');
     }
 
     const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
     if (!urlMatch) {
         core.setFailed('no url');
-        return;
+        throw new Error('no url');
     }
 
     const categories = labels
@@ -52,8 +50,6 @@ const main = async () => {
         issue_number,
     });
 
-    console.log('==comments', comments.data);
-
     const commentBodys = comments?.data
         ?.filter((v) => {
             return v.user.login === owner && v.body.includes('<!--hexo-->');
@@ -63,12 +59,33 @@ const main = async () => {
         });
     content += `\n\n${commentBodys?.join(`\n`)}\n\n`;
 
-    console.log('==path', path);
-    console.log('==content', content);
+    // console.log('==path', path);
+    // console.log('==content', content);
 
     await io.mkdirP('./src/source/_posts');
 
     fs.writeFileSync(`./src/source/_posts/${path}.md`, content);
+
+    return { path };
+};
+
+const main = async () => {
+    const issue_number = core.getInput('issue_number');
+    const token = core.getInput('token');
+    owner = github.context.payload.repository.owner.login;
+    repo = github.context.payload.repository.name;
+
+    octokit = github.getOctokit(token);
+
+    const issueNumbers = issue_number.split(',');
+
+    const results = await Promise.all(
+        issueNumbers.map((v) => {
+            return generateIssue(v);
+        }),
+    );
+
+    console.log('==all paths', results);
 };
 
 try {
