@@ -902,10 +902,10 @@ tags:
 
 
   
-    <article id="post-write-components-elegantly-using-radix" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-react-usedeferredvalue" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/write-components-elegantly-using-radix/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:25:58.000Z" itemprop="datePublished">2023-07-06</time>
+    <a href="/blog/react-usedeferredvalue/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:38:14.000Z" itemprop="datePublished">2023-07-06</time>
 </a>
     
   <div class="article-category">
@@ -920,7 +920,7 @@ tags:
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/write-components-elegantly-using-radix/">从Radix看如何优雅写组件</a>
+      <a class="p-name article-title" href="/blog/react-usedeferredvalue/">React useDeferredValue在性能优化中的使用</a>
     </h1>
   
 
@@ -928,59 +928,35 @@ tags:
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/3">https://github.com/taoliujun/blog/issues/3</a></p>
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/20">https://github.com/taoliujun/blog/issues/20</a></p>
 <!--hexo
 ---
-url: write-components-elegantly-using-radix
+url: react-usedeferredvalue
 tags:
-  - radix
+  - react
 ---
 -->
 
-<h2 id="组件的困扰"><a href="#组件的困扰" class="headerlink" title="组件的困扰"></a>组件的困扰</h2><p>在更早以前，网页应用很简单，开发者自己维护简单的交互组件，通过入参去控制组件有不一样的渲染、样式、交互。后来React&#x2F;Vue等框架的到来，使网页应用变得愈发复杂，于是使用Element、Ant、Mui之类的UI组件来提高开发效率，但使用后发现一些问题，其中常见的是：  </p>
-<ol>
-<li>难以改变样式。</li>
-<li>几乎不能改变dom结构。</li>
-</ol>
-<p>虽然很多组件库提供了css variables、less&#x2F;sass包等方式让人们来定义样式，但离精细定义差些距离。而且固化的组件dom结构让开发者难以完成产品、UI设计师要求的定制化二次开发。</p>
-<p>于是部分人开始从0或基于更基础的UI组件来开发自定义组件以满足自定义样式和dom结构的目的，但问题是维护这些基础组件又是一个麻烦，或者说这些组件放到另一个项目中，是否又需要是另一个dom结构？</p>
-<p>于是，有开源项目在解决这样的事，比较出众的是Mui-Base、Radix，它们都旨在提供一套Uncontrolled、Unstyled、Opened的基础组件以便大家二次封装。我在阅读实践了这两个方案后，选择了使用Radix继续深入下去，主要是因为Radix将组件拆分的更为精细。</p>
-<h2 id="Radix的理念"><a href="#Radix的理念" class="headerlink" title="Radix的理念"></a>Radix的理念</h2><p>它提出了几个特性，一起看看吧。</p>
-<h3 id="Accessible-可访问性"><a href="#Accessible-可访问性" class="headerlink" title="Accessible 可访问性"></a>Accessible 可访问性</h3><p>如果你的应用对可访问性有要求，那Radix会有很大帮助，它遵循了一个 <code>WAI-ARIA</code> 的设计规范。但我对可访问性的研究不多，在此不表了。</p>
-<h3 id="Unstyled-无样式"><a href="#Unstyled-无样式" class="headerlink" title="Unstyled 无样式"></a>Unstyled 无样式</h3><p>顾名思义的是，它提供的组件都是不带任何样式的，你可以使用任意样式方案去开发。这也解决了上文提到的重要问题：自定义样式。</p>
-<h3 id="Opened-开放"><a href="#Opened-开放" class="headerlink" title="Opened 开放"></a>Opened 开放</h3><p>我认为Radix的开发性做到了优秀的程度，它的每个组件都太颗粒了，你可以精细的自由搭配，组装成想要的。</p>
-<h3 id="Incremental-渐进的"><a href="#Incremental-渐进的" class="headerlink" title="Incremental 渐进的"></a>Incremental 渐进的</h3><p>可以只安装我们需要用到的组件库，比如<code>npm install @radix-ui/react-tooltip</code>。</p>
-<h2 id="一个小例子"><a href="#一个小例子" class="headerlink" title="一个小例子"></a>一个小例子</h2><p>我们要做一个tooltip，如果自己写，需要考虑样式、状态控制、可访问性等。但是在Radix里，采用简单的封装和自定义样式即可：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">Popover</span> <span class="keyword">from</span> <span class="string">&#x27;@radix-ui/react-popover&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Popover.Trigger</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Popover.Content</span> <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                    要显示的内容</span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="一个卡顿场景"><a href="#一个卡顿场景" class="headerlink" title="一个卡顿场景"></a>一个卡顿场景</h2><p>已知浏览器在一帧时间里（默认16.6毫秒）要完成好多工作，其中最耗时的是js脚本执行和页面渲染。如果js脚本耗时太长，那要引起页面渲染掉帧，在用户的体验上就是卡顿。</p>
+<p>这里有一个处理用户输入的搜索词语，将结果渲染到一个dom列表上的场景：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span>, useMemo, useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">SearchResults</span>: <span class="variable constant_">FC</span>&lt;&#123; <span class="attr">query</span>: <span class="built_in">string</span> &#125;&gt; = <span class="function">(<span class="params">&#123; query &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> datas = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">10000</span>).<span class="title function_">fill</span>(<span class="literal">null</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;query&#125;</span> <span class="subst">$&#123;<span class="built_in">Math</span>.random()&#125;</span>`</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;, [query]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!query) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>search &quot;&#123;query&#125;&quot; list:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;datas.map((v, k) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;k&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">            &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [query, setQuery] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            Search:</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">value</span>=<span class="string">&#123;query&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setQuery(e.target.value);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">SearchResults</span> <span class="attr">query</span>=<span class="string">&#123;query&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>在上面的代码中，组装Radix提供的popover组件的颗粒，不加任意className就得到一个简单的tooltip，并且”点击我”可进行交互。如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271427990.png"></p>
-<p>接着，我随便加了点tailwindcss。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">           <span class="tag">&lt;<span class="name">Popover.Trigger</span> <span class="attr">className</span>=<span class="string">&quot;text-red&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">Popover.Trigger</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">           <span class="tag">&lt;<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">               <span class="tag">&lt;<span class="name">Popover.Content</span> <span class="attr">className</span>=<span class="string">&quot;border border-solid border-black&quot;</span> <span class="attr">sideOffset</span>=<span class="string">&#123;5&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                   要显示的内容</span></span><br><span class="line"><span class="language-xml">                   <span class="tag">&lt;<span class="name">Popover.Arrow</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">               <span class="tag">&lt;/<span class="name">Popover.Content</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">           <span class="tag">&lt;/<span class="name">Popover.Portal</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;/<span class="name">Popover.Root</span>&gt;</span></span></span><br><span class="line">   );</span><br></pre></td></tr></table></figure>
+<p>当用户每次输入一个字符，就会触发<code>SearchResults</code>组件的重新渲染，这个渲染包括<code>datas</code>的重新计算，和dom结构的重新渲染，这个时间远远超过16毫秒，会导致下一个输入值的处理任务一直在等待中，造成卡顿。</p>
+<h2 id="useDeferredValue"><a href="#useDeferredValue" class="headerlink" title="useDeferredValue"></a>useDeferredValue</h2><p>React提供了<code>时间切片</code>的模式，这里不详细展开了，允许你在调度任务的过程中安排高优先级的任务，而<code>useDeferredValue</code>就是这个模式的一个hook，它可以<strong>延迟更新部分UI</strong></p>
+<p>在之前的代码中，我们稍作修改：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [query, setQuery] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> defreredQuery = <span class="title function_">useDeferredValue</span>(query);</span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">SearchResults</span> <span class="attr">query</span>=<span class="string">&#123;defreredQuery&#125;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-<p>就得到如图的效果：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306271430207.png"></p>
-<p>Radix的组件将几乎所有的state变化，反馈到<code>data-state</code>上方便你精细的定制样式了。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Radix提供了很多小细节让你可以优雅的封装组件，不限于：</p>
-<ul>
-<li>提供<code>forceMount</code>以方便你的组件能运行完整的动画。</li>
-<li>提供<code>asChild</code>以方便你更精细的自定义dom。</li>
-<li>支持SSR。</li>
-<li>提供了许多现成组件，并且足够颗粒化，让你更快更优化的定制出自己的组件哟。</li>
-</ul>
-<p>相比较使用它，理解它的理念才能消化为自己的知识，个人认为即便是自己开发的基础组件，以精细颗粒控制为目标，也不失为一个很棒的思路。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.radix-ui.com/">https://www.radix-ui.com/</a></li>
-</ul>
+<p>当用户<strong>快速</strong>输入一个字符时，<code>SearchResults</code>组件的渲染就会被延迟，这样就尽量减少卡顿了。</p>
+<p><code>useDeferredValue</code>通过延迟状态的更新来实现这个目的，它不同于节流或防抖的固定时间控制，而是根据一系列复杂调度算法来决定延迟的时间，这样可以尽量减少卡顿的发生。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/write-components-elegantly-using-radix/" data-id="clqxl72zp0003lfoyf954gh1j" data-title="从Radix看如何优雅写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/react-usedeferredvalue/" data-id="clqxlloyo0014i5os6103beky" data-title="React useDeferredValue在性能优化中的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
 
     </footer>
   </div>
@@ -990,10 +966,171 @@ tags:
 
 
   
-    <article id="post-es6-promise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-react-usetransition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/es6-promise/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:21:12.000Z" itemprop="datePublished">2023-07-06</time>
+    <a href="/blog/react-usetransition/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:37:42.000Z" itemprop="datePublished">2023-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/react-usetransition/">React useTransition在性能优化中的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/19">https://github.com/taoliujun/blog/issues/19</a></p>
+<!--hexo
+---
+url: react-usetransition
+tags:
+  - react
+---
+-->
+
+<p><code>useTransition</code> is a React Hook that lets you update the state without blocking the UI.</p>
+<p>文档中简单一句话说明<code>useTransition</code>的用途：不阻塞UI的情况下更新<strong>状态</strong>。</p>
+<h2 id="解决什么问题？"><a href="#解决什么问题？" class="headerlink" title="解决什么问题？"></a>解决什么问题？</h2><p>正常代码下，JavaScript是单线程的，所以执行一段耗时的代码，会阻塞UI的渲染，导致页面卡顿。React提供了<strong>时间切片</strong>的功能来尽量确保一帧中有充足的时间来渲染UI，而<code>useTransition</code>就是在这个基础上，可以在不阻塞UI的情况下使用时间分片特性<strong>更新状态</strong>。</p>
+<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>先看下卡顿是如何形成的，一个简单的代码，每500ms，更新<code>name</code>状态。另外点击按钮的时候，更新一系列状态并渲染到dom中。</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">getDatas</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> datas = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">2000</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> s = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        datas.<span class="title function_">push</span>(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> datas;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [name, setName] = <span class="title function_">useState</span>(<span class="string">&#x27;world&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> [datas1, setDatas1] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas2, setDatas2] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas3, setDatas3] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas4, setDatas4] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas5, setDatas5] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas6, setDatas6] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas7, setDatas7] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas8, setDatas8] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> onClick1 = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">setDatas1</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas2</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas3</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas4</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas5</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas6</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas7</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas8</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">    &#125;, []);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">setName</span>(<span class="string">`world <span class="subst">$&#123;<span class="built_in">Math</span>.random()&#125;</span>`</span>);</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, []);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            hello &#123;name&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick1&#125;</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas1.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas2.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas3.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas4.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas5.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas6.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas7.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas8.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>首先不点击按钮，观察5秒，没有卡顿现象，性能表现如图：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041609217.png"></p>
+<p>可以看到有几个微微凸起的黄色点，对应着每次的<code>hello</code>状态更新和渲染，它们的执行时间都在1ms，没有超过一帧的时间。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041610767.png"></p>
+<p>选取其中一个黄色的点，查看它的详情。React的调度器、协调器、渲染器创建了对应的任务，分步执行了任务，具体可阅读React架构的相关文章。</p>
+<p><strong>然后连续点几次按钮，<code>hello</code>的渲染出现明显的卡顿，性能表现如图：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041608992.png"></p>
+<p>在性能图中截取的一段时间中，黄色是脚本执行时间，灰色是UI渲染时间，白色是空闲时间（我停止点击了一会儿），在每帧里，要跑完所有的状态变更和UI渲染，<code>datas</code>系列的状态变更和渲染占据了大量的时间，基本是阻塞了<code>hello</code>的状态变更和渲染。</p>
+<p><strong>只点击一次，性能表现如图：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041625903.png"></p>
+<p>可以看到几个Task，第一个Task就是在更新<code>datas</code>系列状态和渲染，它占据了太多帧的时间，导致<code>hello</code>的状态变更和渲染被推迟到后面的帧。</p>
+<h2 id="优化它"><a href="#优化它" class="headerlink" title="优化它"></a>优化它</h2><p>前面说到，React的架构中实现了<strong>时间切片</strong>，它允许开发者将<em>不重要</em>的变更推迟到后面的帧，这样就可以尽量保证优先执行默认任务。使用<code>useTransition</code>改下代码：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [pending, startTransition] = <span class="title function_">useTransition</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onClick1 = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">startTransition</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">setDatas1</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas2</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas3</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas4</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas5</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas6</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas7</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas8</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
+
+<p><strong>再次连续点击按钮，卡顿现象明显减轻很多，性能表现如下：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041629743.png"></p>
+<p>一看起来，执行时间还是很长，那么为什么<code>hello</code>渲染看起来不卡顿呢？</p>
+<p><strong>只点一次，看看性能表现：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041631650.png"></p>
+<p>查看几个Task的详情，发现<code>datas</code>系列状态的更新，被分配在了多个Task中，中间还穿插了<code>hello</code>的状态更新的任务。这也印证了<code>useTransition</code>的实现背景：将不重要的任务通过时间切片架构，分配到多帧中，优先执行其他任务，从而实现不卡顿的目的。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li><p><code>useTransition</code>是个hook，它的返回值还包括了一个pending状态，用来表示是否处于时间切片的过程中，可以用来优化UI，比如显示一个loading。</p>
+</li>
+<li><p>你也可以使用<code>startTransition</code>这个util函数代替hook的使用。</p>
+</li>
+<li><p>时间切片架构是调度状态变化的，所以<code>startTransition</code>的入参函数里，将状态更新标记为可切片，普通的代码段不会被标记。所以简单的说，你还是得将一个状态变更的执行时间控制在5ms内。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/react-usetransition/" data-id="clqxlloys0018i5oseik26gh3" data-title="React useTransition在性能优化中的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-react-performance optimization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/react-performance%20optimization/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:37:20.000Z" itemprop="datePublished">2023-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/react-performance%20optimization/">React的性能优化项，最后更新2023年07月...</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/18">https://github.com/taoliujun/blog/issues/18</a></p>
+<!--hexo
+---
+url: react-performance optimization
+tags:
+  - react
+---
+-->
+
+<p>React 没有最佳性能优化项，性能优化和项目的复杂度相关，所以以下记录的优化项，酌情使用。</p>
+<p>评论区见。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/18#issuecomment-1623078715">组件需要更细粒度</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/20">React useDeferredValue在性能优化中的使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/19">React useTransition在性能优化中的使用</a></li>
+</ul>
+<!--hexo-->
+
+<h1 id="组件需要更细粒度"><a href="#组件需要更细粒度" class="headerlink" title="组件需要更细粒度"></a>组件需要更细粒度</h1><p><strong>结论：如果组件中的状态更新频率很快，那么尽量将组件拆分到更细粒度。</strong></p>
+<p>先看一个例子：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Test1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;==&quot;</span>, <span class="title class_">Math</span>.<span class="title function_">random</span>());</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;Math.random()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setValue(e.target.value)&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Test1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061103775.png"></p>
+<p>如上，虽然<code>Test1</code>组件和<code>value</code>状态并无关系，但每一次输入都会导致<code>Test1</code>组件的重新渲染。如果<code>Test1</code>组件的逻辑和渲染够复杂，那么很容易影响性能。</p>
+<p>究其原理，Fiber 在节点这一层保存了组件函数中状态和虚拟 Dom 的关系，它的最小渲染单元就是本组件函数。</p>
+<p>根据这个原理，试试将输入框拆分成另一个组件：</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Input1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setValue(e.target.value)&#125; /&gt;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Test1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;==&quot;</span>, <span class="title class_">Math</span>.<span class="title function_">random</span>());</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;Math.random()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Input1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Test1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061111086.png"></p>
+<p>如上，连续输入 abc，并不触发<code>Test1</code>的多次执行，<code>Input1</code>组件在一个独立的 Fiber 结构中，它的状态更新便不会影响到<code>Main</code>函数。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/react-performance%20optimization/" data-id="clqxlloyn0011i5os2njn19ns" data-title="React的性能优化项，最后更新2023年07月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-es6-destructuring" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/es6-destructuring/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:36:43.000Z" itemprop="datePublished">2023-07-06</time>
 </a>
     
   <div class="article-category">
@@ -1008,7 +1145,7 @@ tags:
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-promise/">整理ES6：Promise的忽略点和几个方法的区别</a>
+      <a class="p-name article-title" href="/blog/es6-destructuring/">整理ES6：解构赋值</a>
     </h1>
   
 
@@ -1016,143 +1153,46 @@ tags:
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/2">https://github.com/taoliujun/blog/issues/2</a></p>
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/17">https://github.com/taoliujun/blog/issues/17</a></p>
 <!--hexo
 ---
-url: es6-promise
+url: es6-destructuring
 tags:
   - es6
   - javascript
 ---
 -->
 
-<p><strong>Promise</strong>是业务开发中使用率最高的ES6方法了，但日常容易忽略几个点，以及记不得它几个方法的区别，现记录。</p>
-<h2 id="容易忽略的点"><a href="#容易忽略的点" class="headerlink" title="容易忽略的点"></a>容易忽略的点</h2><ul>
-<li><code>catch</code>是<code>then</code>的语法糖，但是<code>catch</code>可以捕获<code>then</code>中的异常，而<code>then</code>的第二个回调函数不行。</li>
-<li>如果没有使用<code>catch</code>捕获错误，那么Promise的错误不会传递到外层，即使外层有<code>try...catch</code>也捕获不到。</li>
-<li>因为<code>catch</code>捕获了<code>rejected</code>且返回新的实例，所以在<code>all</code>等方法中，p1实现了<code>catch</code>方法，则p1的<code>rejected</code>不会触发p的<code>catch</code>。</li>
-</ul>
-<h2 id="几个方法的区别"><a href="#几个方法的区别" class="headerlink" title="几个方法的区别"></a>几个方法的区别</h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>resolved的前提</th>
-<th>rejected的前提</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>all</td>
-<td>全部resolved</td>
-<td>任一rejected</td>
-<td>-</td>
-</tr>
-<tr>
-<td>race</td>
-<td>任一resolved</td>
-<td>任一rejected</td>
-<td>任一率先改变的状态，传递给p</td>
-</tr>
-<tr>
-<td>allSettled</td>
-<td>全部改变</td>
-<td>-</td>
-<td>状态全部改变，传递给p。格式为: <br /> <code>&#123;status: &#39;fulfilled&#39;, value: value&#125;</code> <br/> 或者 <br/> <code>&#123;status: &#39;rejected&#39;, reason: reason&#125;</code></td>
-</tr>
-<tr>
-<td>any</td>
-<td>任一resolved</td>
-<td>全部rejected</td>
-<td>传递给<code>catch</code>的是一个<code>AggregateError</code>实例</td>
-</tr>
-</tbody></table>
-<!--hexo-->
+<p>工作中经常会使用变量的解构赋值，随便举几个例子。</p>
+<h2 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;pear&quot;</span>, <span class="string">&quot;orange&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;peach&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> [fruit1, , fruit3, ...otherFruits] = fruits;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&#123;</span><br><span class="line">  fruit1,</span><br><span class="line">  fruit3,</span><br><span class="line">  otherFruits,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h1 id="AggregateError"><a href="#AggregateError" class="headerlink" title="AggregateError"></a>AggregateError</h1><p>AggregateError封装了Error数组，它的结构是：</p>
-<blockquote>
-<p>AggregateError(errors[, message])</p>
-</blockquote>
-<p><code>AggregateError()</code>构造函数可以接受两个参数。</p>
-<ul>
-<li>errors：数组，它的每个成员都是一个错误对象。该参数是必须的。</li>
-<li>message：字符串，表示 AggregateError 抛出时的提示信息。该参数是可选的。</li>
-</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node 1.ts</span></span><br><span class="line">&#123;</span><br><span class="line">  fruit1: &#x27;apple&#x27;,</span><br><span class="line">  fruit3: &#x27;orange&#x27;,</span><br><span class="line">  otherFruits: [ &#x27;banana&#x27;, &#x27;peach&#x27; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在执行结果中可以看到，<code>fruit1</code>是apple，其后是一个空位，所以<code>fruit3</code>是orange，<code>otherFruits</code>前面有扩展运算符，所以它读取了剩下的所有索引值。</p>
+<h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><p>对象解构里记录一个概念，就是模式与变量，见下面一个嵌套结构的例子：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">base</span>: &#123;</span><br><span class="line">    <span class="attr">truename</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">sex</span>: <span class="string">&quot;女&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">card</span>: <span class="string">&quot;320xxx&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  base,</span><br><span class="line">  <span class="attr">base</span>: &#123; truename &#125;,</span><br><span class="line">  card,</span><br><span class="line">&#125; = user;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;base:&quot;</span>, base);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;truename:&quot;</span>, truename);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;card:&quot;</span>, card);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base: &#123; truename: &#x27;张三&#x27;, sex: &#x27;女&#x27; &#125;</span><br><span class="line">truename: 张三</span><br><span class="line">card: 320xxx</span><br></pre></td></tr></table></figure>
+
+<p>在如上的对象解构中，第一个<code>base</code>是变量，第二个<code>base</code>是模式，它的值是<code>user</code>对象中的<code>base</code>属性，<code>truename</code>是变量，<code>card</code>也是变量。</p>
+<h2 id="字符串、数组、布尔值解构"><a href="#字符串、数组、布尔值解构" class="headerlink" title="字符串、数组、布尔值解构"></a>字符串、数组、布尔值解构</h2><p>因为解构的规则是将变量转为对象（数组也是对象），字符串、数字、布尔都可以转成对象。</p>
+<p><strong>所以字符串可以像数组</strong>那样解构。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> word = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [, x] = word;</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="number">3</span>: y &#125; = word;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&#123; x, y &#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; x: &#x27;b&#x27;, y: &#x27;d&#x27; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p><strong>数组也是对象</strong>，所以读取指定索引的值，可以这样写：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;pear&quot;</span>, <span class="string">&quot;orange&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;peach&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="number">3</span>: fruit1 &#125; = fruits;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruit1);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banana</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-promise/" data-id="clqxl72ze0000lfoyclk23juo" data-title="整理ES6：Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-what-is-es6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/what-is-es6/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:18:38.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/what-is-es6/">整理ES6：ES6是什么？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/1">https://github.com/taoliujun/blog/issues/1</a></p>
-<!--hexo
----
-url: what-is-es6
-tags:
-  - es6
-  - javascript
----
--->
-
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>本系列文章不是技术教程，只是个人的知识点整理。</p>
-<h2 id="第一段废话"><a href="#第一段废话" class="headerlink" title="第一段废话"></a>第一段废话</h2><p>就在昨晚，我突然冒出了奇怪的心思想要对10年学习工作生涯做一个总结。但今早起来发现无从下手，一是没有优秀的文笔能力，不能科学优雅地整理出重点；二是实在没有牛逼的技术能力，羞于展示于众，这么多年的成长也不过是不断咀嚼大神们的产出。得益于互联网的开源精神和友善的讨论氛围，我这并不天资聪明的脑袋也算是学到了点皮毛能一直工作以温饱无忧。但是说了废话这么多，对写总结仍是没有帮助的，我翻来覆去后打算，不如抓近几年的重点，给某个技术点做一些总结，一来锻炼自己的文笔能力，二来做一次高质量的复习也是能提升自我能力。</p>
-<h2 id="为什么写ES6？"><a href="#为什么写ES6？" class="headerlink" title="为什么写ES6？"></a>为什么写ES6？</h2><p>我从IE6时代开始写JavaScript，到2016年左右迎接真正的成年JS：ES6，接下来是前端爆发时代：CoffeeScript、TypeScript、Webpack、Angular、React、Node、Eslint等百十个技术点或框架层出不穷走向成熟。我和大部分人一样，在有限的精力里不断地消化它们，它们或成为我们工作的一部分，或像IE6一样一去不复返。如上所说，总有一些技术如TypeScript那般坚持了多年之久仍然在坚强的活着，它们如此受欢迎必然有它的闪光点。而ES6正是如此，用稳定优秀的迭代力，现代化的设计理念、牢牢的抓住了各大厂商和开发者的心。</p>
-<p>如果看这篇文档的人儿中有一些近几年加入的开发者，我想对大家说，ES6并不是自古就有，它的出生并不一帆风顺，甚至在推出稳定版本后，得到了一些开发者诸如“浏览器都不支持，要你何用”的嘲笑。但得益于polyfill(s)、浏览器厂商、github开源等好多组织的相辅相成，ES6才成为了现在这样。</p>
-<h2 id="ES6到底是什么？"><a href="#ES6到底是什么？" class="headerlink" title="ES6到底是什么？"></a>ES6到底是什么？</h2><p>大家或多或少看了ES6的介绍文章，正如每个人心中哈姆雷特是不一样的，我参考总结了一些文章，加上自身的工作经验，对ES6做以下的介绍。</p>
-<p>JavaScript在上世纪90年代被提交给标准化组织ECMA，紧接着制定出第一个该语言标准并命名为ECMAScript 1.0，ES便是其简称。JavaScript是该标准的实现之一，被广泛使用，我们可以简单的认为JavaScript就是ECMAScript。</p>
-<p>之后该标准不断推出新版本一直到5.1，当要制定6.0标准的时候，发现要加入的语法功能太多了，要不断地推出6.1、6.2，难以规划和命名。于是ECMA组织改变了策略，定于每年6月推出一个新版本并按年份命名，在这一年期间，若干草案得到充分讨论和经过几个草案步骤后加入到新标准中。于是ES 6.0摇身变成ES2015，之后的年份一直推出ES2016、ES2017等。</p>
-<p><strong>虽然从历史上讲，ES6单指ES2015；但大众更容易理解的是，ES6泛指ES2015及以后的新语法功能。</strong></p>
-<p>这些年的互联网文章在特别的介绍ES6的语法功能，用于与ES5进行对比，或许再过一些年，人们不再提起ES6了，那时候的文章会统一讲整个ECMAScript，再有每年6月份单独的讲解ES20xx了吧。</p>
-<h2 id="ES6的相关技术"><a href="#ES6的相关技术" class="headerlink" title="ES6的相关技术"></a>ES6的相关技术</h2><h3 id="polyfill、babel是什么？"><a href="#polyfill、babel是什么？" class="headerlink" title="polyfill、babel是什么？"></a>polyfill、babel是什么？</h3><p>ES2015之后每一年会发布新的语法功能，我们在代码中使用新语法和功能，但用户的浏览器、Node客户端大概率不是最新版本，并不支持这些新语法。于是发展出两个方案解决这个问题，一是使用babel将新语法编译为老语法（按浏览器版本覆盖率、指定标准等配置，略过不表），二是使用polyfill用老语法模拟出新功能。有了这两者，我们基本可以放心的写出优雅的新代码，然后由它们编译后供浏览器解析。值的说明的是，新功能那么多，现代开发者不需要去维护polyfill列表了，babel中使用core-js库根据browserrc配置项智能的去引入polyfill了。</p>
-<h3 id="和TypeScript的关系？"><a href="#和TypeScript的关系？" class="headerlink" title="和TypeScript的关系？"></a>和TypeScript的关系？</h3><p>TypeScript是对ES的类型补充，它存在一个配置项，来表明在ts检查、编译过程中去支持什么标准的ES。</p>
-<h2 id="最后，欢迎大家在此讨论"><a href="#最后，欢迎大家在此讨论" class="headerlink" title="最后，欢迎大家在此讨论"></a>最后，欢迎大家在此讨论</h2><p>积极汲取大家的讨论，补充我的文章（偷笑）。</p>
-<!--hexo-->
-
-<h1 id="core-js"><a href="#core-js" class="headerlink" title="core-js"></a>core-js</h1><p>虽然大部分开发者不直接使用core-js，甚至不知道它。我们使用webpack将ES6编译成老语法，实际上它在使用babel，而babel在使用core-js。</p>
-<p>它是一个伟大的库，其原理是维护一系列polyfill进行版本、浏览器支持度、草案阶段等维度的分类。你既可以直接引用具体的polyfill，也可以根据草案阶段引入，也可以根据浏览器支持度引入。</p>
-<p>它的作者是一个非常有趣，实诚的人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/what-is-es6/" data-id="clqxl72zk0001lfoy0bb1g26h" data-title="整理ES6：ES6是什么？" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://taoliujun.github.io/blog/es6-destructuring/" data-id="clqxlloy80000i5osfw688vkv" data-title="整理ES6：解构赋值" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -1167,6 +1207,11 @@ tags:
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
+  </nav>
 
 </section>
         
@@ -1186,7 +1231,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
     </div>
   </div>
 
@@ -1196,7 +1241,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 10px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 20px;">typescript</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
+      <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 17.5px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 15px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12.5px;">typescript</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
     </div>
   </div>
 
