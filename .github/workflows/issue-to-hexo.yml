@@ -43,7 +43,7 @@ jobs:
               issue_number: issueNumber
             });
             // console.log('==issue', JSON.stringify(issue.data));
-            const { title, body, created_at } = issue.data;
+            const { title, body, created_at, labels } = issue.data;
 
             const bodyMatch = body.match(/<\!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
 
@@ -59,13 +59,16 @@ jobs:
               return;
             }
 
+            const categories = labels?.map((v)=>{
+              return `  - [${v.name}]`;
+            })?.join(`\n`);
 
             const hexoData = `
             ---
             title: "${title}"
             date: "${created_at}"
             categories:
-              - [React]
+            ${categories}
             ${bodyMatch[1]}
             ---
             `;
@@ -84,6 +87,7 @@ jobs:
       - name: create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          title: New blog by Action
+          delete-branch: true
+          title: "New blog for issue #${{ github.event.inputs.issueNumber }}"
           base: master
           branch: feat/new-blog-by-action
