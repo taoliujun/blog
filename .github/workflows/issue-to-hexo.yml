@@ -7,7 +7,7 @@ on:
         required: true
         type: number
 jobs:
-  build:
+  issueToHexo:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -29,7 +29,7 @@ jobs:
         working-directory: src
         run: pnpm install
 
-      - name: generate issue to hexo
+      - name: issue to hexo
         uses: actions/github-script@v7
         with:
           result-encoding: string
@@ -70,19 +70,6 @@ jobs:
             const path = urlMatch[1];
 
             await exec.exec(
-              `pnpm hexo new`,
-              [
-                `--path "${path}"`,
-                `"${title}"`,
-              ],
-              {
-                cwd: 'src',
-                // silent: true,
-                // ignoreReturnCode: true,
-              }
-            );
-
-            await exec.exec(
               `echo "${hexoData}\n\n${body}" > source/_posts/${path}.md`,
               [],
               {
@@ -92,12 +79,12 @@ jobs:
               }
             );
 
-            return '';
+            return 'done';
 
       - name: list gst
         run: git status
 
-      - name: generate hexo
+      - name: hexo build
         run: pnpm run build
 
       - name: create Pull Request
