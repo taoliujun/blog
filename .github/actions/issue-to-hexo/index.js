@@ -9,6 +9,10 @@ const main = async () => {
     const owner = `\${{ github.event.repository.owner.login }}`;
     const repo = `\${{ github.event.repository.name }}`;
 
+    console.log('==token', token);
+
+    return;
+
     const octokit = github.getOctokit(token);
 
     const issue = await octokit.rest.issues.get({
