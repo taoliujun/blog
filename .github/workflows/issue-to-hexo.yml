@@ -26,7 +26,9 @@ jobs:
             cache-dependency-path: 'src'
 
       - name: cd hexo
-        run: cd src
+        run: |
+            cd src
+            ls -a
 
       - name: install dependencies
         run: |
