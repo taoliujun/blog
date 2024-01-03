@@ -39,10 +39,8 @@ jobs:
 
       - name: generate hexo
         run: |
-          pnpm run build
           cd ..
-          git add .
-          git commit --message "feat: create blog"
+          pnpm run build
 
       - name: create Pull Request
         uses: peter-evans/create-pull-request@v5
