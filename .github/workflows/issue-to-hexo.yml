@@ -40,10 +40,10 @@ jobs:
               repo: context.repo.repo,
               issue_number: issueNumber
             });
-            console.log('==issue', JSON.stringify(issue.data));
+            // console.log('==issue', JSON.stringify(issue.data));
             const { title, body, created_at } = issue.data;
 
-            const bodyMatch = body.match(/<\!--hexo([\r\n\s\S]+)-->/);
+            const bodyMatch = body.match(/<\!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
 
             if (!bodyMatch) {
               core.setFailed('no hexo data');
@@ -51,13 +51,13 @@ jobs:
             }
 
             const hexoData = `
-            <!--hexo
+            ---
             title: ${title}
             date: ${created_at}
             categories:
               - [React]
             ${bodyMatch[1]}
-            -->
+            ---
             `;
 
             const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
