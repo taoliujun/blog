@@ -31,7 +31,7 @@ jobs:
         run: cd src && pnpm install
         
       - name: generate issue to hexo
-        uses: gsongsong/issue-to-hexo@v1
+        uses: somidad/action-issue-to-hexo@v1
         with:
           issue_url: ${{ github.event.issue.url }}
           token: ${{ github.token }}
