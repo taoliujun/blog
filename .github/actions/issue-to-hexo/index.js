@@ -9,12 +9,6 @@ const main = async () => {
     const owner = github.context.payload.repository.owner.login;
     const repo = github.context.payload.repository.name;
 
-    console.log('==info', {
-        token,
-        owner,
-        repo,
-    });
-
     const octokit = github.getOctokit(token);
 
     const issue = await octokit.rest.issues.get({
@@ -23,7 +17,6 @@ const main = async () => {
         issue_number,
     });
 
-    console.log('==issue', JSON.stringify(issue.data));
     const { title, body, created_at, labels, html_url } = issue.data;
 
     const bodyMatch = body.match(/<!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
@@ -58,11 +51,6 @@ const main = async () => {
 
     const path = urlMatch[1];
 
-    console.info('==path', path);
-    console.info('==hexoData', hexoData);
-
-    await io.mkdirP('./src/source/_posts');
-
     const content = `
         ${hexoData}
         \n\n
@@ -70,6 +58,11 @@ const main = async () => {
         \n\n
         ${body}
     `;
+
+    console.log('==path', path);
+    console.log('==content', content);
+
+    await io.mkdirP('./src/source/_posts');
 
     fs.writeFileSync(`./src/source/_posts/${path}.md`, content);
 };
