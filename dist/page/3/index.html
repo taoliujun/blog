@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   
-  <title>Archiv | TaoLiuJun&#39;s Blog</title>
+  <title>TaoLiuJun&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TaoLiuJun&#39;s Blog">
-<meta property="og:url" content="https://taoliujun.github.io/blog/archives/page/2/index.html">
+<meta property="og:url" content="https://taoliujun.github.io/blog/page/3/index.html">
 <meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
 <meta property="og:description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
 <meta property="og:locale">
@@ -80,223 +80,71 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/JavaScript/Promise_ignore_points_and_methods/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-03-01T16:00:00.000Z" itemprop="datePublished">Mar 2</time>
+    <article id="post-Github Actions/0. Intro" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/GitHub_Actions/intro/" class="article-date">
+  <time class="dt-published" datetime="2022-07-02T16:00:00.000Z" itemprop="datePublished">2022-07-03</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E6%9E%B6%E6%9E%84/">架构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/JavaScript/Promise_ignore_points_and_methods/">Promise的忽略点和几个方法的区别</a>
+      <a class="p-name article-title" href="/blog/GitHub_Actions/intro/">0. GitHub Actions - Intro</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/JavaScript/es6_intro/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-02-28T16:00:00.000Z" itemprop="datePublished">Mar 1</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/JavaScript/es6_intro/">ES6是什么</a>
-    </h1>
-  
+        <p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a></p>
+<p>之前依葫芦画瓢使用了 CI，并未对此做系统的了解，近期通读了一遍 Github Actions 文档，本系列文章是个人在 <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a> 学习过程的杂乱记录，它是这样的：</p>
+<ul>
+<li>本文章系列不同于官方文档的中文翻译，只是加入个人理解的学习日记，内容不会完全覆盖。</li>
+<li>时间背景是 2022 年 7 月份。</li>
+<li>按照官方文档的顺序做了笔记，但忽略了个人认为不重要的部分。</li>
+<li>都是经验主义的理解，并且由于本人英文水平有限，会有理解出错的地方。</li>
+<li>部分理解也未基于代码实际运行结果，纯属经验和猜测。</li>
+<li>因为文档术语翻译往往词不达意，所以会有很多中英参杂。</li>
+</ul>
+<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>既然你搜索到本文，想必是知道它是干什么的。我概括为：</p>
+<blockquote>
+<p>GitHub Actions 允许你在某些行为（比如 push master 分支）后，利用特定机器，执行脚本（比如 eslint check），并反馈结果形成一个 job。job 可以串起来，以完成更复杂的自动化操作。</p>
+</blockquote>
+<h2 id="和-CI-的关系"><a href="#和-CI-的关系" class="headerlink" title="和 CI 的关系"></a>和 CI 的关系</h2><p>CI&#x2F;CD 是执行自动化工作流的持续发布策略，它存在于 gitlab、github、jekins，甚至你在服务器上写了一个简单的计划任务拉取仓库代码后进行打包的脚本，也可以称之为 CI。</p>
+<p>在 github.com 上的 CI 就是 GitHub Actions，它提供了一组特定的环境变量、上下文、宿主机器。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/GitHub_Actions/intro/" data-id="cljqqxzzq0001gvrr1v1qhpon" data-title="0. GitHub Actions - Intro" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/React/useTransition/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-09-04T16:00:00.000Z" itemprop="datePublished">Sep 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/React/useTransition/">useTransition在性能优化中的使用</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ci/" rel="tag">ci</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/React/useDeferredValue/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-08-31T16:00:00.000Z" itemprop="datePublished">Sep 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/React/useDeferredValue/">useDeferredValue在性能优化中的使用</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/managing_workflow_runs/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-08T16:00:00.000Z" itemprop="datePublished">Jul 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/managing_workflow_runs/">6. GitHub Actions - Managing workflow runs</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/using_jobs/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-07T16:00:00.000Z" itemprop="datePublished">Jul 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/using_jobs/">5. GitHub Actions - Using jobs</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/using_workflows/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-06T16:00:00.000Z" itemprop="datePublished">Jul 7</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/using_workflows/">4. GitHub Actions - Using workflows</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/examples/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-05T16:00:00.000Z" itemprop="datePublished">Jul 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/examples/">3. GitHub Actions - Examples</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/learn/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-04T16:00:00.000Z" itemprop="datePublished">Jul 5</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/learn/">2. GitHub Actions - Learn</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/GitHub_Actions/quickstart/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-07-03T16:00:00.000Z" itemprop="datePublished">Jul 4</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/GitHub_Actions/quickstart/">1. GitHub Actions - Quickstart</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/archives/">&laquo; zurück</a><a class="page-number" href="/blog/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/archives/page/3/">3</a><a class="extend next" rel="next" href="/blog/archives/page/3/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; zurück</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </section>

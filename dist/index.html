@@ -184,6 +184,78 @@ tags:
 
 
   
+    <article id="post-react-zustand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/react-zustand/" class="article-date">
+  <time class="dt-published" datetime="2023-12-12T22:46:26.000Z" itemprop="datePublished">2023-12-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/react-zustand/">React公共状态利器 - Zustand</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/35">https://github.com/taoliujun/blog/issues/35</a></p>
+<!--hexo
+---
+url: react-zustand
+tags:
+  - zustand
+  - react store
+---
+-->
+
+<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.pmnd.rs/zustand">https://docs.pmnd.rs/zustand</a></p>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><p><strong>Zustand</strong> 是一个非常简单粗暴的全局状态管理库，它的使用有多简单呢？如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; pnpm add zustand</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useFormStateStore.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; create &#125; <span class="keyword">from</span> <span class="string">&#x27;zustand&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">State</span> &#123;</span><br><span class="line">    <span class="attr">loading</span>: <span class="built_in">boolean</span>;</span><br><span class="line">    <span class="attr">disabled</span>: <span class="built_in">boolean</span>;</span><br><span class="line">    <span class="attr">setLoadingByAge</span>: <span class="function">(<span class="params">value: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useFormStateStore = create&lt;<span class="title class_">State</span>&gt;(<span class="function">(<span class="params">set</span>) =&gt;</span> (&#123;</span><br><span class="line">    <span class="attr">loading</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">disabled</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">setLoadingByAge</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">set</span>(&#123; <span class="attr">loading</span>: value &gt; <span class="number">10</span> &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.tsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; useState, <span class="keyword">type</span> <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useFormStateStore &#125; <span class="keyword">from</span> <span class="string">&#x27;./useFormStateStore&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Button</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@/components/Button&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Loading</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; loading &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>loading: &#123;String(loading)&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Disabled</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; disabled &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>disabled: &#123;String(disabled)&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; setLoadingByAge &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">const</span> [age, setAge] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Loading</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Disabled</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        loading: true,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading true</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        loading: false,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading false</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        disabled: true,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set disabled true</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        disabled: false,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set disabled false</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">type</span>=<span class="string">&quot;number&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">value</span>=<span class="string">&#123;age&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setAge(Number(e.target.value));</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setLoadingByAge(age);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading by age</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Main</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>useFormStateStore.ts</code>中定义了状态，然后在<code>app.tsx</code>中使用，就是这么简单粗暴！这里有几点介绍下：</p>
+<ul>
+<li><p>对于简单的状态更新，使用<code>setState</code>方法就可以，它的参数是一个对象，这个对象就是你要更新的状态，它会和之前的状态进行合并，然后返回一个新的状态，从而触发组件更新。</p>
+</li>
+<li><p>对于需要通用的逻辑处理的状态更新，参照<code>useFormStateStore.ts</code>中的<code>setLoadingByAge</code>方法，将它作为状态里的一个方法就行了。</p>
+</li>
+</ul>
+<h1 id="Zustand"><a href="#Zustand" class="headerlink" title="Zustand"></a>Zustand</h1><p>使用非常简单，API也很少，它的原理是使用了<code>Proxy</code>，所以它的性能非常好。</p>
+<h1 id="相比Redux"><a href="#相比Redux" class="headerlink" title="相比Redux"></a>相比Redux</h1><p>相比Redux，Zustand的代码非常简单明了，不需要使用<code>connect</code>、<code>mapStateToProps</code>、<code>mapDispatchToProps</code>这些方法。</p>
+<h1 id="相比React-Context"><a href="#相比React-Context" class="headerlink" title="相比React Context"></a>相比React Context</h1><p>React Context需要一个<code>Provider</code>包裹组件以传递状态，需要一个<code>useContext</code>使用状态，光从层级上就让人绕起来了。而Zustand只需要一个<code>create</code>方法，就可以使用了，且状态是全局的，不需要传递。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/react-zustand/" data-id="clqxk2akp0000j9qe4na7hwwx" data-title="React公共状态利器 - Zustand" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-前端/从Radix看如何优雅写组件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" class="article-date">
@@ -697,95 +769,11 @@ tags:
 
 
   
-    <article id="post-JavaScript/Promise的忽略点和几个方法的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/JavaScript/Promise_ignore_points_and_methods/" class="article-date">
-  <time class="dt-published" datetime="2023-03-01T16:00:00.000Z" itemprop="datePublished">2023-03-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/JavaScript/Promise_ignore_points_and_methods/">Promise的忽略点和几个方法的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>Promise</strong>是业务开发中使用率最高的 ES6 方法了，但日常容易忽略几个点，以及记不得它几个方法的区别，现记录。</p>
-<h2 id="容易忽略的点"><a href="#容易忽略的点" class="headerlink" title="容易忽略的点"></a>容易忽略的点</h2><ul>
-<li><code>catch</code>是<code>then</code>的语法糖，但是<code>catch</code>可以捕获<code>then</code>中的异常，而<code>then</code>的第二个回调函数不行。</li>
-<li>如果没有使用<code>catch</code>捕获错误，那么 Promise 的错误不会传递到外层，即使外层有<code>try...catch</code>也捕获不到。</li>
-<li>因为<code>catch</code>捕获了<code>rejected</code>且返回新的实例，所以在<code>all</code>等方法中，p1 实现了<code>catch</code>方法，则 p1 的<code>rejected</code>不会触发 p 的<code>catch</code>。</li>
-</ul>
-<h2 id="几个方法的区别"><a href="#几个方法的区别" class="headerlink" title="几个方法的区别"></a>几个方法的区别</h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>resolved 的前提</th>
-<th>rejected 的前提</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>all</td>
-<td>全部 resolved</td>
-<td>任一 rejected</td>
-<td>-</td>
-</tr>
-<tr>
-<td>race</td>
-<td>任一 resolved</td>
-<td>任一 rejected</td>
-<td>任一率先改变的状态，传递给 p</td>
-</tr>
-<tr>
-<td>allSettled</td>
-<td>全部改变</td>
-<td>-</td>
-<td>状态全部改变，传递给 p。格式为: <br /> <code>&#123;status: &#39;fulfilled&#39;, value: value&#125;</code> <br/> 或者 <br/> <code>&#123;status: &#39;rejected&#39;, reason: reason&#125;</code></td>
-</tr>
-<tr>
-<td>any</td>
-<td>任一 resolved</td>
-<td>全部 rejected</td>
-<td>传递给<code>catch</code>的是一个<code>AggregateError</code>实例</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Promise_ignore_points_and_methods/" data-id="cljqqy005000vgvrr2a052ye7" data-title="Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/promise/" rel="tag">promise</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -806,7 +794,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ci/" rel="tag">ci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/promise/" rel="tag">promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/reflect/" rel="tag">reflect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/set/" rel="tag">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/symbol/" rel="tag">symbol</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/useDeferredValue/" rel="tag">useDeferredValue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/useTransition/" rel="tag">useTransition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%84%E4%BB%B6/" rel="tag">组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" rel="tag">解构赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">运算符</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ci/" rel="tag">ci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/promise/" rel="tag">promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/reflect/" rel="tag">reflect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/set/" rel="tag">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/symbol/" rel="tag">symbol</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/useDeferredValue/" rel="tag">useDeferredValue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/useTransition/" rel="tag">useTransition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%BB%84%E4%BB%B6/" rel="tag">组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" rel="tag">解构赋值</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="tag">运算符</a></li></ul>
     </div>
   </div>
 
@@ -816,7 +804,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/ci/" style="font-size: 15px;">ci</a> <a href="/blog/tags/github-actions/" style="font-size: 17.5px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/map/" style="font-size: 10px;">map</a> <a href="/blog/tags/promise/" style="font-size: 10px;">promise</a> <a href="/blog/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 12.5px;">react</a> <a href="/blog/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/blog/tags/set/" style="font-size: 10px;">set</a> <a href="/blog/tags/symbol/" style="font-size: 10px;">symbol</a> <a href="/blog/tags/useDeferredValue/" style="font-size: 10px;">useDeferredValue</a> <a href="/blog/tags/useTransition/" style="font-size: 10px;">useTransition</a> <a href="/blog/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 10px;">组件</a> <a href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" style="font-size: 10px;">解构赋值</a> <a href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a>
+      <a href="/blog/tags/ci/" style="font-size: 15px;">ci</a> <a href="/blog/tags/github-actions/" style="font-size: 17.5px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/map/" style="font-size: 10px;">map</a> <a href="/blog/tags/promise/" style="font-size: 10px;">promise</a> <a href="/blog/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 12.5px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/blog/tags/set/" style="font-size: 10px;">set</a> <a href="/blog/tags/symbol/" style="font-size: 10px;">symbol</a> <a href="/blog/tags/useDeferredValue/" style="font-size: 10px;">useDeferredValue</a> <a href="/blog/tags/useTransition/" style="font-size: 10px;">useTransition</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a> <a href="/blog/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 10px;">组件</a> <a href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" style="font-size: 10px;">解构赋值</a> <a href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a>
     </div>
   </div>
 
@@ -842,6 +830,10 @@ tags:
           </li>
         
           <li>
+            <a href="/blog/react-zustand/">React公共状态利器 - Zustand</a>
+          </li>
+        
+          <li>
             <a href="/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/">从Radix看如何优雅的写组件</a>
           </li>
         
@@ -851,10 +843,6 @@ tags:
         
           <li>
             <a href="/blog/JavaScript/using_Proxy/">Proxy的应用场景</a>
-          </li>
-        
-          <li>
-            <a href="/blog/JavaScript/Map/">Map真的挺好的</a>
           </li>
         
       </ul>
