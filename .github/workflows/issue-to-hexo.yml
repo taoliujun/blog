@@ -73,7 +73,7 @@ jobs:
               `pnpm hexo new`,
               [
                 `--path ${path}`,
-                title,
+                `"${title}"`,
               ],
               {
                 cwd: 'src',
