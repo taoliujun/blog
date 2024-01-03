@@ -7,7 +7,7 @@ on:
         required: true
         type: number
 jobs:
-  issueToHexo:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -74,7 +74,7 @@ jobs:
               [],
               {
                 cwd: 'src',
-                silent: true,
+                // silent: true,
                 // ignoreReturnCode: true,
               }
             );
