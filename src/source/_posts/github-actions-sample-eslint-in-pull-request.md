@@ -1,4 +1,3 @@
-
 ---
 title: "7. GitHub Actions - 在pull request中执行eslint检测的工作流例子"
 date: "2023-12-29T03:56:49Z"
@@ -11,6 +10,8 @@ tags:
 
 ---
 
+
+原文链接：[https://github.com/taoliujun/blog/issues/36](https://github.com/taoliujun/blog/issues/36)
 
 <!--hexo
 ---
