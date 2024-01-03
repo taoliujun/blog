@@ -67,7 +67,7 @@ jobs:
               return;
             }
 
-            const path = urlMatch(1);
+            const path = urlMatch[1];
 
             await exec.exec(
               `pnpm hexo new`,
