@@ -25,11 +25,13 @@ jobs:
             cache: 'pnpm'
             cache-dependency-path: 'src'
 
-      - name: cd hexo
-        run: cd src
+      # - name: cd hexo
+      #   run: cd src
 
       - name: install dependencies
-        run: pnpm install
+        run: |
+          ls -a
+          pnpm install
         
       - name: generate issue to hexo
         uses: somidad/action-issue-to-hexo@v1.0.0
