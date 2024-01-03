@@ -83,7 +83,7 @@ jobs:
             );
             
             await exec.exec(
-              `echo "${body}" > source/_posts/${path}.md`,
+              `echo "${hexoData}\n\n${body}" > source/_posts/${path}.md`,
               [],
               {
                 cwd: 'src',
