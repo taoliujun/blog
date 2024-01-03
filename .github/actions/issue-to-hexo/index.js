@@ -20,14 +20,12 @@ const main = async () => {
     const { title, body, created_at, labels, html_url } = issue.data;
 
     const bodyMatch = body.match(/<!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
-
     if (!bodyMatch) {
         core.setFailed('no hexo data');
         return;
     }
 
     const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
-
     if (!urlMatch) {
         core.setFailed('no url');
         return;
@@ -43,7 +41,28 @@ const main = async () => {
 
     const path = urlMatch[1];
 
-    const content = `${hexoData}\n\n原文链接：[${html_url}](${html_url})\n\n${body}`;
+    let content = '';
+
+    content += `${hexoData}\n\n原文链接：[${html_url}](${html_url})\n\n${body}`;
+
+    // list comments
+    const comments = await octokit.rest.issues.listComments({
+        owner,
+        repo,
+        issue_number,
+    });
+
+    console.log('==comments', comments.data);
+
+    const commentBodys = comments?.data
+        ?.filter((v) => {
+            return v.user.login === owner && v.body.includes('<!--hexo-->');
+        })
+        ?.map((v) => {
+            return v.body;
+        });
+    content += `\n\n${commentBodys?.join(`\n`)}\n\n`;
+
     console.log('==path', path);
     console.log('==content', content);
 
