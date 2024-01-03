@@ -50,6 +50,14 @@ jobs:
               return;
             }
 
+            const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
+
+            if (!urlMatch) {
+              core.setFailed('no url');
+              return;
+            }
+
+
             const hexoData = `
             ---
             title: "${title}"
@@ -60,20 +68,13 @@ jobs:
             ---
             `;
 
-            const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
-
-            if (!urlMatch) {
-              core.setFailed('no url');
-              return;
-            }
-
             const path = urlMatch[1];
 
             await exec.exec(
               `echo "${hexoData}\n\n${body}" > source/_posts/${path}.md`,
               [],
               {
-                cwd: 'src',
+                cwd: './src',
                 // silent: true,
                 // ignoreReturnCode: true,
               }
