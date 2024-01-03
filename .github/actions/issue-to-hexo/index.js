@@ -6,16 +6,14 @@ const io = require('@actions/io');
 const main = async () => {
     const issue_number = core.getInput('issue_number');
     const token = core.getInput('token');
-    const { owner, repo } = github.context.repo;
+    const owner = github.context.payload.repository.owner.login;
+    const repo = github.context.payload.repository.name;
 
     console.log('==info', {
         token,
         owner,
         repo,
     });
-    console.log('==github.context', JSON.stringify(github.context));
-
-    return;
 
     const octokit = github.getOctokit(token);
 
