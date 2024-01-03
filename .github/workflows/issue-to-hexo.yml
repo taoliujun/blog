@@ -43,7 +43,7 @@ jobs:
             console.log('==issue', JSON.stringify(issue.data));
             const { title, body, created_at } = issue.data;
 
-            const bodyMatch = body.match(/<\!--hexo\n(---[\s\S]+---)\n-->/);
+            const bodyMatch = body.match(/<\!--hexo([\r\n\s\S]+)-->/);
 
             if (!bodyMatch) {
               core.setFailed('no hexo data');
@@ -60,7 +60,7 @@ jobs:
             -->
             `;
 
-            const urlMatch = bodyMatch.match(/url: ([\s\S]+)\n/);
+            const urlMatch = bodyMatch.match(/url: ([\s\S]+)\r?\n/);
 
             if (!urlMatch) {
               core.setFailed('no url');
