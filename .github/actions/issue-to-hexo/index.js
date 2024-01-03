@@ -19,14 +19,14 @@ const generateIssue = async (issue_number) => {
 
     const bodyMatch = body.match(/<!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
     if (!bodyMatch) {
-        core.setFailed('no hexo data');
-        throw new Error('no hexo data');
+        core.setFailed(`#${issue_number} has no hexo data`);
+        return;
     }
 
     const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
     if (!urlMatch) {
-        core.setFailed('no url');
-        throw new Error('no url');
+        core.setFailed(`#${issue_number} has no url`);
+        return;
     }
 
     const categories = labels
@@ -66,6 +66,7 @@ const generateIssue = async (issue_number) => {
 
     fs.writeFileSync(`./src/source/_posts/${path}.md`, content);
 
+    // eslint-disable-next-line consistent-return
     return { path };
 };
 

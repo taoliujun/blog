@@ -4,6 +4,7 @@ on:
     workflow_dispatch:
         inputs:
             issue_number:
+                description: use commas to separate
                 required: true
                 type: string
 jobs:
