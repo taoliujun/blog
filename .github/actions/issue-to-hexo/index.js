@@ -85,7 +85,10 @@ const main = async () => {
         }),
     );
 
-    console.log('==all paths', results);
+    console.log(
+        '==all paths',
+        results?.map((v) => v.path),
+    );
 };
 
 try {
