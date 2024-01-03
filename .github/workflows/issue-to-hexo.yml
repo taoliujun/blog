@@ -12,9 +12,6 @@ jobs:
       # - name: work branch
       #   run: |
       #     git checkout -b feat/issue-to-hexo-$(date '+%Y%m%d%H%I%S')
-      
-      - name: cd hexo
-        run: cd src
         
       - name: init pnpm
         uses: pnpm/action-setup@v2
@@ -28,8 +25,11 @@ jobs:
             cache: 'pnpm'
             cache-dependency-path: 'src'
 
+      - name: cd hexo
+        run: cd src
+
       - name: install dependencies
-        run: cd src && pnpm install
+        run: pnpm install
         
       - name: generate issue to hexo
         uses: somidad/action-issue-to-hexo@v1.0.0
