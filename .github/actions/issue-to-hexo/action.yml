@@ -5,6 +5,10 @@ runs:
     main: './index.js'
 
 inputs:
+    token:
+        description: 'GitHub token'
+        required: false
+        default: ${{ github.token }}
     issue_number:
         description: 'Issue number'
         required: true

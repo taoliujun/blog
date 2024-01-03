@@ -5,10 +5,15 @@ const io = require('@actions/io');
 
 const main = async () => {
     const issue_number = core.getInput('issue_number');
-    const { token } = github.context;
+    const token = core.getInput('token');
     const { owner, repo } = github.context.repo;
 
-    console.log('==token', JSON.stringify(github.context));
+    console.log('==info', {
+        token,
+        owner,
+        repo,
+    });
+    console.log('==github.context', JSON.stringify(github.context));
 
     return;
 
