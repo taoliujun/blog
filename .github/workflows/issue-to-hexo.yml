@@ -1,7 +1,11 @@
 name: Issue to Hexo
+run-name: 'create blog for issue #${{ github.event.inputs.issueNumber }}'
 on:
-  issues:
-    types: [ milestoned ]
+  workflow_dispatch:
+    inputs:
+      issueNumber:
+        required: true
+        type: number
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,10 +13,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      # - name: work branch
-      #   run: |
-      #     git checkout -b feat/issue-to-hexo-$(date '+%Y%m%d%H%I%S')
-        
       - name: init pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -27,20 +27,55 @@ jobs:
 
       - name: install dependencies
         working-directory: src
-        run: |
-          ls -a
-          pnpm install
+        run: pnpm install
         
       - name: generate issue to hexo
-        uses: somidad/action-issue-to-hexo@v1.0.0
+        uses: actions/github-script@v7
         with:
-          issue_url: ${{ github.event.issue.url }}
-          token: ${{ github.token }}
+          result-encoding: string
+          script: |
+            const issueNumber = "${{ github.event.inputs.issueNumber }}";
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber
+            });
+            console.log('==issue', issue);
+            const { title, body } = issue.data;
+
+            const path = `action-test/${title}`
+
+            await exec.exec(
+              `pnpm hexo new`,
+              [
+                `--path ${path}`,
+                title,
+              ],
+              {
+                cwd: 'src',
+                // silent: true,
+                // ignoreReturnCode: true,
+              }
+            );
+            
+            await exec.exec(
+              `echo "${body}" > source/_posts/${path}.md`,
+              [],
+              [
+                `--path action-test/${title}`,
+                title,
+              ],
+              {
+                cwd: 'src',
+                // silent: true,
+                // ignoreReturnCode: true,
+              }
+            );
+
+            return '';
 
       - name: generate hexo
-        run: |
-          ls -a
-          pnpm run build
+        run: pnpm run build
 
       - name: create Pull Request
         uses: peter-evans/create-pull-request@v5
