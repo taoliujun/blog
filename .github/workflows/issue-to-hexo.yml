@@ -1,15 +1,52 @@
 name: Issue to Hexo
 on:
   issues:
-    # Sufficient to trigger this workflow when an issue is milestoned
     types: [ milestoned ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: gsongsong/issue-to-hexo@v1
+      - name: checkout
+        uses: actions/checkout@v4
+
+      # - name: work branch
+      #   run: |
+      #     git checkout -b feat/issue-to-hexo-$(date '+%Y%m%d%H%I%S')
+          
+      - name: init pnpm
+        uses: pnpm/action-setup@v2
+        with:
+            version: 8
+
+      - name: init node
+        uses: actions/setup-node@v4
+        with:
+            node-version: 20
+            cache: 'pnpm'
+
+      - name: cd hexo
+        run: cd src
+
+      - name: install dependencies
+        run: cd src && pnpm install
+        
+      - name: generate issue to hexo
+        uses: gsongsong/issue-to-hexo@v1
         with:
           issue_url: ${{ github.event.issue.url }}
           token: ${{ github.token }}
+
+      - name: generate hexo
+        run: |
+          pnpm run build
+          cd ..
+          git add .
+          git commit --message "feat: create blog"
+
+      - name: create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+            title: New blog by Action
+            base: master
+            branch: feat/new-blog-by-action
       
