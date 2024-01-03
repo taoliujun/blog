@@ -25,12 +25,8 @@ jobs:
             cache: 'pnpm'
             cache-dependency-path: 'src'
 
-      - name: cd hexo
-        run: |
-            cd src
-            ls -a
-
       - name: install dependencies
+        working-directory: src
         run: |
           ls -a
           pnpm install
@@ -43,10 +39,8 @@ jobs:
 
       - name: generate hexo
         run: |
-          cd ..
           ls -a
           pnpm run build
-          cd ..
 
       - name: create Pull Request
         uses: peter-evans/create-pull-request@v5
