@@ -78,9 +78,6 @@ jobs:
 
             return 'done';
 
-      - name: list gst
-        run: git status
-
       - name: hexo build
         run: pnpm run build
 
