@@ -40,10 +40,34 @@ jobs:
               repo: context.repo.repo,
               issue_number: issueNumber
             });
-            console.log('==issue', issue);
-            const { title, body } = issue.data;
+            console.log('==issue', JSON.stringify(issue.data));
+            const { title, body, created_at } = issue.data;
 
-            const path = `action-test/${title}`
+            const bodyMatch = body.match(/<\!--hexo\n(---[\s\S]+---)\n-->/);
+
+            if (!bodyMatch) {
+              core.setFailed('no hexo data');
+              return;
+            }
+
+            const hexoData = `
+            <!--hexo
+            title: ${title}
+            date: ${created_at}
+            categories:
+              - [React]
+            ${bodyMatch[1]}
+            -->
+            `;
+
+            const urlMatch = bodyMatch.match(/url: ([\s\S]+)\n/);
+
+            if (!urlMatch) {
+              core.setFailed('no url');
+              return;
+            }
+
+            const path = urlMatch(1);
 
             await exec.exec(
               `pnpm hexo new`,
@@ -61,10 +85,6 @@ jobs:
             await exec.exec(
               `echo "${body}" > source/_posts/${path}.md`,
               [],
-              [
-                `--path action-test/${title}`,
-                title,
-              ],
               {
                 cwd: 'src',
                 // silent: true,
@@ -73,6 +93,9 @@ jobs:
             );
 
             return '';
+
+      - name: list gst
+        run: git status
 
       - name: generate hexo
         run: pnpm run build
