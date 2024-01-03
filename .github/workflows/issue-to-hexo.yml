@@ -60,7 +60,7 @@ jobs:
             -->
             `;
 
-            const urlMatch = bodyMatch.match(/url: ([\s\S]+)\r?\n/);
+            const urlMatch = bodyMatch[1].match(/url: ([\s\S]+)\r?\n/);
 
             if (!urlMatch) {
               core.setFailed('no url');
