@@ -68,10 +68,10 @@
         
           <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://taoliujun.github.io/blog"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://taoliujun.github.io/blog"></form>
       </div>
     </div>
   </div>
@@ -79,6 +79,88 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-react-usetransition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/react-usetransition/" class="article-date">
+  <time class="dt-published" datetime="2023-12-28T19:56:49.000Z" itemprop="datePublished">2023-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/react-usetransition/">7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!--hexo
+---
+url: react-usetransition
+tags:
+  - react
+  - useTransition
+---
+-->
+
+<p>一个在pull request发起的时候执行eslint检测的workflow，<a target="_blank" rel="noopener" href="https://github.com/taoliujun/npm-packages/blob/master/.github/workflows/check-pull-request.yml">点此查看完整代码</a>，它实现的功能如下：</p>
+<ul>
+<li>在pull request创建、更新的时候执行。</li>
+<li>先回复一个评论，告诉用户正在运行。</li>
+<li>初始化仓库，并安装依赖，产生依赖缓存。</li>
+<li>运行eslint增量检查。</li>
+<li>运行typescript检查。</li>
+<li>运行jest检查。</li>
+<li>更新之前的评论，回复检查的结果。</li>
+</ul>
+<p>运行截图：</p>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/09c86bc1-ada1-41c3-9f8f-7e6c46f8204e" alt="Alt text"></p>
+<p>为避免歧义，涉及到github action的术语都是英文的。术语介绍如下：</p>
+<ul>
+<li>workflow，工作流，可以理解为yml文件。</li>
+<li>jobs，工作，一个workflow可以包含多个job，并行执行。</li>
+<li>steps，作业，一个job可以包含多个step，串行执行。</li>
+<li>action，操作，作业中具体的执行。</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871790603">初始化workflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871806576">reply checking</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871818126">.&#x2F;.github&#x2F;actions&#x2F;unique-comment</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862632">init</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862779">eslint</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862850">typescript</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871863037">unit test</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871863117">reply result</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/react-usetransition/" data-id="clqxf97zv0000i7q0bx1j3qqw" data-title="7. GitHub Actions - 在pull request中执行eslint检测的工作流例子" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/useTransition/" rel="tag">useTransition</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-前端/从Radix看如何优雅写组件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -145,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqqy00c001fgvrre4mlfork" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/" data-id="cljqqy00c001fgvrre4mlfork" data-title="从Radix看如何优雅的写组件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -208,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Reflect_And_Object/" data-id="cljqqy006000zgvrr0itr10gq" data-title="Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Reflect_And_Object/" data-id="cljqqy006000zgvrr0itr10gq" data-title="Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -269,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/using_Proxy/" data-id="cljqqy0080017gvrrh79d1hlq" data-title="Proxy的应用场景" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/using_Proxy/" data-id="cljqqy0080017gvrrh79d1hlq" data-title="Proxy的应用场景" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -329,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Map/" data-id="cljqqy004000sgvrrepz28c8l" data-title="Map真的挺好的" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Map/" data-id="cljqqy004000sgvrrepz28c8l" data-title="Map真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -389,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Set/" data-id="cljqqy00d001kgvrrblyc4a5l" data-title="Set真的挺好的" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Set/" data-id="cljqqy00d001kgvrrblyc4a5l" data-title="Set真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -456,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Symbol/" data-id="cljqqy0070012gvrr1g2q1p34" data-title="聊一聊Symbol" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Symbol/" data-id="cljqqy0070012gvrr1g2q1p34" data-title="聊一聊Symbol" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -513,7 +595,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_operator/" data-id="cljqqy002000kgvrr7qfkaghl" data-title="ES6新增的运算符" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_operator/" data-id="cljqqy002000kgvrr7qfkaghl" data-title="ES6新增的运算符" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -579,7 +661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_destructuring_assignment/" data-id="cljqqy003000ngvrrf9zt84yx" data-title="ES6的解构赋值" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_destructuring_assignment/" data-id="cljqqy003000ngvrrf9zt84yx" data-title="ES6的解构赋值" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -663,7 +745,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/Promise_ignore_points_and_methods/" data-id="cljqqy005000vgvrr2a052ye7" data-title="Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://taoliujun.github.io/blog/JavaScript/Promise_ignore_points_and_methods/" data-id="cljqqy005000vgvrr2a052ye7" data-title="Promise的忽略点和几个方法的区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -677,67 +759,11 @@
 
 
   
-    <article id="post-JavaScript/ES6是什么" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/JavaScript/es6_intro/" class="article-date">
-  <time class="dt-published" datetime="2023-02-28T16:00:00.000Z" itemprop="datePublished">2023-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/JavaScript/es6_intro/">ES6是什么</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>本系列文章不是技术教程，只是个人的知识点整理。</p>
-<h2 id="第一段废话"><a href="#第一段废话" class="headerlink" title="第一段废话"></a>第一段废话</h2><p>就在昨晚，我突然冒出了奇怪的心思想要对 10 年学习工作生涯做一个总结。但今早起来发现无从下手，一是没有优秀的文笔能力，不能科学优雅地整理出重点；二是实在没有牛逼的技术能力，羞于展示于众，这么多年的成长也不过是不断咀嚼大神们的产出。得益于互联网的开源精神和友善的讨论氛围，我这并不天资聪明的脑袋也算是学到了点皮毛能一直工作以温饱无忧。但是说了废话这么多，对写总结仍是没有帮助的，我翻来覆去后打算，不如抓近几年的重点，给某个技术点做一些总结，一来锻炼自己的文笔能力，二来做一次高质量的复习也是能提升自我能力。</p>
-<h2 id="为什么写-ES6？"><a href="#为什么写-ES6？" class="headerlink" title="为什么写 ES6？"></a>为什么写 ES6？</h2><p>我从 IE6 时代开始写 JavaScript，到 2016 年左右迎接真正的成年 JS：ES6，接下来是前端爆发时代：CoffeeScript、TypeScript、Webpack、Angular、React、Node、Eslint 等百十个技术点或框架层出不穷走向成熟。我和大部分人一样，在有限的精力里不断地消化它们，它们或成为我们工作的一部分，或像 IE6 一样一去不复返。如上所说，总有一些技术如 TypeScript 那般坚持了多年之久仍然在坚强的活着，它们如此受欢迎必然有它的闪光点。而 ES6 正是如此，用稳定优秀的迭代力，现代化的设计理念、牢牢的抓住了各大厂商和开发者的心。</p>
-<p>如果看这篇文档的人儿中有一些近几年加入的开发者，我想对大家说，ES6 并不是自古就有，它的出生并不一帆风顺，甚至在推出稳定版本后，得到了一些开发者诸如“浏览器都不支持，要你何用”的嘲笑。但得益于 polyfill(s)、浏览器厂商、github 开源等好多组织的相辅相成，ES6 才成为了现在这样。</p>
-<h2 id="ES6-到底是什么？"><a href="#ES6-到底是什么？" class="headerlink" title="ES6 到底是什么？"></a>ES6 到底是什么？</h2><p>大家或多或少看了 ES6 的介绍文章，正如每个人心中哈姆雷特是不一样的，我参考总结了一些文章，加上自身的工作经验，对 ES6 做以下的介绍。</p>
-<p>JavaScript 在上世纪 90 年代被提交给标准化组织 ECMA，紧接着制定出第一个该语言标准并命名为 ECMAScript 1.0，ES 便是其简称。JavaScript 是该标准的实现之一，被广泛使用，我们可以简单的认为 JavaScript 就是 ECMAScript。</p>
-<p>之后该标准不断推出新版本一直到 5.1，当要制定 6.0 标准的时候，发现要加入的语法功能太多了，要不断地推出 6.1、6.2，难以规划和命名。于是 ECMA 组织改变了策略，定于每年 6 月推出一个新版本并按年份命名，在这一年期间，若干草案得到充分讨论和经过几个草案步骤后加入到新标准中。于是 ES 6.0 摇身变成 ES2015，之后的年份一直推出 ES2016、ES2017 等。</p>
-<p><strong>虽然从历史上讲，ES6 单指 ES2015；但大众更容易理解的是，ES6 泛指 ES2015 及以后的新语法功能。</strong></p>
-<p>这些年的互联网文章在特别的介绍 ES6 的语法功能，用于与 ES5 进行对比，或许再过一些年，人们不再提起 ES6 了，那时候的文章会统一讲整个 ECMAScript，再有每年 6 月份单独的讲解 ES20xx 了吧。</p>
-<h2 id="ES6-的相关技术"><a href="#ES6-的相关技术" class="headerlink" title="ES6 的相关技术"></a>ES6 的相关技术</h2><h3 id="polyfill、babel-是什么？"><a href="#polyfill、babel-是什么？" class="headerlink" title="polyfill、babel 是什么？"></a>polyfill、babel 是什么？</h3><p>ES2015 之后每一年会发布新的语法功能，我们在代码中使用新语法和功能，但用户的浏览器、Node 客户端大概率不是最新版本，并不支持这些新语法。于是发展出两个方案解决这个问题，一是使用 babel 将新语法编译为老语法（按浏览器版本覆盖率、指定标准等配置，略过不表），二是使用 polyfill 用老语法模拟出新功能。有了这两者，我们基本可以放心的写出优雅的新代码，然后由它们编译后供浏览器解析。值的说明的是，新功能那么多，现代开发者不需要去维护 polyfill 列表了，babel 中使用 core-js 库根据 browserrc 配置项智能的去引入 polyfill 了。</p>
-<h3 id="和-TypeScript-的关系？"><a href="#和-TypeScript-的关系？" class="headerlink" title="和 TypeScript 的关系？"></a>和 TypeScript 的关系？</h3><p>TypeScript 是对 ES 的类型补充，它存在一个配置项，来表明在 ts 检查、编译过程中去支持什么标准的 ES。</p>
-<h2 id="最后，欢迎大家在此讨论"><a href="#最后，欢迎大家在此讨论" class="headerlink" title="最后，欢迎大家在此讨论"></a>最后，欢迎大家在此讨论</h2><p>积极汲取大家的讨论，补充我的文章（偷笑）。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/JavaScript/es6_intro/" data-id="cljqqy000000ggvrr5anaa20z" data-title="ES6是什么" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -746,9 +772,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%9E%B6%E6%9E%84/">架构</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%9E%B6%E6%9E%84/">架构</a></li></ul>
     </div>
   </div>
 
@@ -768,16 +794,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/ci/" style="font-size: 16.67px;">ci</a> <a href="/blog/tags/github-actions/" style="font-size: 16.67px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/map/" style="font-size: 10px;">map</a> <a href="/blog/tags/promise/" style="font-size: 10px;">promise</a> <a href="/blog/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 13.33px;">react</a> <a href="/blog/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/blog/tags/set/" style="font-size: 10px;">set</a> <a href="/blog/tags/symbol/" style="font-size: 10px;">symbol</a> <a href="/blog/tags/useDeferredValue/" style="font-size: 10px;">useDeferredValue</a> <a href="/blog/tags/useTransition/" style="font-size: 10px;">useTransition</a> <a href="/blog/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 10px;">组件</a> <a href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" style="font-size: 10px;">解构赋值</a> <a href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a>
+      <a href="/blog/tags/ci/" style="font-size: 17.5px;">ci</a> <a href="/blog/tags/github-actions/" style="font-size: 17.5px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/map/" style="font-size: 10px;">map</a> <a href="/blog/tags/promise/" style="font-size: 10px;">promise</a> <a href="/blog/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 15px;">react</a> <a href="/blog/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/blog/tags/set/" style="font-size: 10px;">set</a> <a href="/blog/tags/symbol/" style="font-size: 10px;">symbol</a> <a href="/blog/tags/useDeferredValue/" style="font-size: 10px;">useDeferredValue</a> <a href="/blog/tags/useTransition/" style="font-size: 12.5px;">useTransition</a> <a href="/blog/tags/%E7%BB%84%E4%BB%B6/" style="font-size: 10px;">组件</a> <a href="/blog/tags/%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/" style="font-size: 10px;">解构赋值</a> <a href="/blog/tags/%E8%BF%90%E7%AE%97%E7%AC%A6/" style="font-size: 10px;">运算符</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/07/">July 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/07/">July 2022</a></li></ul>
     </div>
   </div>
 
@@ -785,9 +811,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/react-usetransition/">7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</a>
+          </li>
         
           <li>
             <a href="/blog/%E5%89%8D%E7%AB%AF/write_component_with_radix/">从Radix看如何优雅的写组件</a>
@@ -805,10 +835,6 @@
             <a href="/blog/JavaScript/Map/">Map真的挺好的</a>
           </li>
         
-          <li>
-            <a href="/blog/JavaScript/Set/">Set真的挺好的</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -822,7 +848,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 taoliujun<br>
+      &copy; 2024 taoliujun<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
