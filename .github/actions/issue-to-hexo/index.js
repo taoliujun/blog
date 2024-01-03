@@ -39,26 +39,11 @@ const main = async () => {
         })
         ?.join(`\n`);
 
-    const hexoData = `
-      ---
-      title: "${title}"
-      date: "${created_at}"
-      categories:
-      ${categories}
-      ${bodyMatch[1]}
-      ---
-    `;
+    const hexoData = `---\ntitle: "${title}"\ndate: "${created_at}"\ncategories:\n${categories}\n${bodyMatch[1]}\n---\n`;
 
     const path = urlMatch[1];
 
-    const content = `
-        ${hexoData}
-        \n\n
-        原文链接：[${html_url}](${html_url})
-        \n\n
-        ${body}
-    `;
-
+    const content = `${hexoData}\n\n原文链接：[${html_url}](${html_url})\n\n${body}`;
     console.log('==path', path);
     console.log('==content', content);
 
