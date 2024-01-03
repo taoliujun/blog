@@ -12,7 +12,10 @@ jobs:
       # - name: work branch
       #   run: |
       #     git checkout -b feat/issue-to-hexo-$(date '+%Y%m%d%H%I%S')
-          
+      
+      - name: cd hexo
+        run: cd src
+        
       - name: init pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -23,9 +26,6 @@ jobs:
         with:
             node-version: 20
             cache: 'pnpm'
-
-      - name: cd hexo
-        run: cd src
 
       - name: install dependencies
         run: cd src && pnpm install
