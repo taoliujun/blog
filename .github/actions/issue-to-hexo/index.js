@@ -8,11 +8,9 @@ const main = async () => {
     const { token } = github.context;
     const { owner, repo } = github.context.repo;
 
-    console.log('==token', {
-        token,
-        owner,
-        repo,
-    });
+    console.log('==token', JSON.stringify(github.context));
+
+    return;
 
     const octokit = github.getOctokit(token);
 
