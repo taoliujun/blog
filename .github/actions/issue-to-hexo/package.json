@@ -1,0 +1,13 @@
+{
+  "name": "issue-to-hexo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo 'test'"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@actions/io": "^1.1.3"
+  }
+}

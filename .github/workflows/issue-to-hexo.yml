@@ -1,93 +1,52 @@
 name: Issue to Hexo
-run-name: "create blog for issue #${{ github.event.inputs.issueNumber }}"
+run-name: 'create blog for issue #${{ github.event.inputs.issue_number }}'
 on:
-  workflow_dispatch:
-    inputs:
-      issueNumber:
-        required: true
-        type: number
+    workflow_dispatch:
+        inputs:
+            issue_number:
+                required: true
+                type: number
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
 
-      - name: init pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+            - name: init pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 8
 
-      - name: init node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "pnpm"
-          cache-dependency-path: "src"
+            - name: init node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: 'pnpm'
+                  cache-dependency-path: |
+                      src/pnpm-lock.yaml
+                      .github/actions/issue-to-hexo/pnpm-lock.yaml
 
-      - name: install dependencies
-        working-directory: src
-        run: pnpm install
+            - name: install dependencies
+              working-directory: src
+              run: pnpm install
 
-      - name: issue to hexo
-        uses: actions/github-script@v7
-        with:
-          result-encoding: string
-          script: |
-            const fs = require('fs');
+            - name: install dependencies
+              working-directory: .github/actions/issue-to-hexo
+              run: pnpm install
 
-            const issueNumber = "${{ github.event.inputs.issueNumber }}";
-            const issue = await github.rest.issues.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber
-            });
-            // console.log('==issue', JSON.stringify(issue.data));
-            const { title, body, created_at, labels } = issue.data;
+            - name: issue to hexo
+              uses: ./.github/actions/issue-to-hexo
+              with:
+                  issue_number: ${{ github.event.inputs.issue_number }}
 
-            const bodyMatch = body.match(/<\!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
+            - name: hexo build
+              run: pnpm run build
 
-            if (!bodyMatch) {
-              core.setFailed('no hexo data');
-              return;
-            }
-
-            const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
-
-            if (!urlMatch) {
-              core.setFailed('no url');
-              return;
-            }
-
-            const categories = labels?.map((v)=>{
-              return `  - [${v.name}]`;
-            })?.join(`\n`);
-
-            const hexoData = `
-            ---
-            title: "${title}"
-            date: "${created_at}"
-            categories:
-            ${categories}
-            ${bodyMatch[1]}
-            ---
-            `;
-
-            const path = urlMatch[1];
-
-            await io.mkdirP('./src/source/_posts');
-
-            fs.writeFileSync(`./src/source/_posts/${path}.md`, `${hexoData}\n\n${body}`);
-
-            return 'done';
-
-      - name: hexo build
-        run: pnpm run build
-
-      - name: create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          delete-branch: true
-          title: "New blog for issue #${{ github.event.inputs.issueNumber }}"
-          base: master
-          branch: feat/new-blog-by-action
+            - name: create Pull Request
+              uses: peter-evans/create-pull-request@v5
+              with:
+                  delete-branch: true
+                  title: 'New blog for issue #${{ github.event.inputs.issue_number }}'
+                  base: master
+                  branch: feat/new-blog-by-action

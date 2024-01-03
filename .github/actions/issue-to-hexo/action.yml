@@ -1,0 +1,10 @@
+name: issue-to-hexo
+
+runs:
+    using: 'node20'
+    main: './index.js'
+
+inputs:
+    issue_number:
+        description: 'Issue number'
+        required: true
