@@ -10,7 +10,9 @@ keywords: "前端 JavaScript TypeScript React NodeJS"
 author: taoliujun
 language: zh-Hans
 timezone: "Asia/Shanghai"
-sitemap: /sitemap.xml || fa fa-sitemap
+sitemap: 
+    path:
+        - sitemap.xml
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
