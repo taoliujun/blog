@@ -656,10 +656,7 @@ unitTest:
                   cache: 'pnpm'
 
             - name: Install dependencies
-              run: |
-                  pnpm remove @nike/eslint-multi-formatter || true
-                  pnpm remove @nike/svg-packer || true
-                  pnpm install
+              run: pnpm install
 
             - name: Run lint
               id: lint
