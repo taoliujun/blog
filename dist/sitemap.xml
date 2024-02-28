@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://taoliujun.github.io/blog/web-api-badging_api/</loc>
+    
+    <lastmod>2024-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/github-actions-sample-eslint-in-pull-request/</loc>
     
     <lastmod>2024-01-25</lastmod>
@@ -247,7 +256,7 @@
 
   <url>
     <loc>https://taoliujun.github.io/blog</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -255,84 +264,98 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/github-actions/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/zustand/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/react-store/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/ast/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/css-module/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/changesets/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/typescript/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/es6/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/javascript/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/radix/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/react/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/jest/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tags/webapi/</loc>
+    <lastmod>2024-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tags/badging/</loc>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -341,28 +364,28 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/categories/React/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/categories/JavaScript/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://taoliujun.github.io/blog/categories/TypeScript/</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2024-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
