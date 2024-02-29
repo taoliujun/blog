@@ -80,6 +80,154 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-es6-reflect" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/es6-reflect/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:32:57.000Z" itemprop="datePublished">2023-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/es6-reflect/">整理ES6：Reflect和Object的关系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/11">https://github.com/taoliujun/blog/issues/11</a></p>
+<!--hexo
+---
+url: es6-reflect
+tags:
+  - es6
+  - javascript
+---
+-->
+
+<h2 id="Reflect是什么"><a href="#Reflect是什么" class="headerlink" title="Reflect是什么"></a>Reflect是什么</h2><p>在我若干年前阅读Reflect文档的那几天，我常闷被里自问，这是个什么玩意？随着时间的推移，我对它的理解越来越深刻，也越来越喜欢它。我想，这是一个值得深入研究的东西。(这句话是Copilot补充的，我觉得很有道理，就留下来了)</p>
+<p>Reflect是操作对象用的，我觉得Reflect最大的用处有两个。</p>
+<p>一是将Object的命令式、函数式混用行为，统一成函数式行为。比如<code>delete obj.key</code>，<code>key in obj</code>对应为<code>Reflect.deleteProperty(obj, key)</code>和<code>Reflect.has(obj, key)</code>。</p>
+<p>二是Reflect的方法和Proxy的拦截器一一对应，这样就可以用Reflect来实现Proxy的拦截器，而不用再写一遍拦截器的逻辑。比如<code>Reflect.get(obj, key)</code>对应为<code>get</code>拦截器，<code>Reflect.set(obj, key, value)</code>对应为<code>set</code>拦截器。</p>
+<p><strong>它拥有的静态方法和Proxy一样多</strong></p>
+<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// user.age</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Reflect</span>.<span class="title function_">get</span>(user, <span class="string">&quot;age&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20</span><br></pre></td></tr></table></figure>
+
+<p>代码很好理解，不一一表述了。</p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// user.name = &#x27;李四&#x27;</span></span><br><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">set</span>(user, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;李四&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; name: &#x27;李四&#x27;, age: 20 &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">deleteProperty</span>(user, <span class="string">&quot;name&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; age: 20 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多的方法见MDN即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/es6-reflect/" data-id="clqxlloye0007i5os4fvi6ygo" data-title="整理ES6：Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-github-actions-runs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/github-actions-runs/" class="article-date">
+  <time class="dt-published" datetime="2023-07-05T22:32:01.000Z" itemprop="datePublished">2023-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/github-actions-runs/">6. GitHub Actions - Managing workflow runs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/10">https://github.com/taoliujun/blog/issues/10</a></p>
+<!--hexo
+---
+url: github-actions-runs
+tags:
+  - github actions
+---
+-->
+
+<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow">https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow</a></p>
+<h2 id="手动执行"><a href="#手动执行" class="headerlink" title="手动执行"></a>手动执行</h2><p>设置<code>event</code>包含<code>workflow_dispatch</code>，可以手动触发，使用Github CLI、Browser都可以，文档中呈现了一个流程图示例。</p>
+<h2 id="重复执行"><a href="#重复执行" class="headerlink" title="重复执行"></a>重复执行</h2><p>无</p>
+<h2 id="取消执行"><a href="#取消执行" class="headerlink" title="取消执行"></a>取消执行</h2><p>无</p>
+<h2 id="审批执行"><a href="#审批执行" class="headerlink" title="审批执行"></a>审批执行</h2><p>对于pull request，可以设置审批执行以防止浪费actions资源。</p>
+<h2 id="审查部署"><a href="#审查部署" class="headerlink" title="审查部署"></a>审查部署</h2><p>无</p>
+<h2 id="开关workflow"><a href="#开关workflow" class="headerlink" title="开关workflow"></a>开关workflow</h2><p>无</p>
+<h2 id="跳过workflow"><a href="#跳过workflow" class="headerlink" title="跳过workflow"></a>跳过workflow</h2><p>在commit message中加入关键词可以跳过workflow，只对push、pull_request事件有效。关键词有：</p>
+<ul>
+<li>[skip ci]</li>
+<li>[ci skip]</li>
+<li>[no ci]</li>
+<li>[skip actions]</li>
+<li>[actions skip]</li>
+</ul>
+<p>也可以在message后空两行，然后加入关键词：</p>
+<ul>
+<li>skip-checks:true</li>
+<li>skip-checks: true</li>
+</ul>
+<h2 id="删除workflow"><a href="#删除workflow" class="headerlink" title="删除workflow"></a>删除workflow</h2><p>无</p>
+<h2 id="下载workflow归档"><a href="#下载workflow归档" class="headerlink" title="下载workflow归档"></a>下载workflow归档</h2><p>可以下载90天内的workflow归档，操作参考文档。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/github-actions-runs/" data-id="clqxlloyl000vi5os4sz88saa" data-title="6. GitHub Actions - Managing workflow runs" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-github-actions-jobs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/github-actions-jobs/" class="article-date">
@@ -750,82 +898,11 @@ tags:
 
 
   
-    <article id="post-what-is-es6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/what-is-es6/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:18:38.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/what-is-es6/">整理ES6：ES6是什么？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/1">https://github.com/taoliujun/blog/issues/1</a></p>
-<!--hexo
----
-url: what-is-es6
-tags:
-  - es6
-  - javascript
----
--->
-
-<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>本系列文章不是技术教程，只是个人的知识点整理。</p>
-<h2 id="第一段废话"><a href="#第一段废话" class="headerlink" title="第一段废话"></a>第一段废话</h2><p>就在昨晚，我突然冒出了奇怪的心思想要对10年学习工作生涯做一个总结。但今早起来发现无从下手，一是没有优秀的文笔能力，不能科学优雅地整理出重点；二是实在没有牛逼的技术能力，羞于展示于众，这么多年的成长也不过是不断咀嚼大神们的产出。得益于互联网的开源精神和友善的讨论氛围，我这并不天资聪明的脑袋也算是学到了点皮毛能一直工作以温饱无忧。但是说了废话这么多，对写总结仍是没有帮助的，我翻来覆去后打算，不如抓近几年的重点，给某个技术点做一些总结，一来锻炼自己的文笔能力，二来做一次高质量的复习也是能提升自我能力。</p>
-<h2 id="为什么写ES6？"><a href="#为什么写ES6？" class="headerlink" title="为什么写ES6？"></a>为什么写ES6？</h2><p>我从IE6时代开始写JavaScript，到2016年左右迎接真正的成年JS：ES6，接下来是前端爆发时代：CoffeeScript、TypeScript、Webpack、Angular、React、Node、Eslint等百十个技术点或框架层出不穷走向成熟。我和大部分人一样，在有限的精力里不断地消化它们，它们或成为我们工作的一部分，或像IE6一样一去不复返。如上所说，总有一些技术如TypeScript那般坚持了多年之久仍然在坚强的活着，它们如此受欢迎必然有它的闪光点。而ES6正是如此，用稳定优秀的迭代力，现代化的设计理念、牢牢的抓住了各大厂商和开发者的心。</p>
-<p>如果看这篇文档的人儿中有一些近几年加入的开发者，我想对大家说，ES6并不是自古就有，它的出生并不一帆风顺，甚至在推出稳定版本后，得到了一些开发者诸如“浏览器都不支持，要你何用”的嘲笑。但得益于polyfill(s)、浏览器厂商、github开源等好多组织的相辅相成，ES6才成为了现在这样。</p>
-<h2 id="ES6到底是什么？"><a href="#ES6到底是什么？" class="headerlink" title="ES6到底是什么？"></a>ES6到底是什么？</h2><p>大家或多或少看了ES6的介绍文章，正如每个人心中哈姆雷特是不一样的，我参考总结了一些文章，加上自身的工作经验，对ES6做以下的介绍。</p>
-<p>JavaScript在上世纪90年代被提交给标准化组织ECMA，紧接着制定出第一个该语言标准并命名为ECMAScript 1.0，ES便是其简称。JavaScript是该标准的实现之一，被广泛使用，我们可以简单的认为JavaScript就是ECMAScript。</p>
-<p>之后该标准不断推出新版本一直到5.1，当要制定6.0标准的时候，发现要加入的语法功能太多了，要不断地推出6.1、6.2，难以规划和命名。于是ECMA组织改变了策略，定于每年6月推出一个新版本并按年份命名，在这一年期间，若干草案得到充分讨论和经过几个草案步骤后加入到新标准中。于是ES 6.0摇身变成ES2015，之后的年份一直推出ES2016、ES2017等。</p>
-<p><strong>虽然从历史上讲，ES6单指ES2015；但大众更容易理解的是，ES6泛指ES2015及以后的新语法功能。</strong></p>
-<p>这些年的互联网文章在特别的介绍ES6的语法功能，用于与ES5进行对比，或许再过一些年，人们不再提起ES6了，那时候的文章会统一讲整个ECMAScript，再有每年6月份单独的讲解ES20xx了吧。</p>
-<h2 id="ES6的相关技术"><a href="#ES6的相关技术" class="headerlink" title="ES6的相关技术"></a>ES6的相关技术</h2><h3 id="polyfill、babel是什么？"><a href="#polyfill、babel是什么？" class="headerlink" title="polyfill、babel是什么？"></a>polyfill、babel是什么？</h3><p>ES2015之后每一年会发布新的语法功能，我们在代码中使用新语法和功能，但用户的浏览器、Node客户端大概率不是最新版本，并不支持这些新语法。于是发展出两个方案解决这个问题，一是使用babel将新语法编译为老语法（按浏览器版本覆盖率、指定标准等配置，略过不表），二是使用polyfill用老语法模拟出新功能。有了这两者，我们基本可以放心的写出优雅的新代码，然后由它们编译后供浏览器解析。值的说明的是，新功能那么多，现代开发者不需要去维护polyfill列表了，babel中使用core-js库根据browserrc配置项智能的去引入polyfill了。</p>
-<h3 id="和TypeScript的关系？"><a href="#和TypeScript的关系？" class="headerlink" title="和TypeScript的关系？"></a>和TypeScript的关系？</h3><p>TypeScript是对ES的类型补充，它存在一个配置项，来表明在ts检查、编译过程中去支持什么标准的ES。</p>
-<h2 id="最后，欢迎大家在此讨论"><a href="#最后，欢迎大家在此讨论" class="headerlink" title="最后，欢迎大家在此讨论"></a>最后，欢迎大家在此讨论</h2><p>积极汲取大家的讨论，补充我的文章（偷笑）。</p>
-<!--hexo-->
-
-<h1 id="core-js"><a href="#core-js" class="headerlink" title="core-js"></a>core-js</h1><p>虽然大部分开发者不直接使用core-js，甚至不知道它。我们使用webpack将ES6编译成老语法，实际上它在使用babel，而babel在使用core-js。</p>
-<p>它是一个伟大的库，其原理是维护一系列polyfill进行版本、浏览器支持度、草案阶段等维度的分类。你既可以直接引用具体的polyfill，也可以根据草案阶段引入，也可以根据浏览器支持度引入。</p>
-<p>它的作者是一个非常有趣，实诚的人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/what-is-es6/" data-id="clqxl72zk0001lfoy0bb1g26h" data-title="整理ES6：ES6是什么？" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; zurück</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; zurück</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -846,7 +923,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/badging/" rel="tag">badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/badging/" rel="tag">badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
     </div>
   </div>
 
@@ -856,7 +933,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/badging/" style="font-size: 10px;">badging</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 17.5px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 15px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12.5px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 12.5px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
+      <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/badging/" style="font-size: 10px;">badging</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
     </div>
   </div>
 
@@ -878,7 +955,15 @@ tags:
       <ul>
         
           <li>
+            <a href="/blog/web-api-Beacon_api/">Web API - Beacon</a>
+          </li>
+        
+          <li>
             <a href="/blog/web-api-badging_api/">Web API - Badging - 徽章</a>
+          </li>
+        
+          <li>
+            <a href="/blog/web-api-Badging_api/">Web API - Badging</a>
           </li>
         
           <li>
@@ -887,14 +972,6 @@ tags:
         
           <li>
             <a href="/blog/snapshot-impact-on-coverage/">snapshot对单测覆盖率的影响以及应对方案</a>
-          </li>
-        
-          <li>
-            <a href="/blog/github-actions-sample-eslint-in-pull-request/">7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</a>
-          </li>
-        
-          <li>
-            <a href="/blog/react-zustand/">React公共状态利器 - Zustand</a>
           </li>
         
       </ul>
