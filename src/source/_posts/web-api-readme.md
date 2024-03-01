@@ -27,9 +27,11 @@ tags:
 
 ## 目录
 
-- [ ] https://github.com/taoliujun/blog/issues/50
-- [ ] https://github.com/taoliujun/blog/issues/53
-- [ ] https://github.com/taoliujun/blog/issues/55
+- [x] #50 
+- [x] #53 
+- [x] #55 
+- [x] #58 
+- [ ] #59 
 
 
 

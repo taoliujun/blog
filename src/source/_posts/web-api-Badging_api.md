@@ -61,7 +61,7 @@ navigator.clearAppBadge();
 
 ## 示例
 
-示例：https://taoliujun.github.io/example/web-apis/Badging_API/index.html
+示例：https://taoliujun.github.io/example/web-api/Badging_API/index.html
 
 本示例代码较为简单，直接打开查看源码即可。
 

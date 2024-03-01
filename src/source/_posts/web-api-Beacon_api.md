@@ -27,7 +27,7 @@ tags:
 
 > MDN: https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API
 
-**Beacon**用于发送请求到服务器，且不需要响应。浏览器会保证在页面卸载前，将请求运行完成。主要使用场景是发送统计数据。
+**Beacon**用于发送请求到服务器，且不需要响应。浏览器会保证在页面卸载前，将请求运行完成。
 
 ## 方法
 
@@ -41,7 +41,7 @@ navigator.sendBeacon(url, data);
 
 ## 示例
 
-示例：https://taoliujun.github.io/example/web-apis/Beacon_API/index.html
+示例：https://taoliujun.github.io/example/web-api/Beacon_API/index.html
 
 1. 创建一个页面，放一个按钮用于发送`manual`统计数据：
 

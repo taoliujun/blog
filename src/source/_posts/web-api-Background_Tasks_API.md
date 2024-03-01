@@ -52,7 +52,7 @@ tags:
 
 ## 示例
 
-示例：https://taoliujun.github.io/example/web-apis/Background_Tasks_API/index.html
+示例：https://taoliujun.github.io/example/web-api/Background_Tasks_API/index.html
 
 1. 点击几次"add task"按钮，此时没有任务在运行，发现每一秒都流畅打印出任务量。
 
