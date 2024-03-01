@@ -80,6 +80,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-web-api-Background_Tasks_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/web-api-Background_Tasks_API/" class="article-date">
+  <time class="dt-published" datetime="2024-02-29T19:56:11.000Z" itemprop="datePublished">2024-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/55">https://github.com/taoliujun/blog/issues/55</a></p>
+<!--hexo
+---
+url: web-api-Background_Tasks_API
+tags:
+  - webapi
+  - Background Tasks
+---
+-->
+
+<h1 id="Background-Task"><a href="#Background-Task" class="headerlink" title="Background Task"></a>Background Task</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API">https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API</a></p>
+</blockquote>
+<p><strong>Background Tasks</strong>用于在空闲时间执行队列任务，从而<strong>不阻塞事件处理和屏幕更新</strong>。</p>
+<p>我们遇到的大部分浏览器卡顿场景是因为代码执行时间太长，阻塞了用户交互、DOM绘制。</p>
+<p>在以前，可以将耗时任务分为若干份，每一份执行N次任务，每M毫秒执行一份代码，直至所有任务被执行完成。虽然减轻了卡顿率，但存在以下问题：</p>
+<ul>
+<li>要主观判断N次任务的耗时不超过10ms，在一帧中留下充足的时间去处理交互、DOM绘制等。</li>
+<li>不超过10ms的N次任务，在每一帧的瞬时性能中，实际耗时是不一样的。所以如何定义N的值，也是主观而不科学的。</li>
+<li>在每一帧中，任务仍然会耗时过长而阻塞交互、绘制。</li>
+</ul>
+<p>现在，Background Task提供了方法，获取到当前留下了多少空闲时间，在这段时间里可以尽量的执行若干次任务。但仍需注意，只运行那些<strong>单次耗时时间很短的任务</strong>。</p>
+<blockquote>
+<p>“单次耗时时间很短”是什么意思？在不同的场景中，这个时间是可以浮动的。</p>
+<ul>
+<li>在用户点击按钮以查看最新文本信息的场景中，这个时间可以定义为100ms，因为用户在此时间后得到反馈，是不觉得卡顿的。</li>
+<li>在用户快速输入文本以反馈到屏幕上、或滚动订单列表的场景中，这个时间要定义为10ms，因为用户在快速的操作中得不到瞬间反馈就容易感受到卡顿。</li>
+</ul>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="requestIdleCallback"><a href="#requestIdleCallback" class="headerlink" title="requestIdleCallback"></a>requestIdleCallback</h3><p>在空闲时间执行回调。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-apis/Background_Tasks_API/index.html">https://taoliujun.github.io/example/web-apis/Background_Tasks_API/index.html</a></p>
+<ol>
+<li>点击几次”add task”按钮，此时没有任务在运行，发现每一秒都流畅打印出任务量。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/342d899c-45cf-4f61-a529-8846282f2028" alt="image"></p>
+<ol start="2">
+<li>点击”run all tasks”按钮，发现一次跑完所有任务，耗时几千毫秒，此过程中因为DOM绘制被阻塞，打印也卡住了。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/485c6005-7543-42ab-9096-c5b4fcc9681b" alt="image"></p>
+<ol start="3">
+<li>点击”run tasks”按钮，让其循环在空闲时间中跑完所有任务，发现每次执行很少个任务，耗时在几十毫秒，不会阻塞DOM绘制，打印毫无卡顿。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/3b67b0ff-df48-45e9-8c34-6d7327bea1c9" alt="image"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://taoliujun.github.io/blog/web-api-Background_Tasks_API/" data-id="clt84r9rj0000i1ng7xfc3f7a" data-title="Web API - Background Tasks" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-web-api-Beacon_api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/web-api-Beacon_api/" class="article-date">
@@ -116,30 +203,35 @@ tags:
 ---
 -->
 
-<h1 id="Badging"><a href="#Badging" class="headerlink" title="Badging"></a>Badging</h1><blockquote>
+<h1 id="Beacon"><a href="#Beacon" class="headerlink" title="Beacon"></a>Beacon</h1><blockquote>
 <p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API">https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API</a></p>
 </blockquote>
 <p><strong>Beacon</strong>用于发送请求到服务器，且不需要响应。浏览器会保证在页面卸载前，将请求运行完成。主要使用场景是发送统计数据。</p>
 <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="sendBeacon"><a href="#sendBeacon" class="headerlink" title="sendBeacon"></a>sendBeacon</h3><p>通过<em>POST</em>发送少量数据到服务器。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="title function_">sendBeacon</span>(url, data);</span><br></pre></td></tr></table></figure>
 
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>创建一个页面，放一个按钮用于发送<code>manual</code>统计数据：</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-apis/Beacon_API/index.html">https://taoliujun.github.io/example/web-apis/Beacon_API/index.html</a></p>
+<ol>
+<li>创建一个页面，放一个按钮用于发送<code>manual</code>统计数据：</li>
+</ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;javascript:sendData(&#x27;manual&#x27;);&quot;</span>&gt;</span>sendData<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>在页面隐藏、卸载的时候发送<code>hidden</code>统计数据：</p>
+<ol start="2">
+<li>在页面隐藏、卸载的时候发送<code>hidden</code>统计数据：</li>
+</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;visibilitychange&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">visibilityState</span> === <span class="string">&quot;hidden&quot;</span>) &#123;</span><br><span class="line">    <span class="title function_">sendData</span>(<span class="string">&#x27;hidden&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>发送统计数据的函数：</p>
+<p>3。 发送统计数据的函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sendData</span>(<span class="params">source</span>) &#123;</span><br><span class="line">  data += <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// getUrl用于获取服务端地址</span></span><br><span class="line">  navigator.<span class="title function_">sendBeacon</span>(<span class="title function_">getUrl</span>(), <span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(&#123; data, source &#125;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>创建服务端，打印<em>request body</em>数据以测试点击按钮、关闭页面的效果，发现关闭页面后也发送了数据。</p>
+<ol start="4">
+<li>创建服务端，打印<em>request body</em>数据以测试点击按钮、关闭页面的效果，发现关闭页面后也发送了数据。</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">body: [Object: null prototype] &#123; data: <span class="string">&#x27;1&#x27;</span>, <span class="built_in">source</span>: <span class="string">&#x27;manual&#x27;</span> &#125;</span><br><span class="line">body: [Object: null prototype] &#123; data: <span class="string">&#x27;2&#x27;</span>, <span class="built_in">source</span>: <span class="string">&#x27;hidden&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
 
 
-<p>示例：<a href="https://taoliujun.github.io/example/web-apis/Beacon_API/index.html">https://taoliujun.github.io/example/web-apis/Beacon_API/index.html</a></p>
-<blockquote>
-<p>需要服务端配合打印日志。服务端代码见：<a href="https://taoliujun.github.io/example/web-apis/Beacon_API/http.js">https://taoliujun.github.io/example/web-apis/Beacon_API/http.js</a></p>
-</blockquote>
+
+
 
       
     </div>
@@ -320,10 +412,8 @@ tags:
 <h3 id="clearAppBadge"><a href="#clearAppBadge" class="headerlink" title="clearAppBadge"></a>clearAppBadge</h3><p>清空徽章。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="title function_">clearAppBadge</span>();</span><br></pre></td></tr></table></figure>
 
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><a href="https://taoliujun.github.io/example/web-apis/Badging_API/index.html">https://taoliujun.github.io/example/web-apis/Badging_API/index.html</a></p>
-<blockquote>
-<p>Badging在Web APP中生效，用chrome打开示例链接，从链接中安装PWA，然后运行PWA测试。</p>
-</blockquote>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-apis/Badging_API/index.html">https://taoliujun.github.io/example/web-apis/Badging_API/index.html</a></p>
+<p>本示例代码较为简单，直接打开查看源码即可。</p>
 
       
     </div>
@@ -383,7 +473,8 @@ tags:
 </blockquote>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><input disabled="" type="checkbox"> #50 </li>
-<li><input disabled="" type="checkbox"> #53</li>
+<li><input disabled="" type="checkbox"> #53 </li>
+<li><input disabled="" type="checkbox"> #55</li>
 </ul>
 
       
@@ -1103,125 +1194,6 @@ tags:
 
 
   
-    <article id="post-typescript-means" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/typescript-means/" class="article-date">
-  <time class="dt-published" datetime="2023-08-02T17:52:04.000Z" itemprop="datePublished">2023-08-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/TypeScript/">TypeScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/typescript-means/">TypeScript的小手段，最后更新2023/12月...</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/22">https://github.com/taoliujun/blog/issues/22</a></p>
-<!--hexo
----
-url: typescript-means
-tags:
-  - typescript
----
--->
-
-<p>TypeScript有一些小手段，评论区见。</p>
-<ul>
-<li><a href="#issuecomment-1663199481">as断言的另外写法</a></li>
-<li><a href="#issuecomment-1663206615">as const</a></li>
-<li><a href="#issuecomment-1663206898">非null | undefined声明</a></li>
-<li><a href="#issuecomment-1838108783">const enum</a></li>
-<li><a href="#issuecomment-1841954904">@ts-expect-error</a></li>
-<li><a href="#issuecomment-1842016788">解构变量可标记为“不使用”</a></li>
-</ul>
-<!--hexo-->
-
-<h1 id="as断言的另外写法"><a href="#as断言的另外写法" class="headerlink" title="as断言的另外写法"></a>as断言的另外写法</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myCanvas = &lt;<span class="title class_">HTMLCanvasElement</span>&gt;<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;main_canvas&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>将断言类型写在前面的括号里，等同于：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myCanvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;main_canvas&quot;</span>) <span class="keyword">as</span> <span class="title class_">HTMLCanvasElement</span>;</span><br></pre></td></tr></table></figure>
-
-<p>但是不能再<code>.tsx</code>中使用。</p>
-<!--hexo-->
-
-<h1 id="as-const"><a href="#as-const" class="headerlink" title="as const"></a>as const</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test1</span>(<span class="params">name: <span class="string">&#x27;html&#x27;</span> | <span class="string">&#x27;css&#x27;</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;html&#x27;</span> &#125;;</span><br><span class="line"><span class="title function_">test1</span>(obj1.<span class="property">name</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上面的例子有一个类型错误：<code>Argument of type &#39;string&#39; is not assignable to parameter of type &#39;&quot;html&quot; | &quot;css&quot;&#39;.</code>，这是因为，ts对可读写的变量，推断出的类型是非字面类型。</p>
-<p>改下代码：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;html&#x27;</span> &#125; <span class="keyword">as</span> <span class="keyword">const</span>;</span><br></pre></td></tr></table></figure>
-
-<p><code>as const</code>是断言成该变量的字面类型，关于<code>const</code>的字面类型断言解释如下。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">&#x27;2&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>ts对<code>a</code>的推断是<code>string</code>，对<code>b</code>的推断是<code>&#39;2&#39;</code>。在ts的类型推断的设计中，它总是尽可能的推断出更广的类型，但是对于<code>readOnly variable</code>，因为不可变，它的更广的类型就是字面类型。</p>
-<p>得益于 <a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/22#issuecomment-1663199481">https://github.com/taoliujun/blog/issues/22#issuecomment-1663199481</a> ，还可以写成<code>let a = &lt;const&gt;&#39;1&#39;;</code> </p>
-<!--hexo-->
-
-<h1 id="非null-undefined声明"><a href="#非null-undefined声明" class="headerlink" title="非null | undefined声明"></a>非null | undefined声明</h1><p>有时候虽然声明一个变量类型是<code>null</code>，但在某个逻辑中它不可能是<code>null</code>，可以使用<code>!</code>来表示它不是<code>null</code>。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> d1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test1&#x27;</span>);</span><br><span class="line"><span class="comment">// &#x27;d1&#x27; is possibly &#x27;null&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d1.<span class="title function_">getBoundingClientRect</span>());</span><br><span class="line"><span class="comment">// it is fine</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d1!.<span class="title function_">getBoundingClientRect</span>());</span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="const-enum"><a href="#const-enum" class="headerlink" title="const enum"></a>const enum</h1><p>ts会将<code>enum</code>完整的编译出来，如下分别是ts源码和编译后的代码：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源码</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Sex</span> &#123;</span><br><span class="line">    <span class="title class_">Man</span>,</span><br><span class="line">    <span class="title class_">Woman</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译结果</span></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Sex</span>;</span><br><span class="line">(<span class="keyword">function</span> (<span class="params">Sex</span>) &#123;</span><br><span class="line">    <span class="title class_">Sex</span>[<span class="title class_">Sex</span>[<span class="string">&quot;Man&quot;</span>] = <span class="number">0</span>] = <span class="string">&quot;Man&quot;</span>;</span><br><span class="line">    <span class="title class_">Sex</span>[<span class="title class_">Sex</span>[<span class="string">&quot;Woman&quot;</span>] = <span class="number">1</span>] = <span class="string">&quot;Woman&quot;</span>;</span><br><span class="line">&#125;)(<span class="title class_">Sex</span> || (<span class="title class_">Sex</span> = &#123;&#125;));</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<p>而很多时候，我们只是将<code>enum</code>当安全值来用，编译后只保留安全值就行了。加上<code>const</code>就可以：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源码</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> <span class="title class_">Sex</span> &#123;</span><br><span class="line">    <span class="title class_">Man</span>,</span><br><span class="line">    <span class="title class_">Woman</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译结果</span></span><br><span class="line"><span class="keyword">const</span> sex = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="ts-expect-error"><a href="#ts-expect-error" class="headerlink" title="@ts-expect-error"></a>@ts-expect-error</h1><p>在一些场景下，我们需要故意传一个错误类型的变量，比如在写单元测试的时候。如下：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// util.ts</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test1</span>(<span class="params">p1: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="comment">// do</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// __test__</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>在如上的单元测试代码中，ts会反馈<code>&#39;hello&#39;</code>不是一个number，但这个类型错误正是我们期望的。那么就增加一个标记来处理它：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// __test__</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>并且，如果这行语句没有类型错误的话，该注释本身会被认为是一个错误，以及时提醒开发者。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Unused &#x27;@ts-expect-error&#x27; directive.ts(2578)</span></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="number">123</span>);</span><br></pre></td></tr></table></figure>
-
-<p>它和<code>ts-ignore</code>的区别在这：<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#ts-ignore-or-ts-expect-error">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#ts-ignore-or-ts-expect-error</a></p>
-<!--hexo-->
-
-<h1 id="解构变量可标记为“不使用”"><a href="#解构变量可标记为“不使用”" class="headerlink" title="解构变量可标记为“不使用”"></a>解构变量可标记为“不使用”</h1><p>如下语句，ts会告诉你<code>first</code>未使用。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x27;first&#x27; is declared but its value is never read.ts(6133)</span></span><br><span class="line"><span class="keyword">const</span> [first, second] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==&#x27;</span>, second);</span><br></pre></td></tr></table></figure>
-
-<p>但在场景里，就不需要使用第一个变量，ts提供了一个写法标记来忽略检查未使用的解构变量，就是在变量前加<code>_</code>。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [_first, second] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==&#x27;</span>, second);</span><br></pre></td></tr></table></figure>
-
-<p><strong>补充：</strong> 以上是ts4.2的特性，在更新的版本里，只要这样写就行了：<code>const [, second] = [1, 2]</code>。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/typescript-means/" data-id="clqxkljy60005jgq9acu45xw0" data-title="TypeScript的小手段，最后更新2023/12月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -1247,7 +1219,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/badging/" rel="tag">badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/badging/" rel="tag">badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
     </div>
   </div>
 
@@ -1257,7 +1229,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/badging/" style="font-size: 10px;">badging</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
+      <a href="/blog/tags/Background-Tasks/" style="font-size: 10px;">Background Tasks</a> <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/badging/" style="font-size: 10px;">badging</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
     </div>
   </div>
 
@@ -1266,7 +1238,7 @@ tags:
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li></ul>
     </div>
   </div>
 
@@ -1277,6 +1249,10 @@ tags:
     <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
+          </li>
         
           <li>
             <a href="/blog/web-api-Beacon_api/">Web API - Beacon</a>
@@ -1292,10 +1268,6 @@ tags:
         
           <li>
             <a href="/blog/web-api-readme/">Web API 实践，最后更新2024/02月...</a>
-          </li>
-        
-          <li>
-            <a href="/blog/snapshot-impact-on-coverage/">snapshot对单测覆盖率的影响以及应对方案</a>
           </li>
         
       </ul>

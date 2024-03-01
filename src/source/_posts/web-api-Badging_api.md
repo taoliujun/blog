@@ -61,9 +61,9 @@ navigator.clearAppBadge();
 
 ## 示例
 
-https://taoliujun.github.io/example/web-apis/Badging_API/index.html
+示例：https://taoliujun.github.io/example/web-apis/Badging_API/index.html
 
-> Badging在Web APP中生效，用chrome打开示例链接，从链接中安装PWA，然后运行PWA测试。
+本示例代码较为简单，直接打开查看源码即可。
 
 
 

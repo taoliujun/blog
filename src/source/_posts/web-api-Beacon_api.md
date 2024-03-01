@@ -23,7 +23,7 @@ tags:
 ---
 -->
 
-# Badging
+# Beacon
 
 > MDN: https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API
 
@@ -41,13 +41,15 @@ navigator.sendBeacon(url, data);
 
 ## 示例
 
-创建一个页面，放一个按钮用于发送`manual`统计数据：
+示例：https://taoliujun.github.io/example/web-apis/Beacon_API/index.html
+
+1. 创建一个页面，放一个按钮用于发送`manual`统计数据：
 
 ```html
 <button onclick="javascript:sendData('manual');">sendData</button>
 ```
 
-在页面隐藏、卸载的时候发送`hidden`统计数据：
+2. 在页面隐藏、卸载的时候发送`hidden`统计数据：
 
 ```javascript
 document.addEventListener("visibilitychange", ()=> {
@@ -57,7 +59,7 @@ document.addEventListener("visibilitychange", ()=> {
 });
 ```
 
-发送统计数据的函数：
+3。 发送统计数据的函数：
 
 ```javascript
 let data = 0;
@@ -69,17 +71,13 @@ function sendData(source) {
 }
 ```
 
-创建服务端，打印*request body*数据以测试点击按钮、关闭页面的效果，发现关闭页面后也发送了数据。
+4. 创建服务端，打印*request body*数据以测试点击按钮、关闭页面的效果，发现关闭页面后也发送了数据。
 
 ```bash
 body: [Object: null prototype] { data: '1', source: 'manual' }
 body: [Object: null prototype] { data: '2', source: 'hidden' }
 ```
 
-
-示例：https://taoliujun.github.io/example/web-apis/Beacon_API/index.html
-
-> 需要服务端配合打印日志。服务端代码见：https://taoliujun.github.io/example/web-apis/Beacon_API/http.js
 
 
 
