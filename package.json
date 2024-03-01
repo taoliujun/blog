@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cd src && pnpm run start && cd ..",
-    "build": "cd src && pnpm run build && cd .."
+    "build": "cd src && pnpm run clean && pnpm run build && cd .."
   },
   "devDependencies": {
     "@taoliujun/eslint-config": "^2.0.1",
