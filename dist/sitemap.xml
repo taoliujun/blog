@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Badging_API/</loc>
+    
+    <lastmod>2024-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Beacon_API/</loc>
+    
+    <lastmod>2024-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Battery_Status_API/</loc>
+    
+    <lastmod>2024-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Broadcast_Channel_API/</loc>
+    
+    <lastmod>2024-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
+    
+    <lastmod>2024-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/web-api-readme/</loc>
     
     <lastmod>2024-03-01</lastmod>
@@ -236,33 +281,6 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
-    
-    <lastmod>2024-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Badging_api/</loc>
-    
-    <lastmod>2024-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Beacon_api/</loc>
-    
-    <lastmod>2024-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taoliujun.github.io/blog/what-is-es6/</loc>
     
     <lastmod>2024-03-01</lastmod>
@@ -381,6 +399,13 @@
   </url>
   
   <url>
+    <loc>https://taoliujun.github.io/blog/tags/Battery-Status/</loc>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/tags/Badging/</loc>
     <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -389,6 +414,13 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/Beacon/</loc>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tags/Broadcast-Channel/</loc>
     <lastmod>2024-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
