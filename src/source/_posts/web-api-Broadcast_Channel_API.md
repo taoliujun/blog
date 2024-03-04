@@ -37,7 +37,7 @@ tags:
 
 ## 示例
 
-示例：https://taoliujun.github.io/example/web-apis/Broadcast_Channel_API/index.html
+示例：https://taoliujun.github.io/example/web-api/Broadcast_Channel_API/index.html
 
 1. 打开两个Chrome窗口，查看日志：
 

@@ -43,7 +43,7 @@ tags:
 
 ## 示例
 
-示例：https://taoliujun.github.io/example/web-apis/Battery_Status_API/index.html
+示例：https://taoliujun.github.io/example/web-api/Battery_Status_API/index.html
 
 1. 拔掉笔记本充电线，再插上充电线，可以看到监听到充电状态变化。
 
