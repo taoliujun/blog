@@ -1,1183 +1,964 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
+  
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com" />
+  
+    <meta name="robots" content="noindex" />
+  
   
   
   <title>TaoLiuJun&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TaoLiuJun&#39;s Blog">
-<meta property="og:url" content="https://taoliujun.github.io/blog/page/2/index.html">
-<meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
-<meta property="og:description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:locale">
-<meta property="article:author" content="taoliujun">
-<meta property="article:tag" content="前端 JavaScript TypeScript React NodeJS">
-<meta name="twitter:card" content="summary">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   
-    <link rel="alternate" href="/blog/atom.xml" title="TaoLiuJun's Blog" type="application/atom+xml">
+    <meta name="keywords" content="" />
   
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
   
-    <link rel="shortcut icon" href="/blog/favicon.png">
+    <meta name="description" content="Html/Css/JavaScript/TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
   
+
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/blog/css/base.css">
+<link rel="stylesheet" href="/blog/icon/iconfont.css">
+<link rel="stylesheet" href="/blog/css/github-markdown.css">
+<link rel="stylesheet" href="/blog/css/highlight.css">
+
+
+  
+<script src="/blog/js/util.js"></script>
+<script src="/blog/js/valine.min.js"></script>
+
+
+  
+
+  
 
   
   
-<link rel="stylesheet" href="/blog/css/style.css">
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
 
-  
-    
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
-
-  
-  
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">TaoLiuJun&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">博客更新有延迟，在 https://github.com/taoliujun/blog/issues 获取最新文章和讨论</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/blog/">Home</a>
-        
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://taoliujun.github.io/blog"></form>
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/blog/">Taoliujun&#39;s Blog</a>
       </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-tsconfig-json" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/tsconfig-json/" class="article-date">
-  <time class="dt-published" datetime="2023-09-04T18:51:45.000Z" itemprop="datePublished">2023-09-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/TypeScript/">TypeScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/tsconfig-json/">关于tsconfig.json，最后更新2023/11月...</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <nav class="site-navigation">
+      <ul class="nav-menu">
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/23">https://github.com/taoliujun/blog/issues/23</a></p>
-<!--hexo
----
-url: tsconfig-json
-tags:
-  - typescript
----
--->
+        <li class="nav-item" data-path="/">
+          
+            <a 
+              href="/blog/"
+              target="_self"
+            >
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a 
+              href="/blog/archives/"
+              target="_self"
+            >
+              所有文章
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="https://github.com/taoliujun/blog/issues">
+          
+            <a 
+              href="https://github.com/taoliujun/blog/issues"
+              target="_self"
+            >
+              github
+            </a>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
 
-<p><strong>截至TypeScript 5.2</strong>，<code>tsconfig.json</code>的配置项已经有百十个之多，它的某些选项甚至影响了项目的执行结果，所以尽量多的了解它们能让程序员更深的了解ts，写出优美语句让CTO赞赏，甚至避免写出bug。</p>
-<p>本issue的内容，只是个人在工作经验的影响下，对官方文档的内容理解。且内容有所欠缺，基本只记录了我工作涉及到的配置项，比如不怎么使用class，对class的配置项就略过了。</p>
-<p>官方文档：<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig">https://www.typescriptlang.org/tsconfig</a></p>
-<hr>
-<!--hexo-->
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
 
-<h1 id="Top-Level"><a href="#Top-Level" class="headerlink" title="Top Level"></a>Top Level</h1><p>一些根配置项。</p>
-<h2 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h2><p>继承另一个配置文件，推荐的一些官方的配置文件来继承使用：<a target="_blank" rel="noopener" href="https://github.com/tsconfig/bases/tree/main/bases">https://github.com/tsconfig/bases/tree/main/bases</a></p>
-<h2 id="files-include-exclude"><a href="#files-include-exclude" class="headerlink" title="files, include, exclude"></a>files, include, exclude</h2><p>这几项指定了在项目里，被ts作用的文件集合。配置本身没什么好说的，记录下它们之间的关系。</p>
-<ul>
-<li>如果files指定了，那么include的默认值是<code>[]</code>，否则include的默认值是<code>**/*</code>；</li>
-<li>exclude用于排除include已指定的文件集合，但这些文件仍然是可以在项目里被引用的；</li>
-<li>exclude默认排除了<code>node_modules</code>、<code>outDir</code>；</li>
-</ul>
-<h2 id="references"><a href="#references" class="headerlink" title="references"></a>references</h2><p>用于项目文件夹分别打包，并且其中有缓存机制的参与，所以编译速度会快很多。</p>
-<p>如下项目结构：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./interface</span><br><span class="line">./components</span><br><span class="line">./user</span><br><span class="line">./admin</span><br><span class="line">./tsconfig.json</span><br></pre></td></tr></table></figure>
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
 
-<p>在上面，user和admin文件夹分别是业务用户端、业务管理端，interface是接口定义，components是通用组件。在以往，改动了任何文件，都需要整个项目重新编译。而在使用references之后，将4个文件夹中放入对应的tsconfig.json并各有配置，在根tsconfig中指定好references的path后，tsc利用缓存机制，会只打包改动过的文件夹。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions"><a href="#compilerOptions" class="headerlink" title="compilerOptions"></a>compilerOptions</h1><p>编译器配置项太多了，按作用拆分成几个评论来说。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Type-Checking"><a href="#compilerOptions-Type-Checking" class="headerlink" title="compilerOptions - Type Checking"></a>compilerOptions - Type Checking</h1><p>和类型检查有关的配置项。</p>
-<h2 id="strict"><a href="#strict" class="headerlink" title="strict"></a>strict</h2><p>strict是一个严格模式的快捷开关，开启后会默认打开strictNullChecks、noImplicitAny等选项。并且随着typescript的升级，它可能会默认开启新增特性，列出截至5.2默认开启的选项：</p>
-<p><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#alwaysStrict">alwaysStrict</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictNullChecks">strictNullChecks</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictBindCallApply">strictBindCallApply</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictFunctionTypes">strictFunctionTypes</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictPropertyInitialization">strictPropertyInitialization</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#noImplicitAny">noImplicitAny</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#noImplicitThis">noImplicitThis</a><br><a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#useUnknownInCatchVariables">useUnknownInCatchVariables</a></p>
-<h2 id="alwaysStrict"><a href="#alwaysStrict" class="headerlink" title="alwaysStrict"></a>alwaysStrict</h2><p>对所有文件启用javascript strict模式。注意，这和typescript strict不是同一个东西。参考：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</a></p>
-<h2 id="allowUnreachableCode"><a href="#allowUnreachableCode" class="headerlink" title="allowUnreachableCode"></a>allowUnreachableCode</h2><p>对未使用的代码的处理策略，可设置警告(默认)、错误、忽略。</p>
-<h2 id="allowUnusedLabels"><a href="#allowUnusedLabels" class="headerlink" title="allowUnusedLabels"></a>allowUnusedLabels</h2><p>对未使用的Label的处理策略，可设置警告(默认)、错误、忽略。</p>
-<h2 id="exactOptionalPropertyTypes"><a href="#exactOptionalPropertyTypes" class="headerlink" title="exactOptionalPropertyTypes"></a>exactOptionalPropertyTypes</h2><p>对可选项设置为undefined的策略。</p>
-<p>举例：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    sex?: <span class="number">1</span> | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">man</span>: <span class="title class_">User</span> = &#123;&#125;;</span><br><span class="line">man.<span class="property">sex</span> = <span class="number">1</span>;</span><br><span class="line">man.<span class="property">sex</span> = <span class="number">0</span>;</span><br><span class="line">man.<span class="property">sex</span> = <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
-
-<p><code>User.sex</code>是一个可选项，它的预期值是<code>0|1|undefined</code>。但是呢，<code>sex</code>可选想表达的意思是未被定义，而不是值真的是undefined。那么开启本选项后，<code>man.sex = undefined</code>这个赋值语句会给一个报错。</p>
-<h2 id="noImplicitAny"><a href="#noImplicitAny" class="headerlink" title="noImplicitAny"></a>noImplicitAny</h2><p>对推导类型为any的策略。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">subtr</span>(<span class="number">3</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>入参<code>s</code>推导为<code>any</code>，在选项开启情况下会报错。</p>
-<h2 id="noImplicitReturns"><a href="#noImplicitReturns" class="headerlink" title="noImplicitReturns"></a>noImplicitReturns</h2><p>对函数每个分支必须有return语句的策略。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">s: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (s) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.<span class="title function_">substring</span>(<span class="number">3</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="string">&#x27;nothing&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>开启后，ts报错认为<code>fn</code>函数的最后没有return语句。</p>
-<h2 id="noPropertyAccessFromIndexSignature"><a href="#noPropertyAccessFromIndexSignature" class="headerlink" title="noPropertyAccessFromIndexSignature"></a>noPropertyAccessFromIndexSignature</h2><p>对访问未定义的对象属性的策略。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    name?: <span class="built_in">string</span>;</span><br><span class="line">    [<span class="attr">key</span>: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">a</span>: <span class="title class_">User</span> = &#123;&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">name</span>, a[<span class="string">&#x27;name&#x27;</span>], a.<span class="property">sex</span>, a[<span class="string">&#x27;sex&#x27;</span>]);</span><br></pre></td></tr></table></figure>
-
-<p>访问对象属性有<code>.</code>和<code>[index]</code>两个方式，访问未定义的属性，开启本选项后，在<code>a.sex</code>处会抛出一个错误。</p>
-<h2 id="noUncheckedIndexedAccess"><a href="#noUncheckedIndexedAccess" class="headerlink" title="noUncheckedIndexedAccess"></a>noUncheckedIndexedAccess</h2><p>未定义的对象属性值类型，给追加上<code>undefined</code>类型。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">    [<span class="attr">propName</span>: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">const</span> <span class="attr">admin</span>: <span class="title class_">User</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// (property) User.name: string</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(admin.<span class="property">name</span>);</span><br><span class="line"><span class="comment">// (index) User[string]: string</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(admin.<span class="property">birthday</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上例中，birthday的值类型是<code>string</code>，开启本项后，类型追加上<code>undefined</code>。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (index) User[string]: string | undefined</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(admin.<span class="property">birthday</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="noUnusedLocals"><a href="#noUnusedLocals" class="headerlink" title="noUnusedLocals"></a>noUnusedLocals</h2><p>局部变量未使用，抛出错误。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> defaultModelID = <span class="number">23</span>;</span><br><span class="line"><span class="comment">// &#x27;defaultModelID&#x27; is declared but its value is never read.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="noUnusedParameters"><a href="#noUnusedParameters" class="headerlink" title="noUnusedParameters"></a>noUnusedParameters</h2><p>入参未使用，抛出错误。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">createDefaultKeyboard</span> = (<span class="params">modelID: <span class="built_in">number</span></span>) =&gt; &#123;</span><br><span class="line"><span class="comment">// &#x27;modelID&#x27; is declared but its value is never read.</span></span><br><span class="line">  <span class="keyword">const</span> defaultModelID = <span class="number">23</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">type</span>: <span class="string">&quot;keyboard&quot;</span>, <span class="attr">modelID</span>: defaultModelID &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="strictBindCallApply"><a href="#strictBindCallApply" class="headerlink" title="strictBindCallApply"></a>strictBindCallApply</h2><p>在使用函数的call、bind、apply时，是否要检查传入参数的类型。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">x: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> n1 = fn.<span class="title function_">call</span>(<span class="literal">undefined</span>, <span class="string">&#x27;10&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> n2 = fn.<span class="title function_">call</span>(<span class="literal">undefined</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<p>如上代码中，第二个call中的入参false和string类型不匹配而报错。</p>
-<h2 id="strictFunctionTypes"><a href="#strictFunctionTypes" class="headerlink" title="strictFunctionTypes"></a>strictFunctionTypes</h2><p>更精确的检查函数入参类型。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">GetUser</span> = <span class="function">(<span class="params">id: <span class="built_in">string</span> | <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">any</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">x: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">getUser</span>: <span class="title class_">GetUser</span> = test;</span><br></pre></td></tr></table></figure>
-
-<p>如上代码中，GetUser的入参类型<code>string | number</code>不能精确的分配给test的入参类型<code>string</code>。</p>
-<h2 id="strictNullChecks"><a href="#strictNullChecks" class="headerlink" title="strictNullChecks"></a>strictNullChecks</h2><p>是否校验<code>null</code>, <code>undefined</code>的属性访问？</p>
-<p>在以往的纯js项目中，容易忽略变量为undefined后仍然访问其属性的场景，比如在如下代码中，忽略了<code>a</code>为<code>undefined</code>的情况，导致运行时引发异常。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = arr1.<span class="title function_">find</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">name</span>)</span><br></pre></td></tr></table></figure>
-
-<p>本选项开启后，在静态检查时就提示开发者，变量可能是<code>null</code>, <code>undefined</code>，不能访问到<code>name</code>属性。</p>
-<h2 id="useUnknownInCatchVariables"><a href="#useUnknownInCatchVariables" class="headerlink" title="useUnknownInCatchVariables"></a>useUnknownInCatchVariables</h2><p>有时候我们并不知道catch的err类型是什么，它的类型由try里的实际运行分支决定，而如果当成any处理，那么访问它的属性是危险的。当开启本项后，err的类型是unknown，必须先限定其类型再安全的访问其属性，如：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  <span class="keyword">if</span> (err <span class="keyword">instanceof</span> <span class="title class_">Error</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<!--hexo-->
-
-<h1 id="compilerOptions-Modules"><a href="#compilerOptions-Modules" class="headerlink" title="compilerOptions - Modules"></a>compilerOptions - Modules</h1><p>模块的处理策略。</p>
-<h2 id="allowArbitraryExtensions"><a href="#allowArbitraryExtensions" class="headerlink" title="allowArbitraryExtensions"></a>allowArbitraryExtensions</h2><p>ts默认支持了ts、js、cjs、jsx等模块的解析描述，通过<code>global.d.ts</code>的定义扩展，还可以支持css、jpg等模块的解析描述（你要自己保证webpack loader之类的解析器去真实支持加载这些模块）。而有时候，需要对特定模块文件（不管是否已全局定义过该模块的描述）做特别的描述，就可以开启该选项，并且创建一个<code>&#123;file basename&#125;.d.&#123;extension&#125;.ts</code>文件。</p>
-<p>如：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.ts</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 报错：Cannot find module &#x27;./a.jpk&#x27; or its corresponding type declarations.ts(2307)</span></span><br><span class="line"><span class="keyword">import</span> a <span class="keyword">from</span> <span class="string">&#x27;./a.jpk&#x27;</span>;</span><br><span class="line"><span class="comment">// doTest类型是any</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">doTest</span>());</span><br></pre></td></tr></table></figure>
-
-<p>开启该项，并增加<code>a.d.jpk.ts</code>文件：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.d.jpk.ts</span></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">const</span> <span class="attr">jpk</span>: &#123;</span><br><span class="line">    <span class="attr">doTest</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> jpk;</span><br><span class="line"></span><br><span class="line"><span class="comment">// test.ts</span></span><br><span class="line"><span class="keyword">import</span> a <span class="keyword">from</span> <span class="string">&#x27;./a.jpk&#x27;</span>;</span><br><span class="line"><span class="comment">// doTest的类型：(property) doTest: () =&gt; void</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">doTest</span>());</span><br></pre></td></tr></table></figure>
-
-<h2 id="allowImportingTsExtensions"><a href="#allowImportingTsExtensions" class="headerlink" title="allowImportingTsExtensions"></a>allowImportingTsExtensions</h2><p>是否允许在import path带入ts、tsx等后缀名。</p>
-<p>ts项目需要编译成js代码后执行，如果我们使用ts-node来执行项目，可以启用<code>noEmit</code>来禁止这个编译行为，并且在项目源码中直接引入<code>.ts</code>来引入正确的、完整的路径。</p>
-<p>举例：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; wait &#125; <span class="keyword">from</span> <span class="string">&#x27;@/utils/utils.ts&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="allowUmdGlobalAccess"><a href="#allowUmdGlobalAccess" class="headerlink" title="allowUmdGlobalAccess"></a>allowUmdGlobalAccess</h2><p>&#x2F;&#x2F; TODO<br>和umd的声明有关系，不过我还不明确它的意义。见：<a target="_blank" rel="noopener" href="https://github.com/microsoft/TypeScript/pull/30776%E3%80%82">https://github.com/microsoft/TypeScript/pull/30776。</a></p>
-<h2 id="baseUrl"><a href="#baseUrl" class="headerlink" title="baseUrl"></a>baseUrl</h2><p>为解析无路径修饰的模块，设置一个基础路径。 什么叫做无路径修饰？就是该模块不是一个绝对或相对路径，如<code>import a from &#39;@/hello/world&#39;</code>。</p>
-<p>如果配置了该项，那么ts从该项指定的目录中开始查找模块，优先级也高于<code>node_modules</code>。</p>
-<h2 id="module"><a href="#module" class="headerlink" title="module"></a>module</h2><p>模块打包的策略，也就是指编译后的模块加载代码是require、import之类的语法。推荐大家阅读：<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/modules/theory.html">模块理论</a>。</p>
-<p>这个话题有点繁琐，也涉及到javascript的模块化amd、umd之类的历史，对于2023年这个时间点来说，关注下CommonJS、ESM即可，ESM还细分为ES2015、ES20XX等版本，他们的模块打包策略是一样的，区别是更高版本的ESM还支持了<code>dynamic imports</code>、<code>import.meta</code>和<code>top level await</code>之类的东西。</p>
-<p>补充的是，nodejs的模块打包策略也早就支持esm了，具体参照package.json的设置：<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/modules/reference.html#node16-nodenext">https://www.typescriptlang.org/docs/handbook/modules/reference.html#node16-nodenext</a></p>
-<h2 id="moduleResolution"><a href="#moduleResolution" class="headerlink" title="moduleResolution"></a>moduleResolution</h2><p>加载模块的策略，也就是指用什么策略去解析<code>import xxx from &#39;pathA&#39;</code>这里的<code>pathA</code>。<strong>注意区分和module的关系，module指的是项目的模块化是如何打包的，而moduleResolution指的是项目如何加载模块的</strong>。截至2023支持如下策略：</p>
-<ul>
-<li>node16&#x2F;nodenext，对于Node12+版本，本策略可自由根据import&#x2F;require选择合适的算法去加载模块。</li>
-<li>node10，对于Node12之前的版本，本策略只支持require算法加载模块。<strong>基本不用关心了</strong></li>
-<li>bundler，和node16一样，但不要求模块有后缀名。</li>
-<li>classic，早期的策略，不用管了。</li>
-</ul>
-<p><strong>这东西还要和module搭配使用，并且！并且！和package.json还有扯不清的关系。强烈建议阅读上文提到的<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/modules/theory.html">模块理论</a></strong></p>
-<p>另外，由于自己对这块的理解也不足深，还参考了这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/621795173%E3%80%82">https://zhuanlan.zhihu.com/p/621795173。</a></p>
-<h2 id="moduleSuffixes"><a href="#moduleSuffixes" class="headerlink" title="moduleSuffixes"></a>moduleSuffixes</h2><p>模块搜索时的文件扩展名补充，比如以下配置项：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;compilerOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;moduleSuffixes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;.ios&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.native&quot;</span><span class="punctuation">,</span> <span class="string">&quot;&quot;</span><span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> foo <span class="keyword">from</span> <span class="string">&quot;./foo&quot;</span>;</span><br></pre></td></tr></table></figure>
-<p>TypeScript 会按顺序寻找<code>./foo.ios.ts</code>、<code>./foo.native.ts</code>、<code>./foo.ts</code>。</p>
-<h2 id="paths"><a href="#paths" class="headerlink" title="paths"></a>paths</h2><p>在加载模块路径时，加入一个别名匹配。可以理解为webpack的alias。</p>
-<h2 id="resolveJsonModule"><a href="#resolveJsonModule" class="headerlink" title="resolveJsonModule"></a>resolveJsonModule</h2><p>允许加载json模块（文件）。</p>
-<h2 id="resolvePackageJsonExports"><a href="#resolvePackageJsonExports" class="headerlink" title="resolvePackageJsonExports"></a>resolvePackageJsonExports</h2><p>引用<code>node_modules</code>包时，强制遵循包package.json的exports字段的定义。还是那句话，阅读下模块理论那篇文章，不然很难理解前面这句话的信息量。</p>
-<h2 id="resolvePackageJsonImports"><a href="#resolvePackageJsonImports" class="headerlink" title="resolvePackageJsonImports"></a>resolvePackageJsonImports</h2><p>强制typescript使用package.json中imports字段的定义去加载<code>#</code>符号开头的模块路径。例：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"><span class="string">&quot;imports&quot;</span>: &#123;</span><br><span class="line">   <span class="string">&quot;#test/*&quot;</span>: <span class="string">&quot;./src/test/*&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/test/1.ts</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> a = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/b.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; a &#125; <span class="keyword">from</span> <span class="string">&#x27;#test/1&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==a&#x27;</span>, a);</span><br></pre></td></tr></table></figure>
-
-<h2 id="rootDir"><a href="#rootDir" class="headerlink" title="rootDir"></a>rootDir</h2><p>指定项目的根目录，默认值可以理解为所有ts文件目录的最大集。例如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MyProj</span><br><span class="line">├── tsconfig.json</span><br><span class="line">├── core</span><br><span class="line">│   ├── a.ts</span><br><span class="line">│   ├── b.ts</span><br><span class="line">│   ├── sub</span><br><span class="line">│   │   ├── c.ts</span><br><span class="line">├── types.d.ts</span><br></pre></td></tr></table></figure>
-
-<p>如上的项目，rootDir的推断值是”core”。但是你可以手工指定为<code>tsconfig.json</code>的相对目录”，比如.”。</p>
-<p>另外，如果设置了<code>composite</code>，<code>rootDir</code>的默认值就是<code>tsconfig.json</code>文件的目录。</p>
-<h2 id="rootDirs"><a href="#rootDirs" class="headerlink" title="rootDirs"></a>rootDirs</h2><p>这个属性有点拽，它可以将多个目录虚拟成一个目录。这样在<code>import</code>的时候，就当成同一个目录就行啦。</p>
-<h2 id="typeRoots"><a href="#typeRoots" class="headerlink" title="typeRoots"></a>typeRoots</h2><p>类型定义文件的目录，默认所有@types目录都会被包含，包括node_modules下的@types目录。<br>如果指定了typeRoots，那么@types目录的相关规则会被忽略。</p>
-<h2 id="types"><a href="#types" class="headerlink" title="types"></a>types</h2><p>类型定义文件的具体目录，规则和<code>typeRoots</code>一样，不同点是<code>types</code>只指定具体目录，而非<code>*</code>这种匹配型目录。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Emit"><a href="#compilerOptions-Emit" class="headerlink" title="compilerOptions - Emit"></a>compilerOptions - Emit</h1><p>编译策略。</p>
-<h2 id="outDir"><a href="#outDir" class="headerlink" title="outDir"></a>outDir</h2><p>编译文件放置的目录，默认和源码放同一个目录。</p>
-<h2 id="noEmit"><a href="#noEmit" class="headerlink" title="noEmit"></a>noEmit</h2><p>不要编译ts。</p>
-<p>项目中一般使用babel去编译，typescript仅用来做静态检查，所以设置noEmit就可以不生成js、sourcemap、declaration文件了。</p>
-<h2 id="noEmitOnError"><a href="#noEmitOnError" class="headerlink" title="noEmitOnError"></a>noEmitOnError</h2><p>顾名思义，在检查到错误的时候，不要继续编译了。</p>
-<h2 id="declaration-x2F-emitDeclarationOnly-x2F-declarationDir"><a href="#declaration-x2F-emitDeclarationOnly-x2F-declarationDir" class="headerlink" title="declaration &#x2F; emitDeclarationOnly &#x2F; declarationDir"></a>declaration &#x2F; emitDeclarationOnly &#x2F; declarationDir</h2><p>生成类型描述文件。</p>
-<p>这个是typescript最重要的几个特性之一了，为<code>.ts</code>文件生成类型定义文件<code>.d.ts</code>。如果不想同时生成<code>.js</code>文件，则使用<code>emitDeclarationOnly</code>。</p>
-<p>同时，可以使用<code>declarationDir</code>指定类型定义文件的生成目录。</p>
-<h2 id="declarationMap"><a href="#declarationMap" class="headerlink" title="declarationMap"></a>declarationMap</h2><p>给<code>.d.ts</code>文件增加一个map标识到<code>.ts</code>源文件，类似sourceMap。</p>
-<h2 id="sourceMap-x2F-inlineSourceMap-x2F-inlineSources-x2F-mapRoot-x2F-sourceRoot"><a href="#sourceMap-x2F-inlineSourceMap-x2F-inlineSources-x2F-mapRoot-x2F-sourceRoot" class="headerlink" title="sourceMap &#x2F; inlineSourceMap &#x2F; inlineSources &#x2F; mapRoot &#x2F; sourceRoot"></a>sourceMap &#x2F; inlineSourceMap &#x2F; inlineSources &#x2F; mapRoot &#x2F; sourceRoot</h2><p>typescript也是支持souce map的，这里就不解释sourcemap是什么了。它的相关配置项有：</p>
-<p>sourceMap，生成sourcemap文件。<br>inlineSourceMap，不生成sourcemap文件，而是直接把source内容写在.js文件中。<br>inlineSources，同inlineSourceMap。<br>mapRoot，指定sourceMap文件的路径，比如部署到网络中，可以指定为”<a target="_blank" rel="noopener" href="http://xxxx.com"./">http://xxxx.com"。</a><br>sourceRoot，指定source文件的路径，同mapRoot。</p>
-<h2 id="downlevelIteration"><a href="#downlevelIteration" class="headerlink" title="downlevelIteration"></a>downlevelIteration</h2><p>对迭代器的降级解析。</p>
-<p>在es6中增加了for&#x2F;of，spread等迭代特性，typescript在编译成es5的时候，要使用何种语法。文档中有个字符遍历的例子说明开启与否的迭代影响，这对业务计算结果是有影响的。</p>
-<p>不过项目中使用了babel之类的编译器，就不用担心这些影响了。</p>
-<h2 id="importHelpers"><a href="#importHelpers" class="headerlink" title="importHelpers"></a>importHelpers</h2><p>引入降级解析的包。</p>
-<p>将es6的某些特新编译成es5，如迭代器、异步语法等，会将模块中每个相应的代码都编译成降级代码，使得类似代码重复。如：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __read = (<span class="variable language_">this</span> &amp;&amp; <span class="variable language_">this</span>.<span class="property">__read</span>) || <span class="keyword">function</span> (<span class="params">o, n</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> m = <span class="keyword">typeof</span> <span class="title class_">Symbol</span> === <span class="string">&quot;function&quot;</span> &amp;&amp; o[<span class="title class_">Symbol</span>.<span class="property">iterator</span>];</span><br><span class="line">    <span class="keyword">if</span> (!m) <span class="keyword">return</span> o;</span><br><span class="line">    <span class="keyword">var</span> i = m.<span class="title function_">call</span>(o), r, ar = [], e;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> ((n === <span class="built_in">void</span> <span class="number">0</span> || n-- &gt; <span class="number">0</span>) &amp;&amp; !(r = i.<span class="title function_">next</span>()).<span class="property">done</span>) ar.<span class="title function_">push</span>(r.<span class="property">value</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (error) &#123; e = &#123; <span class="attr">error</span>: error &#125;; &#125;</span><br><span class="line">    <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (r &amp;&amp; !r.<span class="property">done</span> &amp;&amp; (m = i[<span class="string">&quot;return&quot;</span>])) m.<span class="title function_">call</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123; <span class="keyword">if</span> (e) <span class="keyword">throw</span> e.<span class="property">error</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ar;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> __spreadArray = (<span class="variable language_">this</span> &amp;&amp; <span class="variable language_">this</span>.<span class="property">__spreadArray</span>) || <span class="keyword">function</span> (<span class="params">to, <span class="keyword">from</span>, pack</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (pack || <span class="variable language_">arguments</span>.<span class="property">length</span> === <span class="number">2</span>) <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = <span class="keyword">from</span>.<span class="property">length</span>, ar; i &lt; l; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ar || !(i <span class="keyword">in</span> <span class="keyword">from</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!ar) ar = <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="keyword">from</span>, <span class="number">0</span>, i);</span><br><span class="line">            ar[i] = <span class="keyword">from</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> to.<span class="title function_">concat</span>(ar || <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="keyword">from</span>));</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> arr2 = <span class="title function_">__spreadArray</span>([<span class="number">1</span>], <span class="title function_">__read</span>(arr), <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果同时开启了<code>downlevelIteration</code>和<code>importHelpers</code>，并且安装了<code>tslib</code>包，那么代码会编译成类似这样：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; __read, __spreadArray &#125; <span class="keyword">from</span> <span class="string">&quot;tslib&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> arr2 = <span class="title function_">__spreadArray</span>([<span class="number">1</span>], <span class="title function_">__read</span>(arr), <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="noEmitHelpers"><a href="#noEmitHelpers" class="headerlink" title="noEmitHelpers"></a>noEmitHelpers</h2><p>typescript处理迭代器、异步等的降级策略是生成一堆降级代码，也可以使用”importHelpers”和”tslib”来提取公共代码。但通过这个配置，可以自定义降级代码了。具体参照文档。</p>
-<h2 id="preserveConstEnums"><a href="#preserveConstEnums" class="headerlink" title="preserveConstEnums"></a>preserveConstEnums</h2><p>是否在编辑结果中移除<code>const enum</code>的定义。因为javascript没有enum概念，typescript会将enum的引用编译成具体的值。如：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> <span class="title class_">Album</span> &#123;</span><br><span class="line">  <span class="title class_">JimmyEatWorldFutures</span> = <span class="number">1</span>,</span><br><span class="line">  <span class="title class_">TubRingZooHypothesis</span> = <span class="number">2</span>,</span><br><span class="line">  <span class="title class_">DogFashionDiscoAdultery</span> = <span class="number">3</span>,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> selectedAlbum = <span class="title class_">Album</span>.<span class="property">JimmyEatWorldFutures</span>;</span><br><span class="line"><span class="keyword">if</span> (selectedAlbum === <span class="title class_">Album</span>.<span class="property">JimmyEatWorldFutures</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;That is a great choice.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>编译结果如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> selectedAlbum = <span class="number">1</span> <span class="comment">/* Album.JimmyEatWorldFutures */</span>;</span><br><span class="line"><span class="keyword">if</span> (selectedAlbum === <span class="number">1</span> <span class="comment">/* Album.JimmyEatWorldFutures */</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;That is a great choice.&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果开启此项，则编译结果中会描述出该enum的结构。如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Album</span>;</span><br><span class="line">(<span class="keyword">function</span> (<span class="params">Album</span>) &#123;</span><br><span class="line">    <span class="title class_">Album</span>[<span class="title class_">Album</span>[<span class="string">&quot;JimmyEatWorldFutures&quot;</span>] = <span class="number">1</span>] = <span class="string">&quot;JimmyEatWorldFutures&quot;</span>;</span><br><span class="line">    <span class="title class_">Album</span>[<span class="title class_">Album</span>[<span class="string">&quot;TubRingZooHypothesis&quot;</span>] = <span class="number">2</span>] = <span class="string">&quot;TubRingZooHypothesis&quot;</span>;</span><br><span class="line">    <span class="title class_">Album</span>[<span class="title class_">Album</span>[<span class="string">&quot;DogFashionDiscoAdultery&quot;</span>] = <span class="number">3</span>] = <span class="string">&quot;DogFashionDiscoAdultery&quot;</span>;</span><br><span class="line">&#125;)(<span class="title class_">Album</span> || (<span class="title class_">Album</span> = &#123;&#125;));</span><br><span class="line"><span class="keyword">const</span> selectedAlbum = <span class="number">1</span> <span class="comment">/* Album.JimmyEatWorldFutures */</span>;</span><br><span class="line"><span class="keyword">if</span> (selectedAlbum === <span class="number">1</span> <span class="comment">/* Album.JimmyEatWorldFutures */</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;That is a great choice.&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="preserveValueImports"><a href="#preserveValueImports" class="headerlink" title="preserveValueImports"></a>preserveValueImports</h2><p>通常，打包器会将未使用的”import”移除掉，但开启了该特性后，会在编译中保留未使用的”import”。例如：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Animal</span> &#125; <span class="keyword">from</span> <span class="string">&quot;./animal.js&quot;</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">&quot;console.log(new Animal().isDangerous())&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="removeComments"><a href="#removeComments" class="headerlink" title="removeComments"></a>removeComments</h2><p>移除代码中的注释。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-JavaScript-Support"><a href="#compilerOptions-JavaScript-Support" class="headerlink" title="compilerOptions - JavaScript Support"></a>compilerOptions - JavaScript Support</h1><p>对javascript文件的支持</p>
-<h2 id="allowJs"><a href="#allowJs" class="headerlink" title="allowJs"></a>allowJs</h2><p>允许<code>.ts</code>文件引用<code>.js</code>文件，这常用在javascript项目升级为typescript的过程中。</p>
-<h2 id="checkJs"><a href="#checkJs" class="headerlink" title="checkJs"></a>checkJs</h2><p>是否开启对<code>.js</code>文件的错误检查。</p>
-<h2 id="maxNodeModuleJsDepth"><a href="#maxNodeModuleJsDepth" class="headerlink" title="maxNodeModuleJsDepth"></a>maxNodeModuleJsDepth</h2><p>为<code>.js</code>文件寻找类型定义文件时，允许的最大依赖深度。</p>
-<p>正常情况下，我们会在<code>.js</code>文件的同级补写<code>.d.ts</code>文件，tsc会很快找到类型定义。但有时候确实要扩大搜索范围去找部分<code>.js</code>文件的类型定义文件。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Interop-Constraints"><a href="#compilerOptions-Interop-Constraints" class="headerlink" title="compilerOptions - Interop Constraints"></a>compilerOptions - Interop Constraints</h1><p>(模块)互相操作的约束</p>
-<h2 id="allowSyntheticDefaultImports"><a href="#allowSyntheticDefaultImports" class="headerlink" title="allowSyntheticDefaultImports"></a>allowSyntheticDefaultImports</h2><p>允许合成<code>default</code>。</p>
-<p>如果一个模块A没有<code>export default</code>，那么另一个模块B在<code>import defaultA from &#39;./a&#39;</code>的时候，会抛出错误说A中没有default。</p>
-<p>有一个做法是<code>import * as defaultA from &#39;./a&#39;</code>曲线救国，但开启这个配置项后，可以直接使用<code>import defaultA from &#39;./a&#39;</code>这样的语法了。</p>
-<h2 id="esModuleInterop"><a href="#esModuleInterop" class="headerlink" title="esModuleInterop"></a>esModuleInterop</h2><p>esm在使用<code>import default from &#39;xxx&#39;</code>方式导入cjs的时候会抛出一个错误，因为cjs模块中没有default。开启此选项后，typescript会使用一些helpers去兼容cjs的default问题。</p>
-<h2 id="forceConsistentCasingInFileNames"><a href="#forceConsistentCasingInFileNames" class="headerlink" title="forceConsistentCasingInFileNames"></a>forceConsistentCasingInFileNames</h2><p>强制引用的模块文件名，和磁盘中的文件名保持一致的大小写。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Language-and-Environment"><a href="#compilerOptions-Language-and-Environment" class="headerlink" title="compilerOptions - Language and Environment"></a>compilerOptions - Language and Environment</h1><p>和语言、环境有关的配置项。</p>
-<h2 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h2><p>如何解析<code>.tsx</code>文件中jsx语法？在2023年，react17+后，用<code>react-jsx</code>就行了。</p>
-<h2 id="lib"><a href="#lib" class="headerlink" title="lib"></a>lib</h2><p>在项目中使用的api类型定义集合。</p>
-<p>ts是需要知道你用的每一个javascript方法、属性的定义的，所以它内置了一批定义（比如Math.abs方法）。但是呢，后面新增方法的定义，需要你手工指定包含，ts才能理解了，比如Array.include方法，你就要包含ES2016。但好在你不需要记住这些，因为当你指定<code>target</code>字段时，lib会被默认设置成对应的值的。</p>
-<p>另外，大部分情况下，我们要访问一些和特定环境有关的特性，比如浏览器里的Dom特性，那么这儿额外引入<code>DOM</code>定义就行了。</p>
-<h2 id="target"><a href="#target" class="headerlink" title="target"></a>target</h2><p>项目编译的目标javascript版本。</p>
-<p>也就是你的目标客户端支持的最低javascript版本。注意它会影响默认的<code>lib</code>配置项。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Compiler-Diagnostics"><a href="#compilerOptions-Compiler-Diagnostics" class="headerlink" title="compilerOptions - Compiler Diagnostics"></a>compilerOptions - Compiler Diagnostics</h1><p>编译诊断配置项。</p>
-<h2 id="diagnostics-x2F-extendedDiagnostics"><a href="#diagnostics-x2F-extendedDiagnostics" class="headerlink" title="diagnostics &#x2F; extendedDiagnostics"></a>diagnostics &#x2F; extendedDiagnostics</h2><p>打印出编译的信息，比如多少文件、编译时间等。</p>
-<p>extendedDiagnostics包含了diagnostics给出的所有信息，所以用extendedDiagnostics就行了。这是一个开启extendedDiagnostics的编译信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Files:                         143</span><br><span class="line">Lines of Library:            38663</span><br><span class="line">Lines of Definitions:        82578</span><br><span class="line">Symbols:                     73362</span><br><span class="line">Types:                        1495</span><br><span class="line">Parse time:                  0.50s</span><br><span class="line">ResolveModule time:          0.03s</span><br><span class="line">Total time:                  1.01s</span><br></pre></td></tr></table></figure>
-
-<h2 id="explainFiles"><a href="#explainFiles" class="headerlink" title="explainFiles"></a>explainFiles</h2><p>打印出文件被编译的原因，也就是它们的引用链。</p>
-<h2 id="listEmittedFiles-x2F-listFiles"><a href="#listEmittedFiles-x2F-listFiles" class="headerlink" title="listEmittedFiles &#x2F; listFiles"></a>listEmittedFiles &#x2F; listFiles</h2><p>列出参与编译的文件。</p>
-<h2 id="traceResolution"><a href="#traceResolution" class="headerlink" title="traceResolution"></a>traceResolution</h2><p>打印每一个文件的编译流程。</p>
-<!--hexo-->
-
-<h1 id="compilerOptions-Completeness"><a href="#compilerOptions-Completeness" class="headerlink" title="compilerOptions - Completeness"></a>compilerOptions - Completeness</h1><p>完整性检测的配置项</p>
-<h2 id="skipLibCheck"><a href="#skipLibCheck" class="headerlink" title="skipLibCheck"></a>skipLibCheck</h2><p>跳过lib库的类型检测。</p>
-
+      
+<div class="container home-index">
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/tsconfig-json/">
+        <span>关于tsconfig.json，最后更新2023/11月...</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-09-05
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-09-05
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/TypeScript/">
+            TypeScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/tsconfig-json/" data-id="clt8hne77001ri8oh2t85c2e4" data-title="关于tsconfig.json，最后更新2023/11月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-typescript-means" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/typescript-means/" class="article-date">
-  <time class="dt-published" datetime="2023-08-02T17:52:04.000Z" itemprop="datePublished">2023-08-03</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/TypeScript/">TypeScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/typescript-means/">TypeScript的小手段，最后更新2023/12月...</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/22">https://github.com/taoliujun/blog/issues/22</a></p>
-<!--hexo
----
-url: typescript-means
-tags:
-  - typescript
----
--->
-
-<p>TypeScript有一些小手段，评论区见。</p>
-<ul>
-<li><a href="#issuecomment-1663199481">as断言的另外写法</a></li>
-<li><a href="#issuecomment-1663206615">as const</a></li>
-<li><a href="#issuecomment-1663206898">非null | undefined声明</a></li>
-<li><a href="#issuecomment-1838108783">const enum</a></li>
-<li><a href="#issuecomment-1841954904">@ts-expect-error</a></li>
-<li><a href="#issuecomment-1842016788">解构变量可标记为“不使用”</a></li>
-</ul>
-<!--hexo-->
-
-<h1 id="as断言的另外写法"><a href="#as断言的另外写法" class="headerlink" title="as断言的另外写法"></a>as断言的另外写法</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myCanvas = &lt;<span class="title class_">HTMLCanvasElement</span>&gt;<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;main_canvas&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>将断言类型写在前面的括号里，等同于：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myCanvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;main_canvas&quot;</span>) <span class="keyword">as</span> <span class="title class_">HTMLCanvasElement</span>;</span><br></pre></td></tr></table></figure>
-
-<p>但是不能再<code>.tsx</code>中使用。</p>
-<!--hexo-->
-
-<h1 id="as-const"><a href="#as-const" class="headerlink" title="as const"></a>as const</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test1</span>(<span class="params">name: <span class="string">&#x27;html&#x27;</span> | <span class="string">&#x27;css&#x27;</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;html&#x27;</span> &#125;;</span><br><span class="line"><span class="title function_">test1</span>(obj1.<span class="property">name</span>);</span><br></pre></td></tr></table></figure>
-
-<p>上面的例子有一个类型错误：<code>Argument of type &#39;string&#39; is not assignable to parameter of type &#39;&quot;html&quot; | &quot;css&quot;&#39;.</code>，这是因为，ts对可读写的变量，推断出的类型是非字面类型。</p>
-<p>改下代码：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;html&#x27;</span> &#125; <span class="keyword">as</span> <span class="keyword">const</span>;</span><br></pre></td></tr></table></figure>
-
-<p><code>as const</code>是断言成该变量的字面类型，关于<code>const</code>的字面类型断言解释如下。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">&#x27;2&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>ts对<code>a</code>的推断是<code>string</code>，对<code>b</code>的推断是<code>&#39;2&#39;</code>。在ts的类型推断的设计中，它总是尽可能的推断出更广的类型，但是对于<code>readOnly variable</code>，因为不可变，它的更广的类型就是字面类型。</p>
-<p>得益于 <a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/22#issuecomment-1663199481">https://github.com/taoliujun/blog/issues/22#issuecomment-1663199481</a> ，还可以写成<code>let a = &lt;const&gt;&#39;1&#39;;</code> </p>
-<!--hexo-->
-
-<h1 id="非null-undefined声明"><a href="#非null-undefined声明" class="headerlink" title="非null | undefined声明"></a>非null | undefined声明</h1><p>有时候虽然声明一个变量类型是<code>null</code>，但在某个逻辑中它不可能是<code>null</code>，可以使用<code>!</code>来表示它不是<code>null</code>。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> d1 = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test1&#x27;</span>);</span><br><span class="line"><span class="comment">// &#x27;d1&#x27; is possibly &#x27;null&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d1.<span class="title function_">getBoundingClientRect</span>());</span><br><span class="line"><span class="comment">// it is fine</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(d1!.<span class="title function_">getBoundingClientRect</span>());</span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="const-enum"><a href="#const-enum" class="headerlink" title="const enum"></a>const enum</h1><p>ts会将<code>enum</code>完整的编译出来，如下分别是ts源码和编译后的代码：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源码</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Sex</span> &#123;</span><br><span class="line">    <span class="title class_">Man</span>,</span><br><span class="line">    <span class="title class_">Woman</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译结果</span></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Sex</span>;</span><br><span class="line">(<span class="keyword">function</span> (<span class="params">Sex</span>) &#123;</span><br><span class="line">    <span class="title class_">Sex</span>[<span class="title class_">Sex</span>[<span class="string">&quot;Man&quot;</span>] = <span class="number">0</span>] = <span class="string">&quot;Man&quot;</span>;</span><br><span class="line">    <span class="title class_">Sex</span>[<span class="title class_">Sex</span>[<span class="string">&quot;Woman&quot;</span>] = <span class="number">1</span>] = <span class="string">&quot;Woman&quot;</span>;</span><br><span class="line">&#125;)(<span class="title class_">Sex</span> || (<span class="title class_">Sex</span> = &#123;&#125;));</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<p>而很多时候，我们只是将<code>enum</code>当安全值来用，编译后只保留安全值就行了。加上<code>const</code>就可以：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 源码</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> <span class="title class_">Sex</span> &#123;</span><br><span class="line">    <span class="title class_">Man</span>,</span><br><span class="line">    <span class="title class_">Woman</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="title class_">Sex</span>.<span class="property">Man</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编译结果</span></span><br><span class="line"><span class="keyword">const</span> sex = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="ts-expect-error"><a href="#ts-expect-error" class="headerlink" title="@ts-expect-error"></a>@ts-expect-error</h1><p>在一些场景下，我们需要故意传一个错误类型的变量，比如在写单元测试的时候。如下：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// util.ts</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test1</span>(<span class="params">p1: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="comment">// do</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// __test__</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>在如上的单元测试代码中，ts会反馈<code>&#39;hello&#39;</code>不是一个number，但这个类型错误正是我们期望的。那么就增加一个标记来处理它：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// __test__</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>并且，如果这行语句没有类型错误的话，该注释本身会被认为是一个错误，以及时提醒开发者。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Unused &#x27;@ts-expect-error&#x27; directive.ts(2578)</span></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="title function_">test1</span>(<span class="number">123</span>);</span><br></pre></td></tr></table></figure>
-
-<p>它和<code>ts-ignore</code>的区别在这：<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#ts-ignore-or-ts-expect-error">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#ts-ignore-or-ts-expect-error</a></p>
-<!--hexo-->
-
-<h1 id="解构变量可标记为“不使用”"><a href="#解构变量可标记为“不使用”" class="headerlink" title="解构变量可标记为“不使用”"></a>解构变量可标记为“不使用”</h1><p>如下语句，ts会告诉你<code>first</code>未使用。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &#x27;first&#x27; is declared but its value is never read.ts(6133)</span></span><br><span class="line"><span class="keyword">const</span> [first, second] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==&#x27;</span>, second);</span><br></pre></td></tr></table></figure>
-
-<p>但在场景里，就不需要使用第一个变量，ts提供了一个写法标记来忽略检查未使用的解构变量，就是在变量前加<code>_</code>。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [_first, second] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==&#x27;</span>, second);</span><br></pre></td></tr></table></figure>
-
-<p><strong>补充：</strong> 以上是ts4.2的特性，在更新的版本里，只要这样写就行了：<code>const [, second] = [1, 2]</code>。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/TypeScript/">
+              TypeScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/typescript/">
+                  #typescript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/typescript-means/" data-id="clt8hne78001ui8ohbxt1guu9" data-title="TypeScript的小手段，最后更新2023/12月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-ast-in-css-module-auto-match" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/ast-in-css-module-auto-match/" class="article-date">
-  <time class="dt-published" datetime="2023-07-26T00:03:32.000Z" itemprop="datePublished">2023-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/ast-in-css-module-auto-match/">AST 在 css module 自动匹配中的应用</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/typescript-means/">
+        <span>TypeScript的小手段，最后更新2023/12月...</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-08-03
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-08-03
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/21">https://github.com/taoliujun/blog/issues/21</a></p>
-<!--hexo
----
-url: ast-in-css-module-auto-match
-tags:
-  - ast
-  - css module
----
--->
-
-<h1 id="AST-在-css-module-自动匹配中的应用"><a href="#AST-在-css-module-自动匹配中的应用" class="headerlink" title="AST 在 css module 自动匹配中的应用"></a>AST 在 css module 自动匹配中的应用</h1><p>我们已经非常明白为什么在项目中要使用 css modules，可直接说到“自动匹配”有点莫名其妙，所以有必要介绍下为什么提出这个问题。</p>
-<p>第一步，我想用官方的话来镇住大家。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/css-modules/css-modules">css modules</a>的官方描述：A CSS Module is a CSS file in which all class names and animation names are scoped locally by default.</p>
-</blockquote>
-<p>官方只提供了一个规范的描述，本身并未提供工具去实现。但无需担心，常见的打包工具都支持了 css modules。比如 webpack 的<a target="_blank" rel="noopener" href="https://webpack.js.org/loaders/css-loader/">css-loader</a>。</p>
-<h2 id="css-loader"><a href="#css-loader" class="headerlink" title="css-loader"></a>css-loader</h2><p>css-loader 在很早就支持 modules，只需要配置<code>modules</code>属性，程序员们使用它的方式是各种各样的。有设置 local modules，在 css 文件中使用<code>:global</code>来支持全局样式的；有设置 global modules，在 css 文件中使用<code>:local</code>来支持局部样式的。这些都是可以的，但是都需要在 css 文件中做一些特殊的标记，这样就会导致 css 文件的可读性变差。</p>
-<p>后来人们学会了配置根据 css 文件名中是否包含<code>.modules.</code>或<code>.global.</code>字符串来启用&#x2F;禁用该文件的 modules 功能。于是项目里有大量的*.modules.css&#x2F;*.global.css 文件，而通过文件名去匹配某个功能的开关却恰恰是程序设计的忌讳。</p>
-<h2 id="符合直觉的自动识别"><a href="#符合直觉的自动识别" class="headerlink" title="符合直觉的自动识别"></a>符合直觉的自动识别</h2><p>我就在 *.modules.css 文件堆中浑浑噩噩的度过了好多年，直到近两年的某一天在<a target="_blank" rel="noopener" href="https://umijs.org/">UmiJS</a>脚手架中发现了这个奇特的细节。</p>
-<p><strong>使用<code>import xxx from &#39;./styles.css&#39;</code>启用 modules，使用<code>import &#39;./styles.css&#39;</code>启用 global。</strong></p>
-<p>这思路对我来说简直是惊为天人，无关乎它的技术细节。因为在直觉中，<code>import module</code>就是要直接执行它，而<code>import xxx from module</code>就是要使用它的某些东西。对于 css 是同样的，既要直接引入全局样式，又要使用局部样式。</p>
-<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><p>webpack 的 module rules 支持使用<code>resourceQuery</code>去匹配模块文件名的 query 部分，所以为 css-loader 增加一个 rules 如下：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">  <span class="attr">oneOf</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">resourceQuery</span>: <span class="regexp">/modules/</span>,</span><br><span class="line">      <span class="attr">use</span>: [</span><br><span class="line">        &#123; <span class="attr">loader</span>: <span class="string">&#x27;style-loader&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">loader</span>: <span class="string">&#x27;css-loader&#x27;</span>, <span class="attr">options</span>: &#123; <span class="attr">modules</span>: <span class="literal">true</span> &#125; &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">use</span>: [</span><br><span class="line">        &#123; <span class="attr">loader</span>: <span class="string">&#x27;style-loader&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">loader</span>: <span class="string">&#x27;css-loader&#x27;</span> &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如此，使用<code>import xxx from &#39;./styles.css?modules&#39;</code>就会命中第一个规则而启用 modules 功能了。</p>
-<p>但显然这样写太麻烦了，有什么办法让它在写<code>import xxx from &#39;./styles.css&#39;</code>时候，自动加上<code>?modules</code>而启用 css modules 呢？</p>
-<p>答案就是使用 AST。由于项目几乎都在使用 babel 去处理 js 文件，所以可以直接使用 babel 插件去分析 AST 从而给 css 文件加上<code>?modules</code>后缀即可。就直接看<a target="_blank" rel="noopener" href="https://github.com/umijs/umi/blob/master/packages/babel-preset-umi/src/plugins/autoCSSModules.ts">umijs 的插件代码</a>:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> <span class="title class_">Babel</span> <span class="keyword">from</span> <span class="string">&quot;@umijs/bundler-utils/compiled/babel/core&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> t <span class="keyword">from</span> <span class="string">&quot;@umijs/bundler-utils/compiled/babel/types&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; extname &#125; <span class="keyword">from</span> <span class="string">&quot;path&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">CSS_EXT_NAMES</span> = [<span class="string">&quot;.css&quot;</span>, <span class="string">&quot;.less&quot;</span>, <span class="string">&quot;.sass&quot;</span>, <span class="string">&quot;.scss&quot;</span>, <span class="string">&quot;.stylus&quot;</span>, <span class="string">&quot;.styl&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">visitor</span>: &#123;</span><br><span class="line">      <span class="title class_">ImportDeclaration</span>(<span class="attr">path</span>: <span class="title class_">Babel</span>.<span class="property">NodePath</span>&lt;t.<span class="property">ImportDeclaration</span>&gt;) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;</span><br><span class="line">          specifiers,</span><br><span class="line">          source,</span><br><span class="line">          <span class="attr">source</span>: &#123; value &#125;,</span><br><span class="line">        &#125; = path.<span class="property">node</span>;</span><br><span class="line">        <span class="keyword">if</span> (specifiers.<span class="property">length</span> &amp;&amp; <span class="variable constant_">CSS_EXT_NAMES</span>.<span class="title function_">includes</span>(<span class="title function_">extname</span>(value))) &#123;</span><br><span class="line">          source.<span class="property">value</span> = <span class="string">`<span class="subst">$&#123;value&#125;</span>?modules`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// more codes</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如上代码中，AST <code>specifiers</code> 里有内容，说明是<code>import xxx from module</code>的形式，而<code>source.value</code>就是 css 文件的路径，所以直接加上<code>?modules</code>后缀即可。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/css-modules/css-modules">https://github.com/css-modules/css-modules</a></li>
-<li><a target="_blank" rel="noopener" href="https://webpack.js.org/loaders/css-loader/#modules">https://webpack.js.org/loaders/css-loader/#modules</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/@umijs/babel-plugin-auto-css-modules">https://www.npmjs.com/package/@umijs/babel-plugin-auto-css-modules</a></li>
-</ul>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/TypeScript/">
+            TypeScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/ast-in-css-module-auto-match/" data-id="clt8hne6g0000i8ohaup9dgy1" data-title="AST 在 css module 自动匹配中的应用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-react-usedeferredvalue" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/react-usedeferredvalue/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:38:14.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/react-usedeferredvalue/">React useDeferredValue在性能优化中的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/20">https://github.com/taoliujun/blog/issues/20</a></p>
-<!--hexo
----
-url: react-usedeferredvalue
-tags:
-  - react
----
--->
-
-<h2 id="一个卡顿场景"><a href="#一个卡顿场景" class="headerlink" title="一个卡顿场景"></a>一个卡顿场景</h2><p>已知浏览器在一帧时间里（默认16.6毫秒）要完成好多工作，其中最耗时的是js脚本执行和页面渲染。如果js脚本耗时太长，那要引起页面渲染掉帧，在用户的体验上就是卡顿。</p>
-<p>这里有一个处理用户输入的搜索词语，将结果渲染到一个dom列表上的场景：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span>, useMemo, useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">SearchResults</span>: <span class="variable constant_">FC</span>&lt;&#123; <span class="attr">query</span>: <span class="built_in">string</span> &#125;&gt; = <span class="function">(<span class="params">&#123; query &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> datas = <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">10000</span>).<span class="title function_">fill</span>(<span class="literal">null</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;query&#125;</span> <span class="subst">$&#123;<span class="built_in">Math</span>.random()&#125;</span>`</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;, [query]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!query) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>search &quot;&#123;query&#125;&quot; list:<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;datas.map((v, k) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                return <span class="tag">&lt;<span class="name">p</span> <span class="attr">key</span>=<span class="string">&#123;k&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">            &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [query, setQuery] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">            Search:</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">value</span>=<span class="string">&#123;query&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setQuery(e.target.value);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">SearchResults</span> <span class="attr">query</span>=<span class="string">&#123;query&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>当用户每次输入一个字符，就会触发<code>SearchResults</code>组件的重新渲染，这个渲染包括<code>datas</code>的重新计算，和dom结构的重新渲染，这个时间远远超过16毫秒，会导致下一个输入值的处理任务一直在等待中，造成卡顿。</p>
-<h2 id="useDeferredValue"><a href="#useDeferredValue" class="headerlink" title="useDeferredValue"></a>useDeferredValue</h2><p>React提供了<code>时间切片</code>的模式，这里不详细展开了，允许你在调度任务的过程中安排高优先级的任务，而<code>useDeferredValue</code>就是这个模式的一个hook，它可以<strong>延迟更新部分UI</strong></p>
-<p>在之前的代码中，我们稍作修改：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [query, setQuery] = <span class="title function_">useState</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> defreredQuery = <span class="title function_">useDeferredValue</span>(query);</span><br><span class="line"></span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">SearchResults</span> <span class="attr">query</span>=<span class="string">&#123;defreredQuery&#125;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>当用户<strong>快速</strong>输入一个字符时，<code>SearchResults</code>组件的渲染就会被延迟，这样就尽量减少卡顿了。</p>
-<p><code>useDeferredValue</code>通过延迟状态的更新来实现这个目的，它不同于节流或防抖的固定时间控制，而是根据一系列复杂调度算法来决定延迟的时间，这样可以尽量减少卡顿的发生。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/TypeScript/">
+              TypeScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/typescript/">
+                  #typescript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/react-usedeferredvalue/" data-id="clt8hne74001di8ohdnmwdmji" data-title="React useDeferredValue在性能优化中的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-react-usetransition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/react-usetransition/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:37:42.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/react-usetransition/">React useTransition在性能优化中的使用</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/ast-in-css-module-auto-match/">
+        <span>AST 在 css module 自动匹配中的应用</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-26
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-26
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/19">https://github.com/taoliujun/blog/issues/19</a></p>
-<!--hexo
----
-url: react-usetransition
-tags:
-  - react
----
--->
-
-<p><code>useTransition</code> is a React Hook that lets you update the state without blocking the UI.</p>
-<p>文档中简单一句话说明<code>useTransition</code>的用途：不阻塞UI的情况下更新<strong>状态</strong>。</p>
-<h2 id="解决什么问题？"><a href="#解决什么问题？" class="headerlink" title="解决什么问题？"></a>解决什么问题？</h2><p>正常代码下，JavaScript是单线程的，所以执行一段耗时的代码，会阻塞UI的渲染，导致页面卡顿。React提供了<strong>时间切片</strong>的功能来尽量确保一帧中有充足的时间来渲染UI，而<code>useTransition</code>就是在这个基础上，可以在不阻塞UI的情况下使用时间分片特性<strong>更新状态</strong>。</p>
-<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>先看下卡顿是如何形成的，一个简单的代码，每500ms，更新<code>name</code>状态。另外点击按钮的时候，更新一系列状态并渲染到dom中。</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">getDatas</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> datas = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">2000</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> s = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        datas.<span class="title function_">push</span>(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> datas;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [name, setName] = <span class="title function_">useState</span>(<span class="string">&#x27;world&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> [datas1, setDatas1] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas2, setDatas2] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas3, setDatas3] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas4, setDatas4] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas5, setDatas5] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas6, setDatas6] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas7, setDatas7] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line">    <span class="keyword">const</span> [datas8, setDatas8] = useState&lt;<span class="built_in">number</span>[]&gt;([]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> onClick1 = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">setDatas1</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas2</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas3</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas4</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas5</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas6</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas7</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas8</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">    &#125;, []);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">window</span>.<span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="title function_">setName</span>(<span class="string">`world <span class="subst">$&#123;<span class="built_in">Math</span>.random()&#125;</span>`</span>);</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, []);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            hello &#123;name&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onClick1&#125;</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas1.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas2.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas3.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas4.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas5.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas6.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas7.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                &#123;datas8.map((v) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                    return <span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;v&#125;</span>&gt;</span>&#123;v&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>;</span></span><br><span class="line"><span class="language-xml">                &#125;)&#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>首先不点击按钮，观察5秒，没有卡顿现象，性能表现如图：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041609217.png"></p>
-<p>可以看到有几个微微凸起的黄色点，对应着每次的<code>hello</code>状态更新和渲染，它们的执行时间都在1ms，没有超过一帧的时间。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041610767.png"></p>
-<p>选取其中一个黄色的点，查看它的详情。React的调度器、协调器、渲染器创建了对应的任务，分步执行了任务，具体可阅读React架构的相关文章。</p>
-<p><strong>然后连续点几次按钮，<code>hello</code>的渲染出现明显的卡顿，性能表现如图：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041608992.png"></p>
-<p>在性能图中截取的一段时间中，黄色是脚本执行时间，灰色是UI渲染时间，白色是空闲时间（我停止点击了一会儿），在每帧里，要跑完所有的状态变更和UI渲染，<code>datas</code>系列的状态变更和渲染占据了大量的时间，基本是阻塞了<code>hello</code>的状态变更和渲染。</p>
-<p><strong>只点击一次，性能表现如图：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041625903.png"></p>
-<p>可以看到几个Task，第一个Task就是在更新<code>datas</code>系列状态和渲染，它占据了太多帧的时间，导致<code>hello</code>的状态变更和渲染被推迟到后面的帧。</p>
-<h2 id="优化它"><a href="#优化它" class="headerlink" title="优化它"></a>优化它</h2><p>前面说到，React的架构中实现了<strong>时间切片</strong>，它允许开发者将<em>不重要</em>的变更推迟到后面的帧，这样就可以尽量保证优先执行默认任务。使用<code>useTransition</code>改下代码：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [pending, startTransition] = <span class="title function_">useTransition</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onClick1 = <span class="title function_">useCallback</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">startTransition</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">setDatas1</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas2</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas3</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas4</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas5</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas6</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas7</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">        <span class="title function_">setDatas8</span>(<span class="title function_">getDatas</span>());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;, []);</span><br></pre></td></tr></table></figure>
-
-<p><strong>再次连续点击按钮，卡顿现象明显减轻很多，性能表现如下：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041629743.png"></p>
-<p>一看起来，执行时间还是很长，那么为什么<code>hello</code>渲染看起来不卡顿呢？</p>
-<p><strong>只点一次，看看性能表现：</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307041631650.png"></p>
-<p>查看几个Task的详情，发现<code>datas</code>系列状态的更新，被分配在了多个Task中，中间还穿插了<code>hello</code>的状态更新的任务。这也印证了<code>useTransition</code>的实现背景：将不重要的任务通过时间切片架构，分配到多帧中，优先执行其他任务，从而实现不卡顿的目的。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><p><code>useTransition</code>是个hook，它的返回值还包括了一个pending状态，用来表示是否处于时间切片的过程中，可以用来优化UI，比如显示一个loading。</p>
-</li>
-<li><p>你也可以使用<code>startTransition</code>这个util函数代替hook的使用。</p>
-</li>
-<li><p>时间切片架构是调度状态变化的，所以<code>startTransition</code>的入参函数里，将状态更新标记为可切片，普通的代码段不会被标记。所以简单的说，你还是得将一个状态变更的执行时间控制在5ms内。</p>
-</li>
-</ul>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/react-usetransition/" data-id="clt8hne75001gi8oh0ik11rjp" data-title="React useTransition在性能优化中的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-react-performance optimization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/react-performance%20optimization/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:37:20.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/react-performance%20optimization/">React的性能优化项，最后更新2023年07月...</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/18">https://github.com/taoliujun/blog/issues/18</a></p>
-<!--hexo
----
-url: react-performance optimization
-tags:
-  - react
----
--->
-
-<p>React 没有最佳性能优化项，性能优化和项目的复杂度相关，所以以下记录的优化项，酌情使用。</p>
-<p>评论区见。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/18#issuecomment-1623078715">组件需要更细粒度</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/20">React useDeferredValue在性能优化中的使用</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/19">React useTransition在性能优化中的使用</a></li>
-</ul>
-<!--hexo-->
-
-<h1 id="组件需要更细粒度"><a href="#组件需要更细粒度" class="headerlink" title="组件需要更细粒度"></a>组件需要更细粒度</h1><p><strong>结论：如果组件中的状态更新频率很快，那么尽量将组件拆分到更细粒度。</strong></p>
-<p>先看一个例子：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Test1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;==&quot;</span>, <span class="title class_">Math</span>.<span class="title function_">random</span>());</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;Math.random()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setValue(e.target.value)&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Test1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061103775.png"></p>
-<p>如上，虽然<code>Test1</code>组件和<code>value</code>状态并无关系，但每一次输入都会导致<code>Test1</code>组件的重新渲染。如果<code>Test1</code>组件的逻辑和渲染够复杂，那么很容易影响性能。</p>
-<p>究其原理，Fiber 在节点这一层保存了组件函数中状态和虚拟 Dom 的关系，它的最小渲染单元就是本组件函数。</p>
-<p>根据这个原理，试试将输入框拆分成另一个组件：</p>
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Input1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [value, setValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> setValue(e.target.value)&#125; /&gt;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Test1</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;==&quot;</span>, <span class="title class_">Math</span>.<span class="title function_">random</span>());</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hello &#123;Math.random()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Input1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Test1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202307061111086.png"></p>
-<p>如上，连续输入 abc，并不触发<code>Test1</code>的多次执行，<code>Input1</code>组件在一个独立的 Fiber 结构中，它的状态更新便不会影响到<code>Main</code>函数。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/ast/">
+                  #ast
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/css-module/">
+                  #css module
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/react-performance%20optimization/" data-id="clt8hne73001ai8ohb0bo3x82" data-title="React的性能优化项，最后更新2023年07月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-es6-destructuring" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-destructuring/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:36:43.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-destructuring/">整理ES6：解构赋值</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/react-usedeferredvalue/">
+        <span>React useDeferredValue在性能优化中的使用</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/17">https://github.com/taoliujun/blog/issues/17</a></p>
-<!--hexo
----
-url: es6-destructuring
-tags:
-  - es6
-  - javascript
----
--->
-
-<p>工作中经常会使用变量的解构赋值，随便举几个例子。</p>
-<h2 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;pear&quot;</span>, <span class="string">&quot;orange&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;peach&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> [fruit1, , fruit3, ...otherFruits] = fruits;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&#123;</span><br><span class="line">  fruit1,</span><br><span class="line">  fruit3,</span><br><span class="line">  otherFruits,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node 1.ts</span></span><br><span class="line">&#123;</span><br><span class="line">  fruit1: &#x27;apple&#x27;,</span><br><span class="line">  fruit3: &#x27;orange&#x27;,</span><br><span class="line">  otherFruits: [ &#x27;banana&#x27;, &#x27;peach&#x27; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在执行结果中可以看到，<code>fruit1</code>是apple，其后是一个空位，所以<code>fruit3</code>是orange，<code>otherFruits</code>前面有扩展运算符，所以它读取了剩下的所有索引值。</p>
-<h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><p>对象解构里记录一个概念，就是模式与变量，见下面一个嵌套结构的例子：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">base</span>: &#123;</span><br><span class="line">    <span class="attr">truename</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">    <span class="attr">sex</span>: <span class="string">&quot;女&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">card</span>: <span class="string">&quot;320xxx&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">  base,</span><br><span class="line">  <span class="attr">base</span>: &#123; truename &#125;,</span><br><span class="line">  card,</span><br><span class="line">&#125; = user;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;base:&quot;</span>, base);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;truename:&quot;</span>, truename);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;card:&quot;</span>, card);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base: &#123; truename: &#x27;张三&#x27;, sex: &#x27;女&#x27; &#125;</span><br><span class="line">truename: 张三</span><br><span class="line">card: 320xxx</span><br></pre></td></tr></table></figure>
-
-<p>在如上的对象解构中，第一个<code>base</code>是变量，第二个<code>base</code>是模式，它的值是<code>user</code>对象中的<code>base</code>属性，<code>truename</code>是变量，<code>card</code>也是变量。</p>
-<h2 id="字符串、数组、布尔值解构"><a href="#字符串、数组、布尔值解构" class="headerlink" title="字符串、数组、布尔值解构"></a>字符串、数组、布尔值解构</h2><p>因为解构的规则是将变量转为对象（数组也是对象），字符串、数字、布尔都可以转成对象。</p>
-<p><strong>所以字符串可以像数组</strong>那样解构。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> word = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [, x] = word;</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="number">3</span>: y &#125; = word;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&#123; x, y &#125;);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; x: &#x27;b&#x27;, y: &#x27;d&#x27; &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p><strong>数组也是对象</strong>，所以读取指定索引的值，可以这样写：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;pear&quot;</span>, <span class="string">&quot;orange&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;peach&quot;</span>];</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="number">3</span>: fruit1 &#125; = fruits;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruit1);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banana</span><br></pre></td></tr></table></figure>
-
-
-
-
+        <span>
+        分类 :
+          <a href="/blog/categories/React/">
+            React
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-destructuring/" data-id="clt8hne6m0003i8ohghnpfqye" data-title="整理ES6：解构赋值" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-es6-operator" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-operator/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:35:25.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-operator/">整理ES6：运算符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/16">https://github.com/taoliujun/blog/issues/16</a></p>
-<!--hexo
----
-url: es6-operator
-tags:
-  - es6
-  - javascript
----
--->
-
-<h2 id="链判断运算符"><a href="#链判断运算符" class="headerlink" title="链判断运算符?."></a>链判断运算符<code>?.</code></h2><p>非常方便的代替了传统的属性是否存在的判断，它有两个注意点：</p>
-<ul>
-<li>左侧的对象是否为<code>null</code>或<code>undefined</code>，如果不是，则继续运算。</li>
-<li>如果是的，就不再往下运算，而是返回<code>undefined</code>。</li>
-</ul>
-<p>常见用法如下：</p>
-<ul>
-<li>obj?.prop &#x2F;&#x2F; 对象属性是否存在</li>
-<li>obj?.[expr] &#x2F;&#x2F; 同上</li>
-<li>func?.(…args) &#x2F;&#x2F; 函数或对象方法是否存在</li>
-</ul>
-<h2 id="Null-判断运算符"><a href="#Null-判断运算符" class="headerlink" title="Null 判断运算符??"></a>Null 判断运算符<code>??</code></h2><p>如果运算结果为<code>null</code>或<code>undefined</code>，则返回右侧的值，否则返回左侧的值。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 老写法，如果左侧的boolean值为falsy，都会返回右侧的值</span></span><br><span class="line"><span class="keyword">const</span> headerText = response.<span class="property">settings</span>.<span class="property">headerText</span> || <span class="string">&#x27;Hello, world!&#x27;</span>;</span><br><span class="line"><span class="comment">// ??写法，只有左侧的值为null或undefined时，才会返回右侧的值</span></span><br><span class="line"><span class="keyword">const</span> headerText = response.<span class="property">settings</span>.<span class="property">headerText</span> ?? <span class="string">&#x27;Hello, world!&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/React/">
+              React
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/react/">
+                  #react
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-operator/" data-id="clt8hne6o0006i8oh1ydc6nlv" data-title="整理ES6：运算符" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-es6-symbol" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-symbol/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:35:00.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-symbol/">整理ES6：聊一聊Symbol </a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/react-usetransition/">
+        <span>React useTransition在性能优化中的使用</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/15">https://github.com/taoliujun/blog/issues/15</a></p>
-<!--hexo
----
-url: es6-symbol
-tags:
-  - es6
-  - javascript
----
--->
-
-<p>我在5年前看完<code>Symbol</code>，就将它抛之脑后，直到最近才重新研究，看看它是什么样的宝藏。</p>
-<p>先快速看下它是什么。</p>
-<h2 id="Symbol-基本用法"><a href="#Symbol-基本用法" class="headerlink" title="Symbol 基本用法"></a>Symbol 基本用法</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a1 = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="keyword">const</span> a2 = <span class="title class_">Symbol</span>(<span class="string">&quot;i am a&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> a3 = <span class="title class_">Symbol</span>(<span class="string">&quot;i am a&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a1&quot;</span>, a1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a2&quot;</span>, a2);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a2&quot;</span>, a2.<span class="property">description</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a2 === a3&quot;</span>, a2 === a3);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a1 Symbol()</span><br><span class="line">a2 Symbol(i am a)</span><br><span class="line">a2 i am a</span><br><span class="line">a2 === a3 false</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从上可看到，<code>Symbol</code>是一个函数，它的返回值是一个<code>Symbol</code>类型的值，这个值是<strong>唯一</strong>的，即使传入相同的参数，也不会相等。</li>
-<li>入参的目的仅仅是为了描述它的来源。</li>
-<li><code>description</code>返回<code>Symbol</code>实例的描述。</li>
-</ul>
-<h2 id="让我使用它"><a href="#让我使用它" class="headerlink" title="让我使用它"></a>让我使用它</h2><p>假设如下代码：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">WOMAN</span> = <span class="string">&quot;woman&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">MAN</span> = <span class="string">&quot;man&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getSex</span>(<span class="params">input</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (input === <span class="variable constant_">WOMAN</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (input === <span class="variable constant_">MAN</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getSex</span>(<span class="variable constant_">MAN</span>));</span><br></pre></td></tr></table></figure>
-
-<p>但代码足够复杂，或出于粗心，几个常量的值设置为一样的字符串，怕是难以发现。那么用Symbol可以方便的保证其唯一性。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">WOMAN</span> = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">MAN</span> = <span class="title class_">Symbol</span>();</span><br><span class="line"><span class="comment">// ...more</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Symbol-的全局注册"><a href="#Symbol-的全局注册" class="headerlink" title="Symbol 的全局注册"></a>Symbol 的全局注册</h2><p>直接看代码：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn1</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Symbol</span>(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn2</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;fn1&quot;</span>, <span class="title function_">fn1</span>() === <span class="title function_">fn1</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;fn2&quot;</span>, <span class="title function_">fn2</span>() === <span class="title function_">fn2</span>());</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fn1 false</span><br><span class="line">fn2 true</span><br></pre></td></tr></table></figure>
-
-<p>正如前面说的，<code>Symbol</code>函数的返回值肯定是不一样的，所以多次<code>fn1</code>的执行结果是不相等的。但是<code>Symbol.for</code>的执行结果是相等的，因为它是全局注册的。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/React/">
+            React
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-symbol/" data-id="clt8hne6u000ki8ohhd0t9mcp" data-title="整理ES6：聊一聊Symbol " class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-es6-set" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-set/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:34:36.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-set/">整理ES6：Set真的挺好的</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/14">https://github.com/taoliujun/blog/issues/14</a></p>
-<!--hexo
----
-url: es6-set
-tags:
-  - es6
-  - javascript
----
--->
-
-<h2 id="为什么用Set"><a href="#为什么用Set" class="headerlink" title="为什么用Set"></a>为什么用Set</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="string">&quot;d&quot;</span>];</span><br><span class="line"></span><br><span class="line">arr1 = arr1.<span class="title function_">filter</span>(<span class="function">(<span class="params">element</span>) =&gt;</span> element !== <span class="string">&quot;d&quot;</span>);</span><br><span class="line">arr1.<span class="title function_">filter</span>(<span class="function">(<span class="params">element</span>) =&gt;</span> element !== <span class="string">&quot;e&quot;</span>).<span class="title function_">push</span>(<span class="string">&quot;e&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">includes</span>(<span class="string">&quot;b&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object</span></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="literal">true</span>, <span class="attr">b</span>: <span class="literal">true</span>, <span class="attr">c</span>: <span class="literal">true</span>, <span class="attr">d</span>: <span class="literal">true</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> obj1.<span class="property">d</span>;</span><br><span class="line">obj1.<span class="property">e</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b&quot;</span> <span class="keyword">in</span> obj1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set</span></span><br><span class="line"><span class="keyword">let</span> set1 = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>]);</span><br><span class="line"></span><br><span class="line">set1.<span class="title function_">delete</span>(<span class="string">&quot;d&quot;</span>);</span><br><span class="line">set1.<span class="title function_">add</span>(<span class="string">&quot;e&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set1.<span class="title function_">has</span>(<span class="string">&quot;b&quot;</span>));</span><br></pre></td></tr></table></figure>
-
-<p>如上演示了Array、Object、Set三种数据结构的基本操作，Set提供了更为便捷的方式：</p>
-<ol>
-<li>相比Array有更简单的语法，在运算复杂度上有很大提升。</li>
-<li>相比Object的命令式操作，Set提供了方法式的操作。</li>
-</ol>
-<h2 id="唯一特性"><a href="#唯一特性" class="headerlink" title="唯一特性"></a>唯一特性</h2><p>在工作中，要用到集合唯一特性的场景有很多，用Array实现的时候，需要自己写很多代码来保证唯一性，而用Object实现，又不能保证元素的访问顺序。</p>
-<p>举几个例子。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 历史搜索记录唯一</span></span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line"></span><br><span class="line">s1.<span class="title function_">add</span>(<span class="string">&quot;长江&quot;</span>);</span><br><span class="line">s1.<span class="title function_">add</span>(<span class="string">&quot;黄河&quot;</span>);</span><br><span class="line">s1.<span class="title function_">add</span>(<span class="string">&quot;故宫&quot;</span>);</span><br><span class="line">s1.<span class="title function_">add</span>(<span class="string">&quot;长江&quot;</span>);</span><br><span class="line">s1.<span class="title function_">add</span>(<span class="string">&quot;圆明园&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s1);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 移除输入的重复数据ID</span></span><br><span class="line"><span class="keyword">const</span> a = [<span class="number">23</span>, <span class="number">58</span>, <span class="number">23</span>, <span class="number">19</span>, <span class="number">96</span>];</span><br><span class="line"><span class="keyword">const</span> s1 = <span class="keyword">new</span> <span class="title class_">Set</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(s1));</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ul>
-<li>Set为了保持元素的唯一，内部使用了<code>SameValueZero</code>算法，这意味着<code>NaN</code>和<code>NaN</code>是相等的，<code>+0</code>和<code>-0</code>是相等的。</li>
-</ul>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/React/">
+              React
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/react/">
+                  #react
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-set/" data-id="clt8hne6t000gi8ohfc7n582s" data-title="整理ES6：Set真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/react-performance%20optimization/">
+        <span>React的性能优化项，最后更新2023年07月...</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/React/">
+            React
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/React/">
+              React
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/react/">
+                  #react
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-destructuring/">
+        <span>整理ES6：解构赋值</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-operator/">
+        <span>整理ES6：运算符</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-symbol/">
+        <span>整理ES6：聊一聊Symbol </span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-set/">
+        <span>整理ES6：Set真的挺好的</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
   
 
-
-  <nav id="page-nav">
+  <nav class="page-navigation">
     
-    <a class="extend prev" rel="prev" href="/blog/">&laquo; zurück</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/3/">weiter &raquo;</a>
+      <a href="/blog/">上一页</a>
+    
+    
+      <a href="/blog/page/3/">下一页</a>
+    
   </nav>
 
-</section>
-        
-          <aside id="sidebar">
-  
+   
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> | Theme - <a target="_blank" rel="noopener" href="https://github.com/dongyuanxin/theme-bmw">BMW</a>
+    <br>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Battery-Status/" rel="tag">Battery Status</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Broadcast-Channel/" rel="tag">Broadcast Channel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/blog/tags/Background-Tasks/" style="font-size: 10px;">Background Tasks</a> <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Battery-Status/" style="font-size: 10px;">Battery Status</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/Broadcast-Channel/" style="font-size: 10px;">Broadcast Channel</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/web-api-Broadcast_Channel_API/">Web API - Broadcast Channel</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Battery_Status_API/">Web API - Battery Status</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Beacon_API/">Web API - Beacon</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Badging_API/">Web API - Badging</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 taoliujun<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+  </p>
 </footer>
 
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/blog/" class="mobile-nav-link">Home</a>
-  
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
     
 
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
 
-<script src="/blog/js/jquery-3.6.4.min.js"></script>
+    
+  </body>
 
-
-
-  
-<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/blog/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
 </html>

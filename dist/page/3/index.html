@@ -1,973 +1,952 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
+  
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com" />
+  
+    <meta name="robots" content="noindex" />
+  
   
   
   <title>TaoLiuJun&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TaoLiuJun&#39;s Blog">
-<meta property="og:url" content="https://taoliujun.github.io/blog/page/3/index.html">
-<meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
-<meta property="og:description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:locale">
-<meta property="article:author" content="taoliujun">
-<meta property="article:tag" content="前端 JavaScript TypeScript React NodeJS">
-<meta name="twitter:card" content="summary">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   
-    <link rel="alternate" href="/blog/atom.xml" title="TaoLiuJun's Blog" type="application/atom+xml">
+    <meta name="keywords" content="" />
   
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
   
-    <link rel="shortcut icon" href="/blog/favicon.png">
+    <meta name="description" content="Html/Css/JavaScript/TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
   
+
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/blog/css/base.css">
+<link rel="stylesheet" href="/blog/icon/iconfont.css">
+<link rel="stylesheet" href="/blog/css/github-markdown.css">
+<link rel="stylesheet" href="/blog/css/highlight.css">
+
+
+  
+<script src="/blog/js/util.js"></script>
+<script src="/blog/js/valine.min.js"></script>
+
+
+  
+
+  
 
   
   
-<link rel="stylesheet" href="/blog/css/style.css">
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
 
-  
-    
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
-
-  
-  
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">TaoLiuJun&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">博客更新有延迟，在 https://github.com/taoliujun/blog/issues 获取最新文章和讨论</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/blog/">Home</a>
-        
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://taoliujun.github.io/blog"></form>
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/blog/">Taoliujun&#39;s Blog</a>
       </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-es6-map" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-map/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:34:11.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-map/">整理ES6：Map真的挺好的</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <nav class="site-navigation">
+      <ul class="nav-menu">
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/13">https://github.com/taoliujun/blog/issues/13</a></p>
-<!--hexo
----
-url: es6-map
-tags:
-  - es6
-  - javascript
----
--->
+        <li class="nav-item" data-path="/">
+          
+            <a 
+              href="/blog/"
+              target="_self"
+            >
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a 
+              href="/blog/archives/"
+              target="_self"
+            >
+              所有文章
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="https://github.com/taoliujun/blog/issues">
+          
+            <a 
+              href="https://github.com/taoliujun/blog/issues"
+              target="_self"
+            >
+              github
+            </a>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
 
-<p>在以前，想要维护一个集合去处理dom和其附加信息的关系，使用Array方式如下：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">dom</span>: dom1,</span><br><span class="line">    <span class="attr">info</span>: &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">dom</span>: dom2,</span><br><span class="line">    <span class="attr">info</span>: &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
 
-<p>如上代码有个很难受的问题，就是读取某个dom的时候需要遍历，而且每次都需要遍历，如果数据量大的话，性能会很差。</p>
-<p>那么改成Object方式：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = &#123;</span><br><span class="line">  <span class="attr">key1</span>: &#123;</span><br><span class="line">    <span class="attr">dom</span>: dom1,</span><br><span class="line">    <span class="attr">info</span>: &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">key2</span>: &#123;</span><br><span class="line">    <span class="attr">dom</span>: dom1,</span><br><span class="line">    <span class="attr">info</span>: &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
 
-<p>这种方式虽然可以快速读取，但是如何处理key和dom的关系又是一个麻烦；并且如果需要遍历的话，就需要先转成Array，然后再遍历，这样也很麻烦。</p>
-<h2 id="Map的基础用法"><a href="#Map的基础用法" class="headerlink" title="Map的基础用法"></a>Map的基础用法</h2><p>但是使用Map可以方便的解决上面的问题：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = <span class="keyword">new</span> <span class="title class_">Map</span>([</span><br><span class="line">  [dom1, &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;],</span><br><span class="line">  [dom2, &#123; <span class="attr">area</span>: <span class="number">123</span> &#125;],</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以快速的读取dom对应的信息，也可以快速的遍历。</p>
-<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ul>
-<li>Map的键是内存引用，所以两个相同值的对象实例，它们是两个键。</li>
-<li>Map采取了和Set一样的比较算法，所以虽然NaN不严格相等于自身，但 Map 将其视为同一个键。</li>
-</ul>
-
+      
+<div class="container home-index">
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-map/">
+        <span>整理ES6：Map真的挺好的</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-map/" data-id="clt8hne6n0005i8ohal4i8rav" data-title="整理ES6：Map真的挺好的" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-es6-proxy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-proxy/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:33:50.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-proxy/">整理ES6：Proxy的应用场景</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/12">https://github.com/taoliujun/blog/issues/12</a></p>
-<!--hexo
----
-url: es6-proxy
-tags:
-  - es6
-  - javascript
----
--->
-
-<p>Proxy拦截对象的操作，这些操作有13种：get、set、apply等。</p>
-<h2 id="get、set"><a href="#get、set" class="headerlink" title="get、set"></a>get、set</h2><p>拦截对象的读取和赋值操作。如下场景，如果用户角色是管理员，那么期望在读取姓名的时候，补充上“管理员”角色名称，并且管理员的姓名不允许被修改。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">sex</span>: <span class="string">&quot;男&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> admin = <span class="keyword">new</span> <span class="title class_">Proxy</span>(</span><br><span class="line">  &#123; ...user &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">get</span>: <span class="function">(<span class="params">target, key</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (key === <span class="string">&quot;name&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`管理员：<span class="subst">$&#123;target[key]&#125;</span>`</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> target[key];</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">set</span>: <span class="function">(<span class="params">target, key, value</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (key === <span class="string">&quot;name&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;不能修改管理员姓名&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      target[key] = value;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;admin信息1：&quot;</span>, admin.<span class="property">name</span>, admin.<span class="property">sex</span>);</span><br><span class="line">admin.<span class="property">sex</span> = <span class="string">&quot;女&quot;</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  admin.<span class="property">name</span> = <span class="string">&quot;李四&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;admin信息2：&quot;</span>, admin.<span class="property">name</span>, admin.<span class="property">sex</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">admin信息1： 管理员：张三 男</span><br><span class="line">Error: 不能修改管理员姓名</span><br><span class="line">    at Object.set (/Users/stao2/www/learn/something/1.ts:18:15)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/Users/stao2/www/learn/something/1.ts:29:14)</span><br><span class="line">    at Module._compile (node:internal/modules/cjs/loader:1254:14)</span><br><span class="line">    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)</span><br><span class="line">    at Module.load (node:internal/modules/cjs/loader:1117:32)</span><br><span class="line">    at Module._load (node:internal/modules/cjs/loader:958:12)</span><br><span class="line">    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)</span><br><span class="line">    at node:internal/main/run_main_module:23:47</span><br><span class="line">admin信息2： 管理员：张三 女</span><br></pre></td></tr></table></figure>
-
-<p>利用这个规则，可以方便的给对象做一层扩展，而不用修改原来的对象逻辑。</p>
-<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><p>apply可以拦截函数的调用，对用户的年龄，但是对不同的角色，校验规则不一样，而且校验代码挺多，函数里的校验就耦合了。例如：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">validate</span>(<span class="params">role, age</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (role === <span class="string">&quot;student&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (age &lt; <span class="number">7</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;不满足学生年龄&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (role === <span class="string">&quot;teacher&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (age &lt; <span class="number">24</span> || age &gt; <span class="number">60</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;不满足教室年龄&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...其他公用的代码</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;validate success&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">validate</span>(<span class="string">&quot;student&quot;</span>, <span class="number">4</span>), <span class="title function_">validate</span>(<span class="string">&quot;teacher&quot;</span>, <span class="number">123</span>));</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不满足学生年龄 不满足教室年龄</span><br></pre></td></tr></table></figure>
-
-<p>但是利用Proxy，可以这样做：</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">validate</span>(<span class="params">user</span>) &#123;</span><br><span class="line">  <span class="comment">// ...其他公用的代码</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;validate success&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> validateStudent = <span class="keyword">new</span> <span class="title class_">Proxy</span>(validate, &#123;</span><br><span class="line">  <span class="attr">apply</span>: <span class="function">(<span class="params">target, thisArg, args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [user] = args;</span><br><span class="line">    <span class="keyword">if</span> (user.<span class="property">age</span> &lt; <span class="number">7</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;不满足学生年龄&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">target</span>(args);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">validateStudent</span>(&#123; <span class="attr">age</span>: <span class="number">7</span> &#125;),<span class="title function_">validateStudent</span>(&#123; <span class="attr">age</span>: <span class="number">8</span> &#125;));</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>Proxy还有<code>has</code>，<code>construct</code>等拦截，先知道有这些东西，用的时候看文档用Proxy实现，而不是自己两眼一抹黑写了半天自己杂乱的代码。</p>
-<p>值得一提的是，很多MVVM框架是用Proxy做数据劫持的，例如Vue3，这样可以监听到对象的变化，从而实现响应式。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-proxy/" data-id="clt8hne6q000ai8oh3czc7dtv" data-title="整理ES6：Proxy的应用场景" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-es6-reflect" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/es6-reflect/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:32:57.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/es6-reflect/">整理ES6：Reflect和Object的关系</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-proxy/">
+        <span>整理ES6：Proxy的应用场景</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/11">https://github.com/taoliujun/blog/issues/11</a></p>
-<!--hexo
----
-url: es6-reflect
-tags:
-  - es6
-  - javascript
----
--->
-
-<h2 id="Reflect是什么"><a href="#Reflect是什么" class="headerlink" title="Reflect是什么"></a>Reflect是什么</h2><p>在我若干年前阅读Reflect文档的那几天，我常闷被里自问，这是个什么玩意？随着时间的推移，我对它的理解越来越深刻，也越来越喜欢它。我想，这是一个值得深入研究的东西。(这句话是Copilot补充的，我觉得很有道理，就留下来了)</p>
-<p>Reflect是操作对象用的，我觉得Reflect最大的用处有两个。</p>
-<p>一是将Object的命令式、函数式混用行为，统一成函数式行为。比如<code>delete obj.key</code>，<code>key in obj</code>对应为<code>Reflect.deleteProperty(obj, key)</code>和<code>Reflect.has(obj, key)</code>。</p>
-<p>二是Reflect的方法和Proxy的拦截器一一对应，这样就可以用Reflect来实现Proxy的拦截器，而不用再写一遍拦截器的逻辑。比如<code>Reflect.get(obj, key)</code>对应为<code>get</code>拦截器，<code>Reflect.set(obj, key, value)</code>对应为<code>set</code>拦截器。</p>
-<p><strong>它拥有的静态方法和Proxy一样多</strong></p>
-<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// user.age</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Reflect</span>.<span class="title function_">get</span>(user, <span class="string">&quot;age&quot;</span>));</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20</span><br></pre></td></tr></table></figure>
-
-<p>代码很好理解，不一一表述了。</p>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// user.name = &#x27;李四&#x27;</span></span><br><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">set</span>(user, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;李四&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; name: &#x27;李四&#x27;, age: 20 &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">20</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">deleteProperty</span>(user, <span class="string">&quot;name&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; age: 20 &#125;</span><br></pre></td></tr></table></figure>
-
-<p>更多的方法见MDN即可。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/es6-reflect/" data-id="clt8hne6s000di8ohhg557c68" data-title="整理ES6：Reflect和Object的关系" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-github-actions-runs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-runs/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:32:01.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-runs/">6. GitHub Actions - Managing workflow runs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/10">https://github.com/taoliujun/blog/issues/10</a></p>
-<!--hexo
----
-url: github-actions-runs
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow">https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow</a></p>
-<h2 id="手动执行"><a href="#手动执行" class="headerlink" title="手动执行"></a>手动执行</h2><p>设置<code>event</code>包含<code>workflow_dispatch</code>，可以手动触发，使用Github CLI、Browser都可以，文档中呈现了一个流程图示例。</p>
-<h2 id="重复执行"><a href="#重复执行" class="headerlink" title="重复执行"></a>重复执行</h2><p>无</p>
-<h2 id="取消执行"><a href="#取消执行" class="headerlink" title="取消执行"></a>取消执行</h2><p>无</p>
-<h2 id="审批执行"><a href="#审批执行" class="headerlink" title="审批执行"></a>审批执行</h2><p>对于pull request，可以设置审批执行以防止浪费actions资源。</p>
-<h2 id="审查部署"><a href="#审查部署" class="headerlink" title="审查部署"></a>审查部署</h2><p>无</p>
-<h2 id="开关workflow"><a href="#开关workflow" class="headerlink" title="开关workflow"></a>开关workflow</h2><p>无</p>
-<h2 id="跳过workflow"><a href="#跳过workflow" class="headerlink" title="跳过workflow"></a>跳过workflow</h2><p>在commit message中加入关键词可以跳过workflow，只对push、pull_request事件有效。关键词有：</p>
-<ul>
-<li>[skip ci]</li>
-<li>[ci skip]</li>
-<li>[no ci]</li>
-<li>[skip actions]</li>
-<li>[actions skip]</li>
-</ul>
-<p>也可以在message后空两行，然后加入关键词：</p>
-<ul>
-<li>skip-checks:true</li>
-<li>skip-checks: true</li>
-</ul>
-<h2 id="删除workflow"><a href="#删除workflow" class="headerlink" title="删除workflow"></a>删除workflow</h2><p>无</p>
-<h2 id="下载workflow归档"><a href="#下载workflow归档" class="headerlink" title="下载workflow归档"></a>下载workflow归档</h2><p>可以下载90天内的workflow归档，操作参考文档。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-runs/" data-id="clt8hne710011i8oh7eok4ahc" data-title="6. GitHub Actions - Managing workflow runs" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-github-actions-jobs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-jobs/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:31:40.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-jobs/">5. GitHub Actions - Using jobs</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/es6-reflect/">
+        <span>整理ES6：Reflect和Object的关系</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/9">https://github.com/taoliujun/blog/issues/9</a></p>
-<!--hexo
----
-url: github-actions-jobs
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow">https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow</a></p>
-<h2 id="使用jobs"><a href="#使用jobs" class="headerlink" title="使用jobs"></a>使用jobs</h2><ul>
-<li>jobs组成workflow，jobs默认并行执行，使用needs管理依赖执行。</li>
-<li>job id命名要唯一，由字母、数字、-、_组成。</li>
-</ul>
-<h2 id="使用runner"><a href="#使用runner" class="headerlink" title="使用runner"></a>使用runner</h2><p>可以使用github提供的机器，也可以自建机器，没啥其他重要的。</p>
-<h2 id="执行条件"><a href="#执行条件" class="headerlink" title="执行条件"></a>执行条件</h2><p>执行if表达式的结果，决定是否执行本job。举例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">example-workflow</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">production-deploy:</span></span><br><span class="line">    <span class="attr">if:</span> <span class="string">github.repository</span> <span class="string">==</span> <span class="string">&#x27;octo-org/octo-repo-prod&#x27;</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&#x27;14&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">-g</span> <span class="string">bats</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>晦涩的词语，理解为遍历变量创建重复执行的job，如下，该job将执行6次，在两个runner上分别执行3种node版本的job。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">example_matrix:</span></span><br><span class="line">    <span class="attr">strategy:</span></span><br><span class="line">      <span class="attr">matrix:</span></span><br><span class="line">        <span class="attr">os:</span> [<span class="string">ubuntu-22.04</span>, <span class="string">ubuntu-20.04</span>]</span><br><span class="line">        <span class="attr">version:</span> [<span class="number">10</span>, <span class="number">12</span>, <span class="number">14</span>]</span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">$&#123;&#123;</span> <span class="string">matrix.os</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">$&#123;&#123;</span> <span class="string">matrix.version</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>也可以使用上下文创建matrix变量。</p>
-<p>matrix还支持自身简单的覆盖扩展，参考文档即可。</p>
-<h2 id="并发策略"><a href="#并发策略" class="headerlink" title="并发策略"></a>并发策略</h2><p>同时只能运行一个符合策略的job或workflow，并决定是否终止同组的job或workflow。</p>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>无</p>
-<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>暂时用不到，无</p>
-<h2 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h2><p>可以在workflow和job级别分别设置默认值，目前支持设置<code>shell</code>、<code>working-directory</code>。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-jobs/" data-id="clt8hne6y000si8oh4dkm54lp" data-title="5. GitHub Actions - Using jobs" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-github-actions-workflows" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-workflows/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:31:08.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-workflows/">4. GitHub Actions - Using workflows</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/8">https://github.com/taoliujun/blog/issues/8</a></p>
-<!--hexo
----
-url: github-actions-workflows
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/about-workflows">https://docs.github.com/en/actions/using-workflows/about-workflows</a></p>
-<p>原文很长，但随着对Github Actions的了解，笔记也会越来越短。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>更详细介绍了workflow的构成，没啥特别重要点。</p>
-<h2 id="触发"><a href="#触发" class="headerlink" title="触发"></a>触发</h2><p>再次复习下触发的几种情况：github、计划任务、手动。</p>
-<h3 id="Branches过滤"><a href="#Branches过滤" class="headerlink" title="Branches过滤"></a>Branches过滤</h3><p>可以通过 branches 、branches-ignore 过滤或排除分支，支持glob patterns。还可以在 branches 前面用!修饰为“非”。比如：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span>    </span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;releases/**&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;!releases/**-alpha&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Tags过滤"><a href="#Tags过滤" class="headerlink" title="Tags过滤"></a>Tags过滤</h3><p>对于tags 的过滤处理和branches是一致的，只是修改了名字为tags、tags-ignore。</p>
-<h3 id="Types过滤"><a href="#Types过滤" class="headerlink" title="Types过滤"></a>Types过滤</h3><p>可以理解为事件的具体行为，比如 issue_commot事件的created行为。</p>
-<h3 id="Paths过滤"><a href="#Paths过滤" class="headerlink" title="Paths过滤"></a>Paths过滤</h3><p>文件路径过滤也是基本功能了，使用paths、paths-ignore处理，举例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;**.js</span></span><br></pre></td></tr></table></figure>
-
-<p>注意，一些过滤场景并不允许 a和a-ignore一起使用，需要注意的。</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>还可以对input进行参数过滤，以满足更丰富的触发条件配置。</li>
-<li>对github的属性，如pull request发起人的名字进行过滤。</li>
-</ul>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>列举了常见的30几种事件，大部分事件包含多种行为。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>涵盖了workflow的大部分配置项。</p>
-<h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><p>actions如何和bash交换变量，使用actions&#x2F;toolkit可以简单做到。</p>
-<h2 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h2><p>注意复用的上下文</p>
-<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>可以缓存npm的依赖以节省install的时间，注意缓存的跨分支适用策略。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/es6/">
+                  #es6
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/javascript/">
+                  #javascript
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-workflows/" data-id="clt8hne720016i8ohef8w3v84" data-title="4. GitHub Actions - Using workflows" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-github-actions-examples" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-examples/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:30:34.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-examples/">3. GitHub Actions - Examples</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-runs/">
+        <span>6. GitHub Actions - Managing workflow runs</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/7">https://github.com/taoliujun/blog/issues/7</a></p>
-<!--hexo
----
-url: github-actions-examples
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/examples/using-scripts-to-test-your-code-on-a-runner">https://docs.github.com/en/actions/examples/using-scripts-to-test-your-code-on-a-runner</a></p>
-<p>官方描述了3个例子，用来检测文件中的broken，我读书少，就依葫芦画瓢写一个eslint检测增量文件的功能，完成以下功能：</p>
-<ul>
-<li>pull_request触发workflow。</li>
-<li>使用eslint检查pull request的增量文件。</li>
-<li>在pull request中回复检测结果。</li>
-</ul>
-<p>代码见：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/npm-packages/blob/master/.github/workflows/check-pull-request.yml">https://github.com/taoliujun/npm-packages/blob/master/.github/workflows/check-pull-request.yml</a></p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-examples/" data-id="clt8hne6w000ni8oh3793hs4v" data-title="3. GitHub Actions - Examples" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-github-actions-learn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-learn/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:29:53.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-learn/">2. GitHub Actions - Learn GitHub Actions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/6">https://github.com/taoliujun/blog/issues/6</a></p>
-<!--hexo
----
-url: github-actions-learn
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions">https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions</a></p>
-<p>官方文档有点长，阅读了两天，容易让人阅读瞌睡，除了要熟知术语部分，其他部分看一遍知道有这些东西就行了，回头使用的时候翻看官方文档即可。</p>
-<h2 id="理解GitHub-Actions和术语"><a href="#理解GitHub-Actions和术语" class="headerlink" title="理解GitHub Actions和术语"></a>理解GitHub Actions和术语</h2><p>GitHub Actions就是通过事件触发工作流，在特定机器中执行一连串工作，每个工作中执行若干个步骤的脚本。</p>
-<p>使用人类行为来举例，我说：“老婆，你去炒个青椒炒肉丝吧。”</p>
-<ul>
-<li>口头说话（Events）会触发老婆的工作流（Workflows）：炒青椒肉丝。</li>
-<li>工作流包含了两个工作（Jobs）：配菜、炒菜。</li>
-<li>配菜工作包含多个步骤（Steps）：清洗青椒、切青椒丝、清洗猪肉、切猪肉丝。</li>
-<li>老婆有一个绞肉机（Actions），它可以完成切猪肉丝的工作而不需要关注细节。</li>
-</ul>
-<p>它包含了下面几个重要的术语。</p>
-<h3 id="Workflows（工作流）"><a href="#Workflows（工作流）" class="headerlink" title="Workflows（工作流）"></a>Workflows（工作流）</h3><p>项目有若干个工作流，它们在不同的事件时机触发。比如，口头说话触发炒青椒肉丝。</p>
-<p>工作流还可以互相引用。比如，做一顿晚饭工作流，包含了炒青椒肉丝工作流。</p>
-<h3 id="Events（事件）"><a href="#Events（事件）" class="headerlink" title="Events（事件）"></a>Events（事件）</h3><p>Github提供了一系列触发工作流的事件，比如发起了pull request，create issue，push commit。</p>
-<p>它还包括两种特殊的事件：</p>
-<ul>
-<li>手动触发，比如你想执行工作流看看全量eslint检测结果。</li>
-<li>计划任务，比如你想每月30号看看全量eslint检测结果。</li>
-</ul>
-<h3 id="Jobs（工作）"><a href="#Jobs（工作）" class="headerlink" title="Jobs（工作）"></a>Jobs（工作）</h3><p>Workflows由多个Jobs组成。</p>
-<p>每个Job运行在<strong>同一机器上</strong>，执行很多步骤的脚本，脚本可以是自定义的shell（比如自己切肉丝，要关注细节：使用什么刀，每个肉丝有多细），也可以是封装好的Actions（比如绞肉机）。</p>
-<p><strong>步骤按顺序执行</strong>，可以共享数据，比如切青椒的步骤，可以读取到青椒清洗的农药残留数据。</p>
-<p><strong>工作还可以依赖</strong>，默认情况下，工作并行执行，但有些场景工作是依赖的，比如炒菜工作，要依赖于配菜工作的完成。</p>
-<h3 id="Actions（脚本动作封装）"><a href="#Actions（脚本动作封装）" class="headerlink" title="Actions（脚本动作封装）"></a>Actions（脚本动作封装）</h3><p>顾名思义，就是将通用的动作封装起来，方便整个宇宙的程序员去使用。比如绞肉机就是将切肉丝的动作封装了起来。</p>
-<p>可以在Github Marketplace中找到和分享Actions.</p>
-<h3 id="Runners（运行的机器）"><a href="#Runners（运行的机器）" class="headerlink" title="Runners（运行的机器）"></a>Runners（运行的机器）</h3><p>工作流不能凭空执行，它也是运行在机器上的，它可以是虚拟机、docker容器。Github提供了 Ubuntu Linux、Microsoft Windows、MacOS这几种机器来执行工作流，注意一个限制：<strong>一个机器同时只能执行一个Job</strong>。</p>
-<p>如果官方的机器不能满足你，也可以自动自己的机器来跑工作流，后续会讲到。</p>
-<h2 id="使用Actions"><a href="#使用Actions" class="headerlink" title="使用Actions"></a>使用Actions</h2><p>上面说到Actions是脚本的封装，它可以是社区市场中的Actions，也可以是自定义Actions，甚至是一个Docker镜像。</p>
-<h3 id="Marketplace方式"><a href="#Marketplace方式" class="headerlink" title="Marketplace方式"></a>Marketplace方式</h3><p>Github提供了界面操作，让我们可以方便的在工作流中维护Actions，只要我们在浏览器中编辑yml文件，右侧就出现了Actions市场，可以点开某个Actions，查看它的详细配置。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281126235.png"><br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127958.png"></p>
-<p>对照着Actions的文档，我在Workflow中插入node。现在，我的配置文件长这样：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">lint</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="attr">eslint:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Check</span> <span class="string">out</span> <span class="string">repository</span> <span class="string">code</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">use</span> <span class="string">node</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/setup-node@v3.3.0</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">node-version:</span> <span class="string">latest</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">node</span> <span class="string">-v</span></span><br></pre></td></tr></table></figure>
-
-<p>然后，查看执行结果。<br>​<br><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281127692.png"></p>
-<h3 id="自己的Actions"><a href="#自己的Actions" class="headerlink" title="自己的Actions"></a>自己的Actions</h3><p>还可以在自己的仓库里添加Actions，这里就贴官方原例子了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- root (repository)</span><br><span class="line">|   |__ .github</span><br><span class="line">|       └── workflows</span><br><span class="line">|           └── my-first-workflow.yml</span><br><span class="line">|       └── actions</span><br><span class="line">|           |__ hello-world-action</span><br><span class="line">|               └── action.yml</span><br></pre></td></tr></table></figure>
-
-<p>Example workflow file:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># This step checks out a copy of your repository.</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="comment"># This step references the directory that contains the action.</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">./.github/actions/hello-world-action</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="公共的Actions"><a href="#公共的Actions" class="headerlink" title="公共的Actions"></a>公共的Actions</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br></pre></td></tr></table></figure>
-
-<p>使用其他Github仓库的Actions就是如此简单，我们常使用的actions&#x2F;***，其实也属于公共仓库，它们是由官方维护的一组Actions，比较稳定。点击此处可以看到官方的Actions。</p>
-<h3 id="Docker镜像"><a href="#Docker镜像" class="headerlink" title="Docker镜像"></a>Docker镜像</h3><p>如果Runners和开源Actions都不能满足你，可以搞docker来执行Workflows。</p>
-<p>因本人的docker水平属于“哇，我能启动docker，我真厉害”，就不展开讲了。</p>
-<h3 id="不同版本的Actions"><a href="#不同版本的Actions" class="headerlink" title="不同版本的Actions"></a>不同版本的Actions</h3><p>Actions本质上是仓库里的文件，它会有版本区分，我们有好几种方法使用它：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用tag</span></span><br><span class="line"><span class="attr">uses:</span> <span class="string">actions/javascript-action@v1.0.1</span></span><br><span class="line"><span class="comment"># 使用commitID</span></span><br><span class="line"><span class="attr">uses:</span> <span class="string">actions/javascript-action@172239021f7ba04fe7327647b213799853a9eb89</span></span><br><span class="line"><span class="comment"># 使用branch</span></span><br><span class="line"><span class="attr">uses:</span> <span class="string">actions/javascript-action@main</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h2><p>这部分文档看的云里雾里的，讲了一些如何使用变量，如何在Jobs里共享数据，不知道这些内容出现在这里的目的是什么，略过。</p>
-<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>支持在配置中使用表达式，我简单的记录了下，实际使用需要参照官方文档，它包含了以下。</p>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>支持<code>boolean</code>，<code>null</code>，<code>number</code>，<code>string</code> 类型。如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="attr">myNull:</span> <span class="string">$&#123;&#123;</span> <span class="literal">null</span> <span class="string">&#125;&#125;</span></span><br><span class="line">  <span class="attr">myBoolean:</span> <span class="string">$&#123;&#123;</span> <span class="literal">false</span> <span class="string">&#125;&#125;</span></span><br><span class="line">  <span class="attr">myIntegerNumber:</span> <span class="string">$&#123;&#123;</span> <span class="number">711</span> <span class="string">&#125;&#125;</span></span><br><span class="line">  <span class="attr">myString:</span> <span class="string">Mona</span> <span class="string">the</span> <span class="string">Octocat</span></span><br><span class="line">  <span class="attr">myStringInBraces:</span> <span class="string">$&#123;&#123;</span> <span class="string">&#x27;It&#x27;</span><span class="string">&#x27;s open source!&#x27;</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><p>一些如值比较、逻辑与、逻辑或的操作，不一一列举了。</p>
-<p>注意不是强类型的比较，有一些值转换的逻辑。</p>
-<h3 id="内置方法"><a href="#内置方法" class="headerlink" title="内置方法"></a>内置方法</h3><p>提供了一些内置方法辅助表达式，比如 <code>contains</code> 判断是否包含某个字符，不一一列举了。</p>
-<h3 id="状态处理"><a href="#状态处理" class="headerlink" title="状态处理"></a>状态处理</h3><p>Jobs的每个步骤会按顺序执行，我们可以在某个步骤中加入对“已经执行的步骤”的状态判断，来决定是否要执行当前步骤。比如，只有青椒清洗步骤成功了，才执行青椒切丝步骤。举例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">steps:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="comment"># 前面的步骤都执行成功了，再执行该步骤</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">The</span> <span class="string">job</span> <span class="string">has</span> <span class="string">succeeded</span></span><br><span class="line">    <span class="attr">if:</span> <span class="string">$&#123;&#123;</span> <span class="string">success()</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>它还有以下几种状态结果：</p>
-<ul>
-<li><strong>always</strong>，只要执行了</li>
-<li><strong>success</strong>，执行成功了</li>
-<li><strong>cancelled</strong>，执行取消了</li>
-<li><strong>failure</strong>，执行失败了</li>
-</ul>
-<h2 id="上下文（重要）"><a href="#上下文（重要）" class="headerlink" title="上下文（重要）"></a>上下文（重要）</h2><p>上下文指工作流运行中可以访问的属性，你可以在<strong>表达式中</strong>访问上下文，比如访问当前仓库的地址<code>github.repositoryUrl</code>。它是<strong>job串起来的重要保障</strong>。</p>
-<p>它提供了一组模块的上下文：github、env、job、steps、runner、needs等等。</p>
-<p>如下演示了一个简单的上下文访问：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span></span><br><span class="line"><span class="attr">on:</span> <span class="string">push</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">prod-check:</span></span><br><span class="line">    <span class="attr">if:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.ref</span> <span class="string">==</span> <span class="string">&#x27;refs/heads/main&#x27;</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;hello $<span class="template-variable">&#123;&#123; github.actor &#125;&#125;</span>, branch is $GITHUB_REF&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>重要点：</p>
-<ul>
-<li>在不同的节点，上下文的可访问性有所不同，文档贴出了表格，这在使用的时候要注意。</li>
-<li>env由内往外覆盖</li>
-</ul>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>还可以在Workflows、Jobs、Steps中设置和访问环境变量。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">lint</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">    <span class="attr">YOUR_NAME:</span> <span class="string">wang</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="attr">eslint:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">            <span class="attr">YOUR_SEX:</span> <span class="string">boy</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">test</span></span><br><span class="line">              <span class="attr">env:</span></span><br><span class="line">                  <span class="attr">YOUR_AGE:</span> <span class="number">18</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;Hello, $<span class="template-variable">&#123;&#123; env.YOUR_NAME &#125;&#125;</span>, your sex is $YOUR_SEX, your age is $YOUR_AGE&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>也提供一系列系统环境变量供访问，注意避开同名。</p>
-<h2 id="收费和限制"><a href="#收费和限制" class="headerlink" title="收费和限制"></a>收费和限制</h2><p>略</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-learn/" data-id="clt8hne6z000ui8ohc8en5vzx" data-title="2. GitHub Actions - Learn GitHub Actions" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-github-actions-quickstart" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-quickstart/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:29:06.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-quickstart/">1. GitHub Actions - Quickstart</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-jobs/">
+        <span>5. GitHub Actions - Using jobs</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/5">https://github.com/taoliujun/blog/issues/5</a></p>
-<!--hexo
----
-url: github-actions-quickstart
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/quickstart">https://docs.github.com/en/actions/quickstart</a></p>
-<p>本文里，因为还没有讲术语的意思，所以用中文描述了基本的执行过程，后续的文章里会用原术语来表达，以防理解不一。</p>
-<p>文档说，只要有仓库，就可以使用Actions。</p>
-<p>依葫芦画瓢，在本地创建 <code>.github/workflows</code> 目录，在目录里创建任意文件，以.yml结尾，我创建了 <code>lint.yml</code>：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">lint</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="attr">eslint:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;The job was automatically triggered by a $<span class="template-variable">&#123;&#123; github.event_name &#125;&#125;</span> event.&quot;</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Check</span> <span class="string">out</span> <span class="string">repository</span> <span class="string">code</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">List</span> <span class="string">files</span> <span class="string">in</span> <span class="string">the</span> <span class="string">repository</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">ls</span> <span class="string">$&#123;&#123;</span> <span class="string">github.workspace</span> <span class="string">&#125;&#125;</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;  This job&#x27;s status is $<span class="template-variable">&#123;&#123; job.status &#125;&#125;</span>.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>配置文件有很多术语在后面的笔记中讲解，对于上面的配置简单的解释下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这个工作流的名字: lint</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">lint</span></span><br><span class="line"><span class="comment"># 在分支push的时候触发</span></span><br><span class="line"><span class="attr">on:</span> [<span class="string">push</span>]</span><br><span class="line"><span class="comment"># 工作列表，例子里只做一个eslint工作</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="comment"># 这一步工作名叫做eslint</span></span><br><span class="line">    <span class="attr">eslint:</span></span><br><span class="line">        <span class="comment"># 代码执行在ubuntu-latest的宿主里，注：ubuntu-latest是github提供的免费的宿主。</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="comment"># 执行哪些代码</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="comment"># 执行一个普通的shell脚本，就是 echo &#x27;巴拉巴拉巴拉巴拉一段话&#x27;，这段话里的$&#123;&#123;github.event_name&#125;&#125;</span></span><br><span class="line">            <span class="comment"># 是一个变量，这个变量由actions上下文提供，望文生义，event_name是事件名称的意思</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;  The job was automatically triggered by a $<span class="template-variable">&#123;&#123; github.event_name &#125;&#125;</span> event.&quot;</span></span><br><span class="line">            <span class="comment"># 为这一步脚本定一个名字，叫做 巴拉巴拉</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Check</span> <span class="string">out</span> <span class="string">repository</span> <span class="string">code</span></span><br><span class="line">              <span class="comment"># 我们使用别人提供的封装好的脚本，这里的意思是使用官方提供的 actions/checkout 的脚本的v3版本</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">            <span class="comment"># 又定义一个名字，叫做 巴拉巴拉</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">List</span> <span class="string">files</span> <span class="string">in</span> <span class="string">the</span> <span class="string">repository</span></span><br><span class="line">              <span class="comment"># 再一次运行自定义的脚本，列出目录结构，这儿又使用了一个变量</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">ls</span> <span class="string">$&#123;&#123;</span> <span class="string">github.workspace</span> <span class="string">&#125;&#125;</span></span><br><span class="line">            <span class="comment"># 最后再执行一个自定义脚本，输出一段话，包含了当前工作的执行状态</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;  This job&#x27;s status is $<span class="template-variable">&#123;&#123; job.status &#125;&#125;</span>.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>而后，将代码推送到github仓库，我们进入仓库页面，点击 Actions 面板，看到 workflows记录，进入详情看到类似面板。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281119773.png"></p>
-<p>这个面板展示了lint.yml这个工作流的执行状态，它列出所有的工作及其状态以及执行时间。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taoliujun/static/blog/202306281120264.png"></p>
-<p>进入工作流的执行详情，可以看到每个工作的每一步脚本的详细执行过程和输出结果，就不一一表述了，后续会讲到。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-quickstart/" data-id="clt8hne70000yi8ohfpzzd528" data-title="1. GitHub Actions - Quickstart" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-github-actions-intro" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-intro/" class="article-date">
-  <time class="dt-published" datetime="2023-07-05T22:27:24.000Z" itemprop="datePublished">2023-07-06</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-intro/">0. GitHub Actions - Intro</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/4">https://github.com/taoliujun/blog/issues/4</a></p>
-<!--hexo
----
-url: github-actions-intro
-tags:
-  - github actions
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a></p>
-<p>之前依葫芦画瓢使用了CI，并未对此做系统的了解，近期通读了一遍Github Actions文档，本系列文章是个人在 <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a> 学习过程的杂乱记录，它是这样的：</p>
-<ul>
-<li>本文章系列不同于官方文档的中文翻译，只是加入个人理解的学习日记，内容不会完全覆盖。</li>
-<li>时间背景是 2023年12月份。</li>
-<li>按照官方文档的顺序做了笔记，但忽略了个人认为不重要的部分。</li>
-<li>都是经验主义的理解，并且由于本人英文水平有限，会有理解出错的地方。</li>
-<li>部分理解也未基于代码实际运行结果，纯属经验和猜测。</li>
-<li>因为文档术语翻译往往词不达意，所以会有很多中英参杂。</li>
-</ul>
-<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>既然你搜索到本文，想必是知道它是干什么的。我概括为：</p>
-<blockquote>
-<p>GitHub Actions允许你在某些行为（比如push master分支）后，利用特定机器，执行脚本（比如eslint check），并反馈结果形成一个job。job可以串起来，以完成更复杂的自动化操作。</p>
-</blockquote>
-<h2 id="和CI的关系"><a href="#和CI的关系" class="headerlink" title="和CI的关系"></a>和CI的关系</h2><p>CI&#x2F;CD是执行自动化工作流的持续发布策略，它存在于gitlab、github、jekins，甚至你在服务器上写了一个简单的计划任务拉取仓库代码后进行打包的脚本，也可以称之为CI。</p>
-<p>在github.com上的CI就是GitHub Actions，它提供了一组特定的环境变量、上下文、宿主机器。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-intro/" data-id="clt8hne6x000qi8ohhrsiazvn" data-title="0. GitHub Actions - Intro" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-workflows/">
+        <span>4. GitHub Actions - Using workflows</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-examples/">
+        <span>3. GitHub Actions - Examples</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-learn/">
+        <span>2. GitHub Actions - Learn GitHub Actions</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-quickstart/">
+        <span>1. GitHub Actions - Quickstart</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-intro/">
+        <span>0. GitHub Actions - Intro</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-07-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-07-06
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
   
 
-
-  <nav id="page-nav">
+  <nav class="page-navigation">
     
-    <a class="extend prev" rel="prev" href="/blog/page/2/">&laquo; zurück</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/4/">weiter &raquo;</a>
+      <a href="/blog/page/2/">上一页</a>
+    
+    
+      <a href="/blog/page/4/">下一页</a>
+    
   </nav>
 
-</section>
-        
-          <aside id="sidebar">
-  
+   
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> | Theme - <a target="_blank" rel="noopener" href="https://github.com/dongyuanxin/theme-bmw">BMW</a>
+    <br>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Battery-Status/" rel="tag">Battery Status</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Broadcast-Channel/" rel="tag">Broadcast Channel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/blog/tags/Background-Tasks/" style="font-size: 10px;">Background Tasks</a> <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Battery-Status/" style="font-size: 10px;">Battery Status</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/Broadcast-Channel/" style="font-size: 10px;">Broadcast Channel</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/web-api-Broadcast_Channel_API/">Web API - Broadcast Channel</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Battery_Status_API/">Web API - Battery Status</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Beacon_API/">Web API - Beacon</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Badging_API/">Web API - Badging</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 taoliujun<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+  </p>
 </footer>
 
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/blog/" class="mobile-nav-link">Home</a>
-  
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
     
 
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
 
-<script src="/blog/js/jquery-3.6.4.min.js"></script>
+    
+  </body>
 
-
-
-  
-<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/blog/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
 </html>

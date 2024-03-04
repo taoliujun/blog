@@ -1,1104 +1,966 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
+  
 <head>
   <meta charset="utf-8">
+  <meta name="author" content="董沅鑫, yuanxin.me@gmail.com" />
+  
   
   
   <title>TaoLiuJun&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TaoLiuJun&#39;s Blog">
-<meta property="og:url" content="https://taoliujun.github.io/blog/index.html">
-<meta property="og:site_name" content="TaoLiuJun&#39;s Blog">
-<meta property="og:description" content="Html&#x2F;Css&#x2F;JavaScript&#x2F;TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
-<meta property="og:locale">
-<meta property="article:author" content="taoliujun">
-<meta property="article:tag" content="前端 JavaScript TypeScript React NodeJS">
-<meta name="twitter:card" content="summary">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
   
-    <link rel="alternate" href="/blog/atom.xml" title="TaoLiuJun's Blog" type="application/atom+xml">
+    <meta name="keywords" content="" />
   
+
+  <script>
+    console.log('\n%c Hexo-theme-bmw v4.0 ' + '%c 🎉 https://github.com/dongyuanxin/theme-bmw 🎉\n' + '\n%c View demo online ' + '%c 🔍 https://godbmw.com/ 🔍  \n' , 'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', '');
+  </script>
+
   
-    <link rel="shortcut icon" href="/blog/favicon.png">
+    <meta name="description" content="Html/Css/JavaScript/TypeScript的学习心得；React的学习心得；技术设计思想；生活随想；">
   
+
   
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/blog/css/base.css">
+<link rel="stylesheet" href="/blog/icon/iconfont.css">
+<link rel="stylesheet" href="/blog/css/github-markdown.css">
+<link rel="stylesheet" href="/blog/css/highlight.css">
+
+
+  
+<script src="/blog/js/util.js"></script>
+<script src="/blog/js/valine.min.js"></script>
+
+
+  
+
+  
 
   
   
-<link rel="stylesheet" href="/blog/css/style.css">
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js" async></script>
+  
+  
 
-  
-    
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
-
-  
-  
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">TaoLiuJun&#39;s Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">博客更新有延迟，在 https://github.com/taoliujun/blog/issues 获取最新文章和讨论</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/blog/">Home</a>
-        
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://taoliujun.github.io/blog"></form>
+  <body>
+
+    
+
+    <div id="app">
+
+      <div class="header-wrap">
+  <header>
+    <div class="site-brand">
+      <div class="site-title">
+        <a href="/blog/">Taoliujun&#39;s Blog</a>
       </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-web-api-Broadcast_Channel_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-Broadcast_Channel_API/" class="article-date">
-  <time class="dt-published" datetime="2024-03-01T02:00:22.000Z" itemprop="datePublished">2024-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-Broadcast_Channel_API/">Web API - Broadcast Channel</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <nav class="site-navigation">
+      <ul class="nav-menu">
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/59">https://github.com/taoliujun/blog/issues/59</a></p>
-<!--hexo
----
-url: web-api-Broadcast_Channel_API
-tags:
-  - webapi
-  - Broadcast Channel
----
--->
+        <li class="nav-item" data-path="/">
+          
+            <a 
+              href="/blog/"
+              target="_self"
+            >
+              主页
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          
+            <a 
+              href="/blog/archives/"
+              target="_self"
+            >
+              所有文章
+            </a>
+          
+        </li>
+      
+        <li class="nav-item" data-path="https://github.com/taoliujun/blog/issues">
+          
+            <a 
+              href="https://github.com/taoliujun/blog/issues"
+              target="_self"
+            >
+              github
+            </a>
+          
+        </li>
+      
+      </ul>
+    </nav>
+    <i class="iconfont icon-menu"></i>
+  </header>
+</div>
 
-<h1 id="Broadcast-Channel"><a href="#Broadcast-Channel" class="headerlink" title="Broadcast Channel"></a>Broadcast Channel</h1><blockquote>
-<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API">https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API</a></p>
-</blockquote>
-<p><strong>Broadcast Channel</strong>可以在<strong>同源</strong>情况下，在一种浏览器的不同窗口、标签页、frame中简单通信。</p>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="BroadcastChannel"><a href="#BroadcastChannel" class="headerlink" title="BroadcastChannel"></a>BroadcastChannel</h3><p>传入频道名称，返回实例，包含了<code>message</code>事件来监听消息、<code>postMessage</code>方法来发送信息。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-apis/Broadcast_Channel_API/index.html">https://taoliujun.github.io/example/web-apis/Broadcast_Channel_API/index.html</a></p>
-<ol>
-<li>打开两个Chrome窗口，查看日志：</li>
-</ol>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/8c0fdb6e-0318-49cd-8040-f90ca0738a13" alt="image"></p>
+<script>
+  let links = document.querySelectorAll('.nav-item');
+  for(let link of links){
+    let childrenLink = link.querySelector('ul');
+    link.addEventListener('mouseenter', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown active";
+      }
+    })
+    link.addEventListener('mouseleave', () => {
+      if(childrenLink) {
+        childrenLink.className = "nav-menu--dropdown";
+      }
+    })
+  }
+  let rootRealPath = getRealPath(window.location.pathname, true);
+  for(let link of links) {
+    let linkPath = link.getAttribute("data-path");
+    if(linkPath && getRealPath(linkPath, true) === rootRealPath) {
+      link.className = "nav-item hover";
+    }
+  }
 
+  let iconMenu = document.querySelector("i.iconfont.icon-menu"),
+    iconMenuClicked = false;
+  let navDOM = document.querySelector("nav.site-navigation");
+  iconMenu.addEventListener("click", () => {
+    iconMenuClicked 
+      ? navDOM.className = "site-navigation active"
+      : navDOM.className = "site-navigation";
+    iconMenuClicked = !iconMenuClicked;
+  })
+</script>
+
+      
+<div class="container home-index">
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-Broadcast_Channel_API/">
+        <span>Web API - Broadcast Channel</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-03-01
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-03-01
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-Broadcast_Channel_API/" data-id="clt8hne7c002bi8ohfzyr9vej" data-title="Web API - Broadcast Channel" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Broadcast-Channel/" rel="tag">Broadcast Channel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-web-api-Battery_Status_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-Battery_Status_API/" class="article-date">
-  <time class="dt-published" datetime="2024-03-01T01:34:25.000Z" itemprop="datePublished">2024-03-01</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-Battery_Status_API/">Web API - Battery Status</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/58">https://github.com/taoliujun/blog/issues/58</a></p>
-<!--hexo
----
-url: web-api-Battery_Status_API
-tags:
-  - webapi
-  - Battery Status
----
--->
-
-<h1 id="Battery-Status"><a href="#Battery-Status" class="headerlink" title="Battery Status"></a>Battery Status</h1><blockquote>
-<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API">https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API</a></p>
-</blockquote>
-<p><strong>Battery Status</strong>可以查看电池信息、监听充电状态变化。</p>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="BatteryManager"><a href="#BatteryManager" class="headerlink" title="BatteryManager"></a>BatteryManager</h3><p>设备电池对象。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="getBattery"><a href="#getBattery" class="headerlink" title="getBattery"></a>getBattery</h3><p>返回<code>Promise&lt;BatteryManager&gt;</code></p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-apis/Battery_Status_API/index.html">https://taoliujun.github.io/example/web-apis/Battery_Status_API/index.html</a></p>
-<ol>
-<li>拔掉笔记本充电线，再插上充电线，可以看到监听到充电状态变化。</li>
-</ol>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/9944f20b-95b2-4bc2-b2c6-01c7cdcdf80d" alt="image"></p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/Broadcast-Channel/">
+                  #Broadcast Channel
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-Battery_Status_API/" data-id="clt8hne7a0021i8ohdd78avcq" data-title="Web API - Battery Status" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Battery-Status/" rel="tag">Battery Status</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-web-api-Background_Tasks_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-Background_Tasks_API/" class="article-date">
-  <time class="dt-published" datetime="2024-02-29T19:56:11.000Z" itemprop="datePublished">2024-03-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-Battery_Status_API/">
+        <span>Web API - Battery Status</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-03-01
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-03-01
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/55">https://github.com/taoliujun/blog/issues/55</a></p>
-<!--hexo
----
-url: web-api-Background_Tasks_API
-tags:
-  - webapi
-  - Background Tasks
----
--->
-
-<h1 id="Background-Task"><a href="#Background-Task" class="headerlink" title="Background Task"></a>Background Task</h1><blockquote>
-<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API">https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API</a></p>
-</blockquote>
-<p><strong>Background Tasks</strong>用于在空闲时间执行队列任务，从而<strong>不阻塞事件处理和屏幕更新</strong>。</p>
-<p>我们遇到的大部分浏览器卡顿场景是因为代码执行时间太长，阻塞了用户交互、DOM绘制。</p>
-<p>在以前，可以将耗时任务分为若干份，每一份执行N次任务，每M毫秒执行一份代码，直至所有任务被执行完成。虽然减轻了卡顿率，但存在以下问题：</p>
-<ul>
-<li>要主观判断N次任务的耗时不超过10ms，在一帧中留下充足的时间去处理交互、DOM绘制等。</li>
-<li>不超过10ms的N次任务，在每一帧的瞬时性能中，实际耗时是不一样的。所以如何定义N的值，也是主观而不科学的。</li>
-<li>在每一帧中，任务仍然会耗时过长而阻塞交互、绘制。</li>
-</ul>
-<p>现在，Background Task提供了方法，获取到当前留下了多少空闲时间，在这段时间里可以尽量的执行若干次任务。但仍需注意，只运行那些<strong>单次耗时时间很短的任务</strong>。</p>
-<blockquote>
-<p>“单次耗时时间很短”是什么意思？在不同的场景中，这个时间是可以浮动的。</p>
-<ul>
-<li>在用户点击按钮以查看最新文本信息的场景中，这个时间可以定义为100ms，因为用户在此时间后得到反馈，是不觉得卡顿的。</li>
-<li>在用户快速输入文本以反馈到屏幕上、或滚动订单列表的场景中，这个时间要定义为10ms，因为用户在快速的操作中得不到瞬间反馈就容易感受到卡顿。</li>
-</ul>
-</blockquote>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="requestIdleCallback"><a href="#requestIdleCallback" class="headerlink" title="requestIdleCallback"></a>requestIdleCallback</h3><p>在空闲时间执行回调。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Background_Tasks_API/index.html">https://taoliujun.github.io/example/web-api/Background_Tasks_API/index.html</a></p>
-<ol>
-<li>点击几次”add task”按钮，此时没有任务在运行，发现每一秒都流畅打印出任务量。</li>
-</ol>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/342d899c-45cf-4f61-a529-8846282f2028" alt="image"></p>
-<ol start="2">
-<li>点击”run all tasks”按钮，发现一次跑完所有任务，耗时几千毫秒，此过程中因为DOM绘制被阻塞，打印也卡住了。</li>
-</ol>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/485c6005-7543-42ab-9096-c5b4fcc9681b" alt="image"></p>
-<ol start="3">
-<li>点击”run tasks”按钮，让其循环在空闲时间中跑完所有任务，发现每次执行很少个任务，耗时在几十毫秒，不会阻塞DOM绘制，打印毫无卡顿。</li>
-</ol>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/3b67b0ff-df48-45e9-8c34-6d7327bea1c9" alt="image"></p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-Background_Tasks_API/" data-id="clt8hne79001xi8oh5ietgq6s" data-title="Web API - Background Tasks" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-web-api-Beacon_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-Beacon_API/" class="article-date">
-  <time class="dt-published" datetime="2024-02-28T23:21:58.000Z" itemprop="datePublished">2024-02-29</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-Beacon_API/">Web API - Beacon</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/53">https://github.com/taoliujun/blog/issues/53</a></p>
-<!--hexo
----
-url: web-api-Beacon_API
-tags:
-  - webapi
-  - Beacon
----
--->
-
-<h1 id="Beacon"><a href="#Beacon" class="headerlink" title="Beacon"></a>Beacon</h1><blockquote>
-<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API">https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API</a></p>
-</blockquote>
-<p><strong>Beacon</strong>用于发送请求到服务器，且不需要响应。浏览器会保证在页面卸载前，将请求运行完成。</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="sendBeacon"><a href="#sendBeacon" class="headerlink" title="sendBeacon"></a>sendBeacon</h3><p>通过<em>POST</em>发送少量数据到服务器。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="title function_">sendBeacon</span>(url, data);</span><br></pre></td></tr></table></figure>
-
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Beacon_API/index.html">https://taoliujun.github.io/example/web-api/Beacon_API/index.html</a></p>
-<ol>
-<li>创建一个页面，放一个按钮用于发送<code>manual</code>统计数据：</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;javascript:sendData(&#x27;manual&#x27;);&quot;</span>&gt;</span>sendData<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>在页面隐藏、卸载的时候发送<code>hidden</code>统计数据：</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;visibilitychange&quot;</span>, <span class="function">()=&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">visibilityState</span> === <span class="string">&quot;hidden&quot;</span>) &#123;</span><br><span class="line">    <span class="title function_">sendData</span>(<span class="string">&#x27;hidden&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>3。 发送统计数据的函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sendData</span>(<span class="params">source</span>) &#123;</span><br><span class="line">  data += <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// getUrl用于获取服务端地址</span></span><br><span class="line">  navigator.<span class="title function_">sendBeacon</span>(<span class="title function_">getUrl</span>(), <span class="keyword">new</span> <span class="title class_">URLSearchParams</span>(&#123; data, source &#125;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>创建服务端，打印<em>request body</em>数据以测试点击按钮、关闭页面的效果，发现关闭页面后也发送了数据。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">body: [Object: null prototype] &#123; data: <span class="string">&#x27;1&#x27;</span>, <span class="built_in">source</span>: <span class="string">&#x27;manual&#x27;</span> &#125;</span><br><span class="line">body: [Object: null prototype] &#123; data: <span class="string">&#x27;2&#x27;</span>, <span class="built_in">source</span>: <span class="string">&#x27;hidden&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/Battery-Status/">
+                  #Battery Status
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-Beacon_API/" data-id="clt8hne7b0028i8oh6rf36zu9" data-title="Web API - Beacon" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-web-api-Badging_API" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-Badging_API/" class="article-date">
-  <time class="dt-published" datetime="2024-02-28T00:22:00.000Z" itemprop="datePublished">2024-02-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-Badging_API/">Web API - Badging</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-Background_Tasks_API/">
+        <span>Web API - Background Tasks</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-03-01
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-03-01
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/50">https://github.com/taoliujun/blog/issues/50</a></p>
-<!--hexo
----
-url: web-api-Badging_API
-tags:
-  - webapi
-  - Badging
----
--->
-
-<h1 id="Badging"><a href="#Badging" class="headerlink" title="Badging"></a>Badging</h1><blockquote>
-<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Badging_API">https://developer.mozilla.org/en-US/docs/Web/API/Badging_API</a></p>
-</blockquote>
-<p><strong>Badging</strong>用于在Web APP的图标上<strong>标记徽章</strong>，常用于通知用户有新消息啦，它有3种状态：</p>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>描述</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>nothing</td>
-<td>什么都没有</td>
-<td><img src="https://github.com/taoliujun/blog/assets/5689134/0410ffdf-fbf3-41aa-b3b5-de0aa2ceb671" alt="image"></td>
-</tr>
-<tr>
-<td>flag</td>
-<td>一个圆点</td>
-<td><img src="https://github.com/taoliujun/blog/assets/5689134/965f2c77-8b85-443f-8f97-da491df88354" alt="image"></td>
-</tr>
-<tr>
-<td>integer</td>
-<td>一个数字，最大显示99+</td>
-<td><img src="https://github.com/taoliujun/blog/assets/5689134/f0333758-125b-40b9-a88b-285346730816" alt="image"></td>
-</tr>
-</tbody></table>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="setAppBadge"><a href="#setAppBadge" class="headerlink" title="setAppBadge"></a>setAppBadge</h3><p>设置徽章。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置圆点</span></span><br><span class="line">navigator.<span class="title function_">setAppBadge</span>();</span><br><span class="line"><span class="comment">// 设置数字</span></span><br><span class="line">navigator.<span class="title function_">setAppBadge</span>(<span class="number">12</span>);</span><br><span class="line"><span class="comment">// 设置大数字</span></span><br><span class="line">navigator.<span class="title function_">setAppBadge</span>(<span class="number">1234</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="clearAppBadge"><a href="#clearAppBadge" class="headerlink" title="clearAppBadge"></a>clearAppBadge</h3><p>清空徽章。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="title function_">clearAppBadge</span>();</span><br></pre></td></tr></table></figure>
-
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Badging_API/index.html">https://taoliujun.github.io/example/web-api/Badging_API/index.html</a></p>
-<p>本示例代码较为简单，直接打开查看源码即可。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-Badging_API/" data-id="clt8hne7a0025i8ohhasq15oj" data-title="Web API - Badging" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-web-api-readme" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/web-api-readme/" class="article-date">
-  <time class="dt-published" datetime="2024-02-28T00:10:53.000Z" itemprop="datePublished">2024-02-28</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/web-api-readme/">Web API 实践，最后更新2024/02月...</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/49">https://github.com/taoliujun/blog/issues/49</a></p>
-<!--hexo
----
-url: web-api-readme
-tags:
-  - webapi
----
--->
-
-<p><a target="_blank" rel="noopener" href="https://www.w3.org/TR/">Web API</a>的发展日新月异，稍不留神就偷偷的出了新规范，这些规范为项目方案提供了更多的可能性。话说读百遍不如写一遍，计划在一段时间内，对大部分API进行demo实践以加深印象。</p>
-<blockquote>
-<p>以 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API">https://developer.mozilla.org/en-US/docs/Web/API</a> 为基础，只实践W3C Recommendation状态的API。</p>
-</blockquote>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> #50 </li>
-<li><input checked="" disabled="" type="checkbox"> #53 </li>
-<li><input checked="" disabled="" type="checkbox"> #55 </li>
-<li><input checked="" disabled="" type="checkbox"> #58 </li>
-<li><input disabled="" type="checkbox"> #59</li>
-</ul>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/Background-Tasks/">
+                  #Background Tasks
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/web-api-readme/" data-id="clt8hne7d002fi8oh4cqmc2up" data-title="Web API 实践，最后更新2024/02月..." class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-snapshot-impact-on-coverage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/snapshot-impact-on-coverage/" class="article-date">
-  <time class="dt-published" datetime="2024-01-09T00:44:02.000Z" itemprop="datePublished">2024-01-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/snapshot-impact-on-coverage/">snapshot对单测覆盖率的影响以及应对方案</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-Beacon_API/">
+        <span>Web API - Beacon</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-02-29
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-02-29
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/46">https://github.com/taoliujun/blog/issues/46</a></p>
-<!--hexo
----
-url: snapshot-impact-on-coverage
-tags:
-  - jest
----
--->
-
-<p>Jest snapshot是把双刃剑，虽然使用它可以快速的编写测试用例，但它导致开发者忽略了测试用例的细节设计。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>试想一个场景，有一个方法返回了复杂的结构，开发者A由于懒惰或自信以后能根据snapshot的结果来修复问题，而只写了snapshot。过了一段时间，开发者A或B修改了该方法，发现snapshot匹配失败，那么他会这样做：</p>
-<ol>
-<li>仔细检查匹配失败的原因，然后或修改代码、或更新snapshot。</li>
-<li>直接更新snapshot。</li>
-</ol>
-<p>我相信，大部分人都会选择第二种方式，因为这样更快，更简单。但后果是，大家都只关心了方法的结果，而忽略了方法的细节设计，这样的测试用例是不可靠的。即便在pull request环节，Reviewers面对难以阅读的snapshot文件，也往往是选择了approve。</p>
-<p>所以，需要一个方案来实现几个目的：</p>
-<ul>
-<li>保留snapshot对复杂结构进行测试。</li>
-<li>snapshot不提高覆盖率，因为低覆盖率会警告开发者去关注测试用例的细节设计。</li>
-</ul>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>因为jest的限制，执行用例肯定会影响覆盖率。那么可以执行两次用例，一次是执行包含snapshot的文件来校验用例，一次是执行不包含snapshot的文件来生成测试覆盖率。</p>
-<p>于是，新增两个<code>script</code>：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pnpm exec jest&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;test:coverage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pnpm exec jest --config=jest.coverage.config.js&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
-<p>默认的<code>jest.config.js</code>配置不包含覆盖率配置，而<code>jest.coverage.config.js</code>包含覆盖率配置。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jest.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jest.coverage.config.js</span></span><br><span class="line"><span class="keyword">const</span> baseConfig = <span class="built_in">require</span>(<span class="string">&#x27;./jest.config&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    ...baseConfig,</span><br><span class="line"></span><br><span class="line">    <span class="attr">testMatch</span>: [<span class="string">&#x27;**/src/**/__tests__/**/*.ts&#x27;</span>, <span class="string">&#x27;!**/src/**/__tests__/**/*.snap.test.ts&#x27;</span>],</span><br><span class="line"></span><br><span class="line">    <span class="attr">collectCoverage</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">collectCoverageFrom</span>: [<span class="string">&#x27;src/**/*.ts&#x27;</span>, <span class="string">&#x27;!src/**/*.snap.test.ts&#x27;</span>, <span class="string">&#x27;!src/index.ts&#x27;</span>],</span><br><span class="line">    <span class="attr">coverageDirectory</span>: <span class="string">&#x27;reports/jest&#x27;</span>,</span><br><span class="line">    <span class="attr">coverageThreshold</span>: &#123; <span class="attr">global</span>: &#123; <span class="attr">lines</span>: <span class="number">90</span>, <span class="attr">branches</span>: <span class="number">50</span> &#125; &#125;,</span><br><span class="line">    <span class="attr">coverageReporters</span>: [<span class="string">&#x27;html&#x27;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在<code>jest.coverage.config.js</code>中，<code>testMatch</code>排除执行<code>.snap.test.ts</code>用例文件，<code>collectCoverageFrom</code>也排除了<code>.snap.test.ts</code>文件本身作为源码文件被收集的问题。</p>
-<p>接下来，只需要把包含<code>toMatchSnapshot</code>等方法的测试用例，单独成文件且命名为<code>*.snap.test.ts</code>，就可以了。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/snapshot-impact-on-coverage/" data-id="clt8hne76001ni8oh2e325nn8" data-title="snapshot对单测覆盖率的影响以及应对方案" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-github-actions-sample-eslint-in-pull-request" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/github-actions-sample-eslint-in-pull-request/" class="article-date">
-  <time class="dt-published" datetime="2023-12-28T19:56:49.000Z" itemprop="datePublished">2023-12-29</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/github-actions-sample-eslint-in-pull-request/">7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36">https://github.com/taoliujun/blog/issues/36</a></p>
-<!--hexo
----
-url: github-actions-sample-eslint-in-pull-request
-tags:
-  - github actions
----
--->
-
-<p>一个在pull request发起的时候执行eslint检测的workflow，<a target="_blank" rel="noopener" href="https://github.com/taoliujun/npm-packages/blob/master/.github/workflows/check-pull-request.yml">点此查看完整代码</a>，它实现的功能如下：</p>
-<ul>
-<li>在pull request创建、更新的时候执行。</li>
-<li>先回复一个评论，告诉用户正在运行。</li>
-<li>初始化仓库，并安装依赖，产生依赖缓存。</li>
-<li>运行eslint增量检查。</li>
-<li>运行typescript检查。</li>
-<li>运行jest检查。</li>
-<li>更新之前的评论，回复检查的结果。</li>
-</ul>
-<p>运行截图：</p>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/09c86bc1-ada1-41c3-9f8f-7e6c46f8204e" alt="Alt text"></p>
-<p>为避免歧义，涉及到github action的术语都是英文的。术语介绍如下：</p>
-<ul>
-<li>workflow，工作流，可以理解为yml文件。</li>
-<li>jobs，工作，一个workflow可以包含多个job，并行执行。</li>
-<li>steps，作业，一个job可以包含多个step，串行执行。</li>
-<li>action，操作，作业中具体的执行。</li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871790603">初始化workflow</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871806576">reply checking</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871818126">.&#x2F;.github&#x2F;actions&#x2F;unique-comment</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862632">init</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862779">eslint</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871862850">typescript</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871863037">unit test</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/36#issuecomment-1871863117">reply result</a></li>
-</ul>
-<!--hexo-->
-
-<h1 id="初始化workflow"><a href="#初始化workflow" class="headerlink" title="初始化workflow"></a>初始化workflow</h1><p>在项目中新建文件<code>.github/workflows/check-pull-request.yml</code>，内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">test</span> <span class="string">check</span> <span class="string">pull</span> <span class="string">request</span></span><br><span class="line"><span class="attr">run-name:</span> <span class="string">&#x27;check pull request #$<span class="template-variable">&#123;&#123; github.event.pull_request.number &#125;&#125;</span>&#x27;</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">    <span class="attr">pull_request:</span></span><br><span class="line">        <span class="attr">types:</span> [<span class="string">opened</span>, <span class="string">synchronize</span>, <span class="string">reopened</span>]</span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">    <span class="attr">replyChecking:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;replyChecking&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">init:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;init&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">eslint:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;eslint&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">typescript:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;typescript&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">unitTest:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;unitTest&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">replyResult:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">replyChecking</span>, <span class="string">eslint</span>, <span class="string">typescript</span>, <span class="string">unitTest</span>]</span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&#x27;replyResult&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="name和run-name"><a href="#name和run-name" class="headerlink" title="name和run-name"></a>name和run-name</h2><p>给workflow命名为<code>check pull request</code>，它会出现在Actions页面的左侧菜单中。运行实例名为<code>check pull request #44</code>，出现在右侧的运行列表中。如图：</p>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/c1371ff2-8fc3-4e5b-8b60-3c572419938b"></p>
-<p><code>run-name</code>中的<code>$&#123;&#123; github.event.pull_request.number &#125;&#125;</code>是workflow的上下文，这里读取了上下文中的pr编号。</p>
-<h2 id="on"><a href="#on" class="headerlink" title="on"></a>on</h2><p><code>on</code>指定了workflow的触发条件，这里配置了在pr创建、同步、重新打开的时候，触发该workflow。</p>
-<h2 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h2><p>按照设想，需要定义几个job，分别是：</p>
-<ul>
-<li>replyChecking：回复用户正在检查中</li>
-<li>init：初始化仓库，缓存依赖项</li>
-<li>eslint：运行eslint检查</li>
-<li>typescript：运行typescript检查</li>
-<li>unitTest：运行单元测试</li>
-<li>replyResult：回复用户检查结果</li>
-</ul>
-<p><code>jobs</code>是并行运行的，聪明如你肯定发现了，eslint、typescript、unitTest这三个job会涉及到安装npm依赖，所以它们最好在init后执行，确保依赖已经缓存了。</p>
-<p>其次，replyResult肯定要拿到eslint等job的结果才能执行，所以使用了<code>needs</code>管理它们的执行依赖关系。</p>
-<h3 id="runs-on"><a href="#runs-on" class="headerlink" title="runs-on"></a>runs-on</h3><p>每个job都运行在独立的容器中，github官方提供了windows、macos、linux多种容器，这里使用了ubuntu容器。</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>发起一个pr，看到Actions页面出现了新的运行实例，点击进去，可以看到各个job的运行情况和依赖关系：</p>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/09c86bc1-ada1-41c3-9f8f-7e6c46f8204e"></p>
-<!--hexo-->
-
-<h1 id="replyChecking"><a href="#replyChecking" class="headerlink" title="replyChecking"></a>replyChecking</h1><p>在进行eslint检测之前，先在pr里回复<code>checking</code>，并且带上拽酷炫的话。将replyChecking改成如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">replyChecking:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">          <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">          <span class="attr">with:</span></span><br><span class="line">              <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Get</span> <span class="string">date</span> <span class="string">time</span></span><br><span class="line">          <span class="attr">id:</span> <span class="string">getDateTime</span></span><br><span class="line">          <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;result=$(TZ=Asia/Shanghai date)&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">&quot;$GITHUB_OUTPUT&quot;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Create</span> <span class="string">or</span> <span class="string">update</span> <span class="string">a</span> <span class="string">comment</span></span><br><span class="line">          <span class="attr">uses:</span> <span class="string">./.github/actions/unique-comment</span></span><br><span class="line">          <span class="attr">with:</span></span><br><span class="line">              <span class="attr">uniqueIdentifier:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.workflow</span> <span class="string">&#125;&#125;</span></span><br><span class="line">              <span class="attr">body:</span> <span class="string">|</span></span><br><span class="line"><span class="string">                  **Checking...**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">                  <span class="string">---</span></span><br><span class="line"></span><br><span class="line">                  <span class="string">Commented</span> <span class="string">by</span> <span class="string">Action</span> [<span class="string">$<span class="template-variable">&#123;&#123;github.workflow&#125;&#125;</span></span>]<span class="string">($&#123;&#123;github.event.repository.html_url&#125;&#125;/actions/runs/$&#123;&#123;github.run_id&#125;&#125;),</span> <span class="string">last</span> <span class="string">updated</span> <span class="string">on</span> <span class="string">$&#123;&#123;steps.getDateTime.outputs.result&#125;&#125;.</span></span><br></pre></td></tr></table></figure>
-
-<p><code>steps</code>每一步里<code>name</code>、<code>id</code>是可选的，<code>name</code>在Actions详情页面里会显示，更直观的看到step的名称，推荐写上。</p>
-<h2 id="Checkout"><a href="#Checkout" class="headerlink" title="Checkout"></a>Checkout</h2><p><code>uses</code>表示使用一个action，名为<code>actions/checkout@v4</code>，它用来拉取仓库。</p>
-<blockquote>
-<p>同其他编程语言一样，重复的action可以封装起来。<a target="_blank" rel="noopener" href="https://github.com/marketplace?type=actions">action市场</a>提供了很多。</p>
-</blockquote>
-<p><code>with</code>属性指定了该action的输入参数，每个action的参数不尽相同。</p>
-<p><code>ref</code>参数表示要拉取的分支，<code>$&#123;&#123;github.head_ref&#125;&#125;</code>也是一个上下文，表示当前pr的源分支。</p>
-<h2 id="Get-Date-time"><a href="#Get-Date-time" class="headerlink" title="Get Date time"></a>Get Date time</h2><p>这step还写了<code>id</code>，表示该step在该job中的唯一标识，为什么要写呢？是为了下一步step能根据<code>id</code>读取到它的<code>output</code>。</p>
-<blockquote>
-<p><strong>output</strong>是workflow中非常重要的概念，它用于在step之间、job之间分享简单的数据。</p>
-</blockquote>
-<p><code>run</code>就是在容器中跑一个命令，这里跑了一个unix bash命令，将当前时间写入到<code>$GITHUB_OUTPUT</code>中，键名为<code>result</code>。</p>
-<blockquote>
-<p><code>$GITHUB_OUTPUT</code>是workflow注入到容器中的一个路径，用于存放output。</p>
-</blockquote>
-<h2 id="Create-or-update-a-comment"><a href="#Create-or-update-a-comment" class="headerlink" title="Create or update a comment"></a>Create or update a comment</h2><p><code>uses</code>使用了本地的action，这个action用于创建或更新一个唯一回复，下一节说。</p>
-<blockquote>
-<p>有时候，官方或市场的action并不能满足你的需要，就得自己写一个了。</p>
-</blockquote>
-<p>同理，该action也有<code>with</code>属性，<code>uniqueIdentifier</code>是回复评论的唯一标识，<code>body</code>是回复的内容，内容使用了markdown语法，里面还涉及到上下文不一一细讲了。只说<code>$&#123;&#123;steps.getDateTime.outputs.result&#125;&#125;</code>这个上下文表示获取getDateTime这个step中，键名为<code>result</code>的值。</p>
-<p>如果你不需要在内容里插入时间，那么上面的<code>Get Date time</code>就可以省略了。</p>
-<h2 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h2><p>因为我已经有完整的代码了，所以运行后，pr中会有一个回复，如图：</p>
-<p><img src="https://github.com/taoliujun/blog/assets/5689134/42396a84-b798-4f4e-9f39-5bf92a8acb15"></p>
-<!--hexo-->
-
-<h1 id="x2F-github-x2F-actions-x2F-unique-comment"><a href="#x2F-github-x2F-actions-x2F-unique-comment" class="headerlink" title=".&#x2F;.github&#x2F;actions&#x2F;unique-comment"></a>.&#x2F;.github&#x2F;actions&#x2F;unique-comment</h1><p>这是一个封装的javascript action，用于对issue创建、更新唯一评论。</p>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>创建目录<code>./.github/actions/unique-comment</code>，最终目录结构如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── action.yml</span><br><span class="line">├── config</span><br><span class="line">│   └── webpack.config.js</span><br><span class="line">├── dist</span><br><span class="line">│   ├── index.js</span><br><span class="line">│   └── index.js.LICENSE.txt</span><br><span class="line">├── package.json</span><br><span class="line">└── src</span><br><span class="line">    └── index.js</span><br></pre></td></tr></table></figure>
-
-<h2 id="action-yml"><a href="#action-yml" class="headerlink" title="action.yml"></a>action.yml</h2><p>这是action的配置文件，必须存在，内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">unique-comment</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">create</span> <span class="string">or</span> <span class="string">update</span> <span class="string">a</span> <span class="string">unique</span> <span class="string">comment</span></span><br><span class="line"></span><br><span class="line"><span class="attr">runs:</span></span><br><span class="line">    <span class="attr">using:</span> <span class="string">&#x27;node20&#x27;</span></span><br><span class="line">    <span class="attr">main:</span> <span class="string">&#x27;./dist/index.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">inputs:</span></span><br><span class="line">    <span class="attr">token:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;GitHub token&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">default:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.token</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">owner:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;Repository owner&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">default:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.event.repository.owner.login</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">repo:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;Repository name&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">default:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.event.repository.name</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">issue_number:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;Issue number&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">default:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.event.number</span> <span class="string">&#125;&#125;</span></span><br><span class="line">    <span class="attr">body:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;Comment body&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">uniqueIdentifier:</span></span><br><span class="line">        <span class="attr">description:</span> <span class="string">&#x27;Unique identifier for comment&#x27;</span></span><br><span class="line">        <span class="attr">required:</span> <span class="literal">false</span></span><br><span class="line">        <span class="attr">default:</span> <span class="string">&#x27;unique-comment&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>大部分属性不一一细讲了，都是简单的英文望文生义即可。</p>
-<p><code>runs</code>表示运行在<code>node20</code>环境下，入口文件为<code>./dist/index.js</code>。</p>
-<p><code>inputs</code>表示接受的参数，也就是之前提到的<code>with</code>属性里要输入的参数。用<code>required</code>表示是否必须传入，<code>default</code>表示默认值。</p>
-<h2 id="src-x2F-index-js"><a href="#src-x2F-index-js" class="headerlink" title="src&#x2F;index.js"></a>src&#x2F;index.js</h2><p>为什么入口文件是<code>dist/index.js</code>，而不是<code>src/index.js</code>呢？因为要引用一些github官方提供的快捷操作github REST API的js包去操作issue评论(pull request也是一种issue)，最终打包后的文件才能在工作流中稳妥的运行。所以，写好<code>src/index.js</code>，再打包就行。</p>
-<p>该文件代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> core = <span class="built_in">require</span>(<span class="string">&#x27;@actions/core&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> github = <span class="built_in">require</span>(<span class="string">&#x27;@actions/github&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">main</span> = <span class="keyword">async</span> (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> token = core.<span class="title function_">getInput</span>(<span class="string">&#x27;token&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> owner = core.<span class="title function_">getInput</span>(<span class="string">&#x27;owner&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> repo = core.<span class="title function_">getInput</span>(<span class="string">&#x27;repo&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> issueNumber = core.<span class="title function_">getInput</span>(<span class="string">&#x27;issue_number&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> uniqueIdentifier = <span class="string">`[^uniqueIdentifier]: <span class="subst">$&#123;core.getInput(<span class="string">&#x27;uniqueIdentifier&#x27;</span>)&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">const</span> body = <span class="string">`<span class="subst">$&#123;core.getInput(<span class="string">&#x27;body&#x27;</span>)&#125;</span>\n\n<span class="subst">$&#123;uniqueIdentifier&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">    core.<span class="title function_">debug</span>(<span class="string">`uniqueIdentifier is <span class="subst">$&#123;uniqueIdentifier&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> octokit = github.<span class="title function_">getOctokit</span>(token);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> comments = <span class="keyword">await</span> octokit.<span class="property">rest</span>.<span class="property">issues</span>.<span class="title function_">listComments</span>(&#123;</span><br><span class="line">        owner,</span><br><span class="line">        repo,</span><br><span class="line">        <span class="attr">issue_number</span>: issueNumber,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> botComment = comments.<span class="property">data</span>.<span class="title function_">find</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> v.<span class="property">body</span>.<span class="title function_">includes</span>(uniqueIdentifier));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (botComment) &#123;</span><br><span class="line">        core.<span class="title function_">info</span>(<span class="string">&#x27;update comment successfully.&#x27;</span>);</span><br><span class="line">        <span class="keyword">await</span> octokit.<span class="property">rest</span>.<span class="property">issues</span>.<span class="title function_">updateComment</span>(&#123;</span><br><span class="line">            owner,</span><br><span class="line">            repo,</span><br><span class="line">            <span class="attr">comment_id</span>: botComment.<span class="property">id</span>,</span><br><span class="line">            body,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        core.<span class="title function_">info</span>(<span class="string">&#x27;create comment successfully.&#x27;</span>);</span><br><span class="line">        <span class="keyword">await</span> octokit.<span class="property">rest</span>.<span class="property">issues</span>.<span class="title function_">createComment</span>(&#123;</span><br><span class="line">            owner,</span><br><span class="line">            repo,</span><br><span class="line">            <span class="attr">issue_number</span>: issueNumber,</span><br><span class="line">            body,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="title function_">main</span>();</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    core.<span class="title function_">setFailed</span>(err.<span class="property">message</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>@actions/core</code>和<code>@actions/github</code>是github官方提供的js包，前者可以方便的读取入参等，后者可以方便的操作github REST API。</p>
-<p><code>main</code>函数的代码就是原生javascript，不一一解释了，主要通过<code>uniqueIdentifier</code>来判断是否发布过评论，如果是，就更新评论，否则就创建评论。</p>
-<blockquote>
-<p>markdown语法<code>[^uniqueIdentifier]</code>表示脚注，不会被渲染。</p>
-</blockquote>
-<p><code>core.setFailed(err.message);</code>表示抛出退出代码。</p>
-<h2 id="config-x2F-webpack-config-js"><a href="#config-x2F-webpack-config-js" class="headerlink" title="config&#x2F;webpack.config.js"></a>config&#x2F;webpack.config.js</h2><p>打包用的，配置简单可用即可：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;production&#x27;</span>,</span><br><span class="line">    <span class="attr">target</span>: <span class="string">&#x27;node20&#x27;</span>,</span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&#x27;./src/index.js&#x27;</span>,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;index.js&#x27;</span>,</span><br><span class="line">        <span class="attr">clean</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;unique-comment&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;private&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;webpack --config ./config/webpack.config.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;@actions/core&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;@actions/github&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^6.0.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;webpack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.89.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;webpack-cli&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.1.4&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>没啥好说的，列出了依赖项。和一个打包脚本。</p>
-<h2 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h2><p>修改了<code>src/index.js</code>得<code>build</code>，然后push到github仓库。</p>
-<p>记得将<strong>dist</strong>目录也提交到github仓库。</p>
-<!--hexo-->
-
-<h1 id="init"><a href="#init" class="headerlink" title="init"></a>init</h1><p>现在，开始搞正经的了。</p>
-<p>先初始化项目，这个job的目的仅仅是为了缓存pnpm依赖项，如果你的项目的依赖项不经常更新，可以省略这个job，后续也不要<code>needs</code>这个job。</p>
-<p>将init改成如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">init:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">repo</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">pnpm</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">pnpm/action-setup@v2</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">version:</span> <span class="number">8</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">node</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">node-version:</span> <span class="number">20</span></span><br><span class="line">                  <span class="attr">cache:</span> <span class="string">&#x27;pnpm&#x27;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">pnpm</span> <span class="string">install</span></span><br></pre></td></tr></table></figure>
-
-<p>相信经过对之前的job的了解，这里的配置就看起来很简单了。</p>
-<h2 id="Init-pnpm"><a href="#Init-pnpm" class="headerlink" title="Init pnpm"></a>Init pnpm</h2><p>使用第三方action，安装pnpm@^8。</p>
-<h2 id="Init-node"><a href="#Init-node" class="headerlink" title="Init node"></a>Init node</h2><p><code>cache: &#39;pnpm&#39;</code>指定缓存机制，它内部是利用了workflow的cache机制。</p>
-<h2 id="Install-dependencies"><a href="#Install-dependencies" class="headerlink" title="Install dependencies"></a>Install dependencies</h2><p>安装依赖项，触发缓存。</p>
-<!--hexo-->
-
-<h1 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h1><p>将eslint改成如下：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eslint:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">outputs:</span></span><br><span class="line">            <span class="attr">result:</span> <span class="string">$&#123;&#123;</span> <span class="string">steps.lint.outputs.result</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">repo</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line">                  <span class="attr">fetch-depth:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">pnpm</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">pnpm/action-setup@v2</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">version:</span> <span class="number">8</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">node</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">node-version:</span> <span class="number">20</span></span><br><span class="line">                  <span class="attr">cache:</span> <span class="string">&#x27;pnpm&#x27;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">pnpm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">eslint</span></span><br><span class="line">              <span class="attr">id:</span> <span class="string">lint</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/github-script@v7</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">result-encoding:</span> <span class="string">string</span></span><br><span class="line">                  <span class="attr">script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">                      let output = &#x27;&#x27;;</span></span><br><span class="line"><span class="string">                      let outerr = &#x27;&#x27;;</span></span><br><span class="line"><span class="string">                      let diffFiles = &#x27;&#x27;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">                      <span class="string">await</span> <span class="string">exec.exec(</span></span><br><span class="line">                        <span class="string">`git</span> <span class="string">diff</span> <span class="string">--name-only</span> <span class="string">origin/$&#123;&#123;github.base_ref&#125;&#125;`,</span></span><br><span class="line">                        []<span class="string">,</span></span><br><span class="line">                        &#123;</span><br><span class="line">                          <span class="string">//</span> <span class="attr">silent:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="string">//</span> <span class="attr">ignoreReturnCode:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="attr">listeners:</span> &#123;</span><br><span class="line">                            <span class="attr">stdout:</span> <span class="string">(data)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                                <span class="string">diffFiles</span> <span class="string">+=</span> <span class="string">data.toString();</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                          &#125;,</span><br><span class="line">                        &#125;</span><br><span class="line">                      <span class="string">);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">const</span> <span class="string">lintFiles</span> <span class="string">=</span> <span class="string">diffFiles.split(`\n`).filter((file)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                        <span class="string">return</span> <span class="string">file.endsWith(&#x27;.js&#x27;)</span> <span class="string">||</span> <span class="string">file.endsWith(&#x27;.ts&#x27;)</span> <span class="string">||</span> <span class="string">file.endsWith(&#x27;.tsx&#x27;)</span></span><br><span class="line">                      &#125;<span class="string">).join(&#x27;</span> <span class="string">&#x27;);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                      await exec.exec(</span></span><br><span class="line"><span class="string">                        // &quot;pnpm run lint --format stylish&quot;,</span></span><br><span class="line"><span class="string">                        `pnpm eslint $&#123;lintFiles&#125;`,</span></span><br><span class="line"><span class="string">                        [],</span></span><br><span class="line"><span class="string">                        &#123;</span></span><br><span class="line"><span class="string">                          // silent: true,</span></span><br><span class="line"><span class="string">                          ignoreReturnCode: true,</span></span><br><span class="line"><span class="string">                          listeners: &#123;</span></span><br><span class="line"><span class="string">                            stdout: (data) =&gt; &#123;</span></span><br><span class="line"><span class="string">                                output += data.toString();</span></span><br><span class="line"><span class="string">                            &#125;,</span></span><br><span class="line"><span class="string">                            stderr: (data) =&gt; &#123;</span></span><br><span class="line"><span class="string">                                outerr += data.toString();</span></span><br><span class="line"><span class="string">                            &#125;,</span></span><br><span class="line"><span class="string">                          &#125;,</span></span><br><span class="line"><span class="string">                        &#125;</span></span><br><span class="line"><span class="string">                      );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                      if (outerr) &#123;</span></span><br><span class="line"><span class="string">                        return `:x: Some command execution errors, non-eslint business errors.`;</span></span><br><span class="line"><span class="string">                      &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                      const errorMatch = output.match(/(\d+) errors?/);</span></span><br><span class="line"><span class="string">                      const warnMatch = output.match(/(\d+) warnings?/);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                      if (errorMatch &amp;&amp; errorMatch?.[1] !== &#x27;</span><span class="number">0</span><span class="string">&#x27;) &#123;</span></span><br><span class="line"><span class="string">                        return `:x: $&#123;errorMatch?.[0]&#125; $&#123;warnMatch?.[0]&#125;`;</span></span><br><span class="line"><span class="string">                      &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                      return `:white_check_mark: $&#123;errorMatch?.[0] || &#x27;</span><span class="number">0</span> <span class="string">error&#x27;&#125;</span> <span class="string">$&#123;warnMatch?.[0]</span> <span class="string">||</span> <span class="string">&#x27;0 warning&#x27;</span><span class="string">&#125;`;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="needs"><a href="#needs" class="headerlink" title="needs"></a>needs</h2><p>使用<code>needs</code>依赖init，可以使用到pnpm的缓存项，防止install太慢。</p>
-<blockquote>
-<p>因为eslint、typescript、unitTest都需要pnpm install，所以一个前置的init去缓存pnpm依赖项，可以加快后续的install速度。</p>
-</blockquote>
-<h2 id="outputs"><a href="#outputs" class="headerlink" title="outputs"></a>outputs</h2><p>job里的outputs，可以在依赖它的其他job中访问到。这里使用<code>$&#123;&#123; steps.lint.outputs.result &#125;&#125;</code>去获取该job中lint这个step里的output里的result。</p>
-<blockquote>
-<p>output有job和step两个维度，注意区分。</p>
-</blockquote>
-<h2 id="Run-eslint"><a href="#Run-eslint" class="headerlink" title="Run eslint"></a>Run eslint</h2><p>它uses了<code>actions/github-script@v7</code>，这是github官方提供的一个action，可以在<code>with.script</code>里写js代码去执行，同时它会注入一些变量到script中去，见它的<a target="_blank" rel="noopener" href="https://github.com/actions/github-script/tree/v7/">官方文档</a>。</p>
-<blockquote>
-<p>对于简单的js代码，可以使用这个action去完成，不用再去写一个js文件。</p>
-</blockquote>
-<p><code>result-encoding</code>是指定script返回的数据格式的，默认是json，这指定为string。</p>
-<blockquote>
-<p>为什么script里return了string，还要指定为string呢？<br>因为<code>return &#39;hello&#39;</code>在json encode后是<code>&#39;&quot;hello&quot;&#39;</code>，而string encode后为<code>&#39;hello&#39;</code>。</p>
-</blockquote>
-<p>script里是原生的js代码了，里面的<code>exec</code>是该action注入的变量，用来执行shell命令。</p>
-<p>这段js代码做了两个事情，一是<code>git diff</code>获取pr中改动的文件列表，二是<code>eslint</code>检查这些增量文件，最后返回处理的结果。</p>
-<h2 id="fetch-depth"><a href="#fetch-depth" class="headerlink" title="fetch-depth"></a>fetch-depth</h2><p>Init repo这个step里设置了<code>fetch-depth: 0</code>，不然获取不到完整的git分支，具体看<code>actions/checkout</code>的解释，涉及到git的知识不展开细说了。</p>
-<h2 id="steps-lint-outputs-result"><a href="#steps-lint-outputs-result" class="headerlink" title="steps.lint.outputs.result"></a>steps.lint.outputs.result</h2><p><code>steps.lint.outputs.result</code>为什么能拿到lint step里的output.result呢？因为<code>actions/github-script</code>这个action内部将script的返回值，设置到<code>$GITHUB_OUTPUT</code>里了，且键名为<code>result</code>。</p>
-<!--hexo-->
-
-<h1 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h1><p>和eslint的配置大同小异，只是改了对检测结果的判断。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">typescript:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">outputs:</span></span><br><span class="line">            <span class="attr">result:</span> <span class="string">$&#123;&#123;</span> <span class="string">steps.lint.outputs.result</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">repo</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">pnpm</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">pnpm/action-setup@v2</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">version:</span> <span class="number">8</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">node</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">node-version:</span> <span class="number">20</span></span><br><span class="line">                  <span class="attr">cache:</span> <span class="string">&#x27;pnpm&#x27;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">pnpm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">lint</span></span><br><span class="line">              <span class="attr">id:</span> <span class="string">lint</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/github-script@v7</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">result-encoding:</span> <span class="string">string</span></span><br><span class="line">                  <span class="attr">script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">                      let output = &#x27;&#x27;;</span></span><br><span class="line"><span class="string">                      let outerr = &#x27;&#x27;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">                      <span class="string">await</span> <span class="string">exec.exec(</span></span><br><span class="line">                        <span class="string">`pnpm</span> <span class="string">run</span> <span class="string">-r</span> <span class="string">lint:ts`,</span></span><br><span class="line">                        []<span class="string">,</span></span><br><span class="line">                        &#123;</span><br><span class="line">                          <span class="string">//</span> <span class="attr">silent:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="attr">ignoreReturnCode:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="attr">listeners:</span> &#123;</span><br><span class="line">                            <span class="attr">stdout:</span> <span class="string">(data)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                                <span class="string">output</span> <span class="string">+=</span> <span class="string">data.toString();</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                            <span class="attr">stderr:</span> <span class="string">(data)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                                <span class="string">outerr</span> <span class="string">+=</span> <span class="string">data.toString();</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                          &#125;,</span><br><span class="line">                        &#125;</span><br><span class="line">                      <span class="string">);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">if</span> <span class="string">(outerr)</span> &#123;</span><br><span class="line">                        <span class="string">return</span> <span class="string">`:x:</span> <span class="string">Some</span> <span class="string">command</span> <span class="string">execution</span> <span class="string">errors</span>, <span class="literal">no</span> <span class="string">business</span> <span class="string">errors.`;</span></span><br><span class="line">                      &#125;</span><br><span class="line"></span><br><span class="line">                      <span class="string">const</span> <span class="string">errorMatch</span> <span class="string">=</span> <span class="string">output.match(/error</span> <span class="string">TS/g);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">if</span> <span class="string">(errorMatch)</span> &#123;</span><br><span class="line">                        <span class="string">return</span> <span class="string">`:x:</span> <span class="string">$</span>&#123;<span class="string">errorMatch?.length</span>&#125; <span class="string">errors`;</span></span><br><span class="line">                      &#125;</span><br><span class="line"></span><br><span class="line">                      <span class="string">return</span> <span class="string">`:white_check_mark:</span> <span class="string">$&#123;&#x27;0</span> <span class="string">error&#x27;&#125;`;</span></span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="unitTest"><a href="#unitTest" class="headerlink" title="unitTest"></a>unitTest</h1><p>和eslint的配置大同小异，只是改了对检测结果的判断。唯一的区别是jest的检测结果是输出到stderr，见<a target="_blank" rel="noopener" href="https://github.com/jestjs/jest/issues/5064%E3%80%82">https://github.com/jestjs/jest/issues/5064。</a></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">unitTest:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">init</span>]</span><br><span class="line">        <span class="attr">outputs:</span></span><br><span class="line">            <span class="attr">result:</span> <span class="string">$&#123;&#123;</span> <span class="string">steps.lint.outputs.result</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">repo</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">pnpm</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">pnpm/action-setup@v2</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">version:</span> <span class="number">8</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Init</span> <span class="string">node</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/setup-node@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">node-version:</span> <span class="number">20</span></span><br><span class="line">                  <span class="attr">cache:</span> <span class="string">&#x27;pnpm&#x27;</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">dependencies</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">pnpm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Run</span> <span class="string">lint</span></span><br><span class="line">              <span class="attr">id:</span> <span class="string">lint</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/github-script@v7</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">result-encoding:</span> <span class="string">string</span></span><br><span class="line">                  <span class="attr">script:</span> <span class="string">|</span></span><br><span class="line"><span class="string">                      let output = &#x27;&#x27;;</span></span><br><span class="line"><span class="string">                      let outerr = &#x27;&#x27;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">                      <span class="string">await</span> <span class="string">exec.exec(</span></span><br><span class="line">                        <span class="string">`pnpm</span> <span class="string">run</span> <span class="string">test`,</span></span><br><span class="line">                        []<span class="string">,</span></span><br><span class="line">                        &#123;</span><br><span class="line">                          <span class="string">//</span> <span class="attr">silent:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="attr">ignoreReturnCode:</span> <span class="literal">true</span>,</span><br><span class="line">                          <span class="attr">listeners:</span> &#123;</span><br><span class="line">                            <span class="attr">stdout:</span> <span class="string">(data)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                                <span class="string">output</span> <span class="string">+=</span> <span class="string">data.toString();</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                            <span class="attr">stderr:</span> <span class="string">(data)</span> <span class="string">=&gt;</span> &#123;</span><br><span class="line">                                <span class="string">outerr</span> <span class="string">+=</span> <span class="string">data.toString();</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                          &#125;,</span><br><span class="line">                        &#125;</span><br><span class="line">                      <span class="string">);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">//</span> <span class="string">why</span> <span class="string">use</span> <span class="string">outerr?</span> <span class="string">https://github.com/jestjs/jest/issues/5064</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">const</span> <span class="string">failMatch</span> <span class="string">=</span> <span class="string">outerr.match(/Test</span> <span class="attr">Suites:</span> <span class="string">\d+</span> <span class="string">failed/);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">if</span> <span class="string">(failMatch)</span> &#123;</span><br><span class="line">                        <span class="string">return</span> <span class="string">`:x:</span> <span class="string">$</span>&#123;<span class="string">failMatch?.</span>[<span class="number">0</span>]&#125;<span class="string">`;</span></span><br><span class="line">                      &#125;</span><br><span class="line"></span><br><span class="line">                      <span class="string">const</span> <span class="string">errorMatch</span> <span class="string">=</span> <span class="string">outerr.match(/Jest:</span> <span class="string">&quot;global&quot;</span> <span class="string">coverage</span> <span class="string">threshold</span> <span class="string">for</span> <span class="string">lines</span> <span class="string">\([0-9\.]+%\)</span> <span class="attr">not met:</span> [<span class="number">0</span><span class="number">-9</span><span class="string">\.</span>]<span class="string">+%/);</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">if</span> <span class="string">(errorMatch)</span> &#123;</span><br><span class="line">                        <span class="string">return</span> <span class="string">`:x:</span> <span class="string">$</span>&#123;<span class="string">errorMatch?.</span>[<span class="number">0</span>]&#125;<span class="string">`;</span></span><br><span class="line">                      &#125;</span><br><span class="line"></span><br><span class="line">                      <span class="string">return</span> <span class="string">`:white_check_mark:</span> <span class="string">passed`;</span></span><br></pre></td></tr></table></figure>
-<!--hexo-->
-
-<h1 id="replyResult"><a href="#replyResult" class="headerlink" title="replyResult"></a>replyResult</h1><p>最后，将几个检测的结果进行汇总，回复到pr里就行了。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">replyResult:</span></span><br><span class="line">        <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">        <span class="attr">needs:</span> [<span class="string">replyChecking</span>, <span class="string">eslint</span>, <span class="string">typescript</span>, <span class="string">unitTest</span>]</span><br><span class="line">        <span class="attr">steps:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">ref:</span> <span class="string">$&#123;&#123;github.head_ref&#125;&#125;</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Get</span> <span class="string">date</span> <span class="string">time</span></span><br><span class="line">              <span class="attr">id:</span> <span class="string">getDateTime</span></span><br><span class="line">              <span class="attr">run:</span> <span class="string">echo</span> <span class="string">&quot;result=$(TZ=Asia/Shanghai date)&quot;</span> <span class="string">&gt;&gt;</span> <span class="string">&quot;$GITHUB_OUTPUT&quot;</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Create</span> <span class="string">or</span> <span class="string">update</span> <span class="string">a</span> <span class="string">comment</span></span><br><span class="line">              <span class="attr">uses:</span> <span class="string">./.github/actions/unique-comment</span></span><br><span class="line">              <span class="attr">with:</span></span><br><span class="line">                  <span class="attr">uniqueIdentifier:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.workflow</span> <span class="string">&#125;&#125;</span></span><br><span class="line">                  <span class="attr">body:</span> <span class="string">|</span></span><br><span class="line"><span class="string">                      ## Eslint Check Result</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">                      <span class="string">$&#123;&#123;needs.eslint.outputs.result&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">                      <span class="comment">## Typescript Check Result</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">$&#123;&#123;needs.typescript.outputs.result&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">                      <span class="comment">## UnitTest Check Result</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">$&#123;&#123;needs.unitTest.outputs.result&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">---</span></span><br><span class="line"></span><br><span class="line">                      <span class="string">Commented</span> <span class="string">by</span> <span class="string">Action</span> [<span class="string">$<span class="template-variable">&#123;&#123;github.workflow&#125;&#125;</span></span>]<span class="string">($&#123;&#123;github.event.repository.html_url&#125;&#125;/actions/runs/$&#123;&#123;github.run_id&#125;&#125;),</span> <span class="string">last</span> <span class="string">updated</span> <span class="string">on</span> <span class="string">$&#123;&#123;steps.getDateTime.outputs.result&#125;&#125;.</span></span><br></pre></td></tr></table></figure>
-
-<p>和replyChecking差不多，在body里使用<code>$&#123;&#123;needs.eslint.outputs.result&#125;&#125;</code>去读取了eslint job的outputs。</p>
-<h2 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h2><p>去发起新的pr，故意提交一个有eslint error的js&#x2F;ts文件，看看表现吧~</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/Beacon/">
+                  #Beacon
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/github-actions-sample-eslint-in-pull-request/" data-id="clt8hne720014i8ohgkmn24c9" data-title="7. GitHub Actions - 在pull request中执行eslint检测的工作流例子" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
-  
-    <article id="post-react-zustand" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/react-zustand/" class="article-date">
-  <time class="dt-published" datetime="2023-12-12T22:46:26.000Z" itemprop="datePublished">2023-12-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/react-zustand/">React公共状态利器 - Zustand</a>
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-Badging_API/">
+        <span>Web API - Badging</span>
+      </a>
     </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-02-28
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-02-28
+      </span>
       
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/35">https://github.com/taoliujun/blog/issues/35</a></p>
-<!--hexo
----
-url: react-zustand
-tags:
-  - zustand
-  - react store
----
--->
-
-<p>官方文档：<a target="_blank" rel="noopener" href="https://docs.pmnd.rs/zustand">https://docs.pmnd.rs/zustand</a></p>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><p><strong>Zustand</strong> 是一个非常简单粗暴的全局状态管理库，它的使用有多简单呢？如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; pnpm add zustand</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useFormStateStore.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; create &#125; <span class="keyword">from</span> <span class="string">&#x27;zustand&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">State</span> &#123;</span><br><span class="line">    <span class="attr">loading</span>: <span class="built_in">boolean</span>;</span><br><span class="line">    <span class="attr">disabled</span>: <span class="built_in">boolean</span>;</span><br><span class="line">    <span class="attr">setLoadingByAge</span>: <span class="function">(<span class="params">value: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useFormStateStore = create&lt;<span class="title class_">State</span>&gt;(<span class="function">(<span class="params">set</span>) =&gt;</span> (&#123;</span><br><span class="line">    <span class="attr">loading</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">disabled</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">setLoadingByAge</span>: <span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">set</span>(&#123; <span class="attr">loading</span>: value &gt; <span class="number">10</span> &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.tsx</span></span><br><span class="line"><span class="keyword">import</span> &#123; useState, <span class="keyword">type</span> <span class="variable constant_">FC</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; useFormStateStore &#125; <span class="keyword">from</span> <span class="string">&#x27;./useFormStateStore&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Button</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@/components/Button&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Loading</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; loading &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>loading: &#123;String(loading)&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Disabled</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; disabled &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>disabled: &#123;String(disabled)&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Main</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; setLoadingByAge &#125; = <span class="title function_">useFormStateStore</span>();</span><br><span class="line">    <span class="keyword">const</span> [age, setAge] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Loading</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Disabled</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        loading: true,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading true</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        loading: false,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading false</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        disabled: true,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set disabled true</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    useFormStateStore.setState(&#123;</span></span><br><span class="line"><span class="language-xml">                        disabled: false,</span></span><br><span class="line"><span class="language-xml">                    &#125;);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set disabled false</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">type</span>=<span class="string">&quot;number&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">value</span>=<span class="string">&#123;age&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onChange</span>=<span class="string">&#123;(e)</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setAge(Number(e.target.value));</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">Button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">                    setLoadingByAge(age);</span></span><br><span class="line"><span class="language-xml">                &#125;&#125;</span></span><br><span class="line"><span class="language-xml">            &gt;</span></span><br><span class="line"><span class="language-xml">                set loading by age</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Main</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在<code>useFormStateStore.ts</code>中定义了状态，然后在<code>app.tsx</code>中使用，就是这么简单粗暴！这里有几点介绍下：</p>
-<ul>
-<li><p>对于简单的状态更新，使用<code>setState</code>方法就可以，它的参数是一个对象，这个对象就是你要更新的状态，它会和之前的状态进行合并，然后返回一个新的状态，从而触发组件更新。</p>
-</li>
-<li><p>对于需要通用的逻辑处理的状态更新，参照<code>useFormStateStore.ts</code>中的<code>setLoadingByAge</code>方法，将它作为状态里的一个方法就行了。</p>
-</li>
-</ul>
-<h1 id="Zustand"><a href="#Zustand" class="headerlink" title="Zustand"></a>Zustand</h1><p>使用非常简单，API也很少，它的原理是使用了<code>Proxy</code>，所以它的性能非常好。</p>
-<h1 id="相比Redux"><a href="#相比Redux" class="headerlink" title="相比Redux"></a>相比Redux</h1><p>相比Redux，Zustand的代码非常简单明了，不需要使用<code>connect</code>、<code>mapStateToProps</code>、<code>mapDispatchToProps</code>这些方法。</p>
-<h1 id="相比React-Context"><a href="#相比React-Context" class="headerlink" title="相比React Context"></a>相比React Context</h1><p>React Context需要一个<code>Provider</code>包裹组件以传递状态，需要一个<code>useContext</code>使用状态，光从层级上就让人绕起来了。而Zustand只需要一个<code>create</code>方法，就可以使用了，且状态是全局的，不需要传递。</p>
-
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/react-zustand/" data-id="clt8hne75001ji8oh9i2l3g9s" data-title="React公共状态利器 - Zustand" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-changesets-in-monorepo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/changesets-in-monorepo/" class="article-date">
-  <time class="dt-published" datetime="2023-12-08T01:44:30.000Z" itemprop="datePublished">2023-12-08</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/changesets-in-monorepo/">在monorepo中使用changesets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/33">https://github.com/taoliujun/blog/issues/33</a></p>
-<!--hexo
----
-url: changesets-in-monorepo
-tags:
-  - changesets
----
--->
-
-<p><code>changesets</code>是目前(2023年)最流行的(多)包管理和发布工具了，使用它可以方便的生成CHANGELOG、打版本号和发布。</p>
-<p>项目链接：<a target="_blank" rel="noopener" href="https://github.com/changesets/changesets">changesets</a></p>
-<p>我这有个<a target="_blank" rel="noopener" href="https://github.com/taoliujun/npm-packages">pnpm monorepo</a>库，现在在用<code>changesets</code>管理发布版本了。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm add -Dw @changesets/cli @changesets/changelog-git</span><br></pre></td></tr></table></figure>
-
-<p><code>@changesets/cli</code>是必须安装的，<code>@changesets/changelog-git</code>是CHANGELOG生成风格，可以选择其他的，也可以不安装，用默认的。</p>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm changeset init</span><br></pre></td></tr></table></figure>
-
-<p>生成<code>.changeset</code>目录，里面有<code>config.json</code>，我修改了一下，如下：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://unpkg.com/@changesets/config@3.0.0/schema.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;changelog&quot;</span><span class="punctuation">:</span> <span class="string">&quot;@changesets/changelog-git&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="comment">// 在changeset add和changeset version后，自动运行git commit</span></span><br><span class="line">  <span class="attr">&quot;commit&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="comment">// 如果要发布到npm官方仓库，就设置成public</span></span><br><span class="line">  <span class="attr">&quot;access&quot;</span><span class="punctuation">:</span> <span class="string">&quot;public&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="comment">// 我的仓库的主分支是master</span></span><br><span class="line">  <span class="attr">&quot;baseBranch&quot;</span><span class="punctuation">:</span> <span class="string">&quot;master&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;fixed&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;linked&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;updateInternalDependencies&quot;</span><span class="punctuation">:</span> <span class="string">&quot;patch&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;ignore&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="发布一个包"><a href="#发布一个包" class="headerlink" title="发布一个包"></a>发布一个包</h2><p>现在，我要给包pack1添加一些新特性，和修复一些bug。</p>
-<p>特性代码有点长，我要写好几天的代码。仍然按照以往的commit message的频率和风格去提交代码。这个commit message里的type和subject，<strong>都不会影响CHANGELOG和包版本号</strong>。</p>
-<h3 id="随时添加一个changeset"><a href="#随时添加一个changeset" class="headerlink" title="随时添加一个changeset"></a>随时添加一个changeset</h3><p>当我完成一个特性，或修复了一个bug，可以随时打一个changeset标记，这样就可以记录下来，方便后面生成CHANGELOG。再次说明，这个changeset标记和commit message是互不冲突的，changeset标记是用来管理包版本的，而commit message是用来管理代码的。</p>
-<p><em>这和之前使用lerna有点区别，lerna是根据commit message来决定版本号和CHANGLOG的，而<code>changesets</code>是根据<code>changeset add</code>和<code>changeset version</code>来决定的。</em></p>
-<p><code>changeset</code>这么做的目的是，让开发者将包管理和代码管理分开，这样更加灵活。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 添加一个changeset标记</span><br><span class="line">pnpm changeset add</span><br></pre></td></tr></table></figure>
-
-<p>会出现交互，让你选择要打标记的包，版本号等。</p>
-<h4 id="选版本遇到一个坑，总是显示major？？？"><a href="#选版本遇到一个坑，总是显示major？？？" class="headerlink" title="选版本遇到一个坑，总是显示major？？？"></a>选版本遇到一个坑，总是显示<code>major</code>？？？</h4><p><code>changeset</code>老版本会让你上下选择版本类型，而新的<code>changeset</code>的交互改了，在提示<code>major</code>的时候，未选择的包，按回车后会进入到选择<code>minor</code>的步骤。</p>
-<h3 id="生成CHANGELOG和版本号"><a href="#生成CHANGELOG和版本号" class="headerlink" title="生成CHANGELOG和版本号"></a>生成CHANGELOG和版本号</h3><p>终于，我完成了所有的特性和bug，准备发布了。</p>
-<p>可以查看<code>.changeset</code>下有很多<code>.md</code>文件，这些就是之前随时添加的changeset标记。每一个文件描述了改动的包、改动的类型、改动的内容。在下一步操作之前，可以直接修改这些<code>.md</code>文件，来修改上述提到的类型、内容等。</p>
-<p>准备好了，运行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm changeset version</span><br></pre></td></tr></table></figure>
-
-<p>changeset会生成CHANGELOG和版本号，在最终发布之前，最好查看一下。</p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm changeset publish</span><br></pre></td></tr></table></figure>
-
-<p>它会自动调用<code>pnpm publish</code>，发布到npm仓库，并且打上tag。不过可惜的是，要手动push tag到远程：<code>git push --tags</code>。</p>
-
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/Badging/">
+                  #Badging
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://taoliujun.github.io/blog/changesets-in-monorepo/" data-id="clt8hne6j0001i8ohamwvdd40" data-title="在monorepo中使用changesets" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li></ul>
-
-    </footer>
   </div>
   
-</article>
-
-
-
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/web-api-readme/">
+        <span>Web API 实践，最后更新2024/02月...</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-02-28
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-02-28
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/JavaScript/">
+              JavaScript
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/webapi/">
+                  #webapi
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/snapshot-impact-on-coverage/">
+        <span>snapshot对单测覆盖率的影响以及应对方案</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2024-01-09
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2024-01-09
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/jest/">
+                  #jest
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/github-actions-sample-eslint-in-pull-request/">
+        <span>7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-12-29
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-12-29
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/github-actions/">
+                  #github actions
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/react-zustand/">
+        <span>React公共状态利器 - Zustand</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-12-13
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-12-13
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/React/">
+            React
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/React/">
+              React
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/zustand/">
+                  #zustand
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/blog/tags/react-store/">
+                  #react store
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/blog/changesets-in-monorepo/">
+        <span>在monorepo中使用changesets</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2023-12-08
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2023-12-08
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+            工程化
+          </a>
+        </span>
+      
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+              工程化
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/blog/tags/changesets/">
+                  #changesets
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+    </div>
+  </div>
   
 
-
-  <nav id="page-nav">
+  <nav class="page-navigation">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
+    
+      <a href="/blog/page/2/">下一页</a>
+    
   </nav>
 
-</section>
-        
-          <aside id="sidebar">
-  
+   
+</div>
+
+
+      <footer>
+  <p class="site-info">
+    Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> | Theme - <a target="_blank" rel="noopener" href="https://github.com/dongyuanxin/theme-bmw">BMW</a>
+    <br>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B7%A5%E7%A8%8B%E5%8C%96/">工程化</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Background-Tasks/" rel="tag">Background Tasks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Badging/" rel="tag">Badging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Battery-Status/" rel="tag">Battery Status</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Beacon/" rel="tag">Beacon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Broadcast-Channel/" rel="tag">Broadcast Channel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ast/" rel="tag">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/changesets/" rel="tag">changesets</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css-module/" rel="tag">css module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/es6/" rel="tag">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github-actions/" rel="tag">github actions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/jest/" rel="tag">jest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/radix/" rel="tag">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/react-store/" rel="tag">react store</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/typescript/" rel="tag">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webapi/" rel="tag">webapi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/zustand/" rel="tag">zustand</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/blog/tags/Background-Tasks/" style="font-size: 10px;">Background Tasks</a> <a href="/blog/tags/Badging/" style="font-size: 10px;">Badging</a> <a href="/blog/tags/Battery-Status/" style="font-size: 10px;">Battery Status</a> <a href="/blog/tags/Beacon/" style="font-size: 10px;">Beacon</a> <a href="/blog/tags/Broadcast-Channel/" style="font-size: 10px;">Broadcast Channel</a> <a href="/blog/tags/ast/" style="font-size: 10px;">ast</a> <a href="/blog/tags/changesets/" style="font-size: 10px;">changesets</a> <a href="/blog/tags/css-module/" style="font-size: 10px;">css module</a> <a href="/blog/tags/es6/" style="font-size: 20px;">es6</a> <a href="/blog/tags/github-actions/" style="font-size: 18px;">github actions</a> <a href="/blog/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/blog/tags/jest/" style="font-size: 10px;">jest</a> <a href="/blog/tags/radix/" style="font-size: 10px;">radix</a> <a href="/blog/tags/react/" style="font-size: 14px;">react</a> <a href="/blog/tags/react-store/" style="font-size: 10px;">react store</a> <a href="/blog/tags/typescript/" style="font-size: 12px;">typescript</a> <a href="/blog/tags/webapi/" style="font-size: 16px;">webapi</a> <a href="/blog/tags/zustand/" style="font-size: 10px;">zustand</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/web-api-Broadcast_Channel_API/">Web API - Broadcast Channel</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Battery_Status_API/">Web API - Battery Status</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Background_Tasks_API/">Web API - Background Tasks</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Beacon_API/">Web API - Beacon</a>
-          </li>
-        
-          <li>
-            <a href="/blog/web-api-Badging_API/">Web API - Badging</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 taoliujun<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+  </p>
 </footer>
 
+      <div class="back-to-top hidden">
+  <span>
+    <i class="iconfont icon-60"></i><span></span>%
+  </span>
+</div>
+
+<script>
+const updateIconToTop = percent => {
+  let dom = document.querySelector(".back-to-top span span");
+  dom.innerText = percent;
+  if(percent < 1) {
+    document.querySelector(".back-to-top").className = "back-to-top hidden";
+  } else {
+    document.querySelector(".back-to-top").className = "back-to-top";
+  }
+}
+
+const handleScoll = () => {
+  let isRunning = false;
+  return () => {
+    if (isRunning) return;
+    isRunning = true;
+    window.requestAnimationFrame(timestamp => {
+      let scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop,
+        scrollHeight =
+          document.documentElement.scrollHeight ||
+          document.body.scrollHeight,
+        clientHeight =
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+      isRunning = false;
+      if (scrollTop <= 1) {
+        updateIconToTop(0);
+        return;
+      }
+      if (scrollTop + clientHeight >= scrollHeight) {
+        updateIconToTop(100);
+      } else {
+        updateIconToTop(parseInt(
+          100 * scrollTop / (scrollHeight - clientHeight),
+          10
+        ));
+      }
+    });
+  };
+}
+
+const backToTop = () => {
+  let scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop,
+    delay = 10,
+    time = 200;
+  if (scrollTop <= 20) {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    return;
+  }
+  let step = Math.ceil(scrollTop * delay / time);
+  let timer = setInterval(() => {
+    scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (scrollTop - step <= 0) {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      clearInterval(timer);
+    } else {
+      document.documentElement.scrollTop = scrollTop - step;
+      document.body.scrollTop = scrollTop - step;
+    }
+  }, delay);
+}
+
+document.addEventListener("scroll", handleScoll(), false);
+
+document.querySelector(".back-to-top").addEventListener("click", backToTop, false);
+
+</script>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/blog/" class="mobile-nav-link">Home</a>
-  
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script>
+  (() => {
+    const mathjaxConfig = {
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+        availableFonts: ["STIX", "TeX"], //可选字体
+        showMathMenu: false //关闭右击菜单显示
+      }
+    }
+
+    let mathjaxInterval = setInterval(() => {
+      if(!window.MathJax){
+        return;
+      }
+      window.MathJax.Hub.Config(mathjaxConfig)
+      window.MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('app')])
+
+      clearInterval(mathjaxInterval)
+    }, 10)    
+  })()
+</script>
     
 
+    <script src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js" async></script>
+<script async>
+  let fancyTimer = setInterval(function(){
+    if(!window.$){
+      return;
+    }
+    $(document).ready(function() {
+      $(".post img").each(function () {
+        if($(this).parent().get(0).tagName.toLowerCase() === "a") {
+          return;
+        }
+        // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "gallery");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      });
+      
+      clearInterval(fancyTimer);
+    });
+  }, 10);
+</script>
 
-<script src="/blog/js/jquery-3.6.4.min.js"></script>
+    
+  </body>
 
-
-
-  
-<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/blog/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
 </html>
