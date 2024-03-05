@@ -17,12 +17,12 @@ const generateIssue = async (issue_number) => {
 
     const { title, body, created_at, labels, html_url } = issue.data;
 
-    const bodyMatch = body.match(/<!--hexo\r?\n---([\r\n\s\S]+)---\r?\n-->/);
+    const bodyMatch = body.match(/<!--hexo(\r?\n)+?---([\r\n\s\S]+)---(\r?\n)+?-->/);
     if (!bodyMatch) {
         throw new Error(`#${issue_number} has no hexo data`);
     }
 
-    const urlMatch = bodyMatch[1].match(/url: ([\s\S]+?)\r?\n/);
+    const urlMatch = bodyMatch[2].match(/url: ([\s\S]+?)\r?\n/);
     if (!urlMatch) {
         throw new Error(`#${issue_number} has no url`);
     }
@@ -33,7 +33,7 @@ const generateIssue = async (issue_number) => {
         })
         ?.join(`\n`);
 
-    const hexoData = `---\ntitle: "${title}"\ndate: "${created_at}"\ncategories:\n${categories}\n${bodyMatch[1]}\n---\n`;
+    const hexoData = `---\ntitle: "${title}"\ndate: "${created_at}"\ncategories:\n${categories}\n${bodyMatch[2]}\n---\n`;
 
     const path = urlMatch[1];
 
