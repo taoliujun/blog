@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2024/3 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - CSS Font Loading | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="JavaScript,webapi,CSS Font Loading," />
   
 
   <script>
@@ -145,85 +145,130 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 35 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - CSS Font Loading</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-04
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2024</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/65">https://github.com/taoliujun/blog/issues/65</a></p>
+<!--hexo
+
+---
+url: web-api-CSS_Font_Loading_API
+tags:
+  - webapi
+  - CSS Font Loading
+---
+
+-->
+
+<h1 id="CSS-Font-Loading"><a href="#CSS-Font-Loading" class="headerlink" title="CSS Font Loading"></a>CSS Font Loading</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API">https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API</a></p>
+</blockquote>
+<p><strong>CSS Font Loading</strong>和css的<code>@font-face</code>所作功能一致，在javascript中加载字体可以更精确控制其加载状态，并用在canvas等场景中。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="FontFace"><a href="#FontFace" class="headerlink" title="FontFace"></a>FontFace</h3><p>创建字体对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> font1 = <span class="keyword">new</span> <span class="title class_">FontFace</span>(</span><br><span class="line">    <span class="string">&#x27;f1&#x27;</span>,</span><br><span class="line">    <span class="string">`url(https://fonts.gstatic.com/s/kodemono/v1/A2BYn5pb0QgtVEPFnlYOnYLweZGZuA.woff2) format(&#x27;woff2&#x27;)`</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">weight</span>: <span class="string">&#x27;800&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">font1.<span class="title function_">load</span>();</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">fonts</span>.<span class="title function_">add</span>(font1);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>第三个参数描述符和css <code>@font-face</code>的属性<code>font-style</code>等是一样的作用，用于精确匹配字体源的。</p>
+</blockquote>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/CSS_Font_Loading_API/index.html">https://taoliujun.github.io/example/web-api/CSS_Font_Loading_API/index.html</a></p>
+<ol>
+<li>加载字体，在dom中自动生效，以及在canvas中作图。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/dee25ceb-9ddb-4cf8-9f7f-93382d3211b2" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Font_Loading_API/">
-          <span>Web API - CSS Font Loading</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-04
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Custom_Highlight_API/">
-          <span>Web API - CSS Custom Highlight</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-04
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Broadcast_Channel_API/">
-          <span>Web API - Broadcast Channel</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-01
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Battery_Status_API/">
-          <span>Web API - Battery Status</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-01
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/CSS-Font-Loading/">
+              #CSS Font Loading
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-CSS_Custom_Highlight_API/" target="_self">Web API - CSS Custom Highlight</a>
+      </div>
     
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
