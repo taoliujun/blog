@@ -2,25 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://taoliujun.github.io/blog/web-api-CSS_Custom_Highlight_API/</loc>
-    
-    <lastmod>2024-03-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/ast-in-css-module-auto-match/</loc>
-    
-    <lastmod>2024-03-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/changesets-in-monorepo/</loc>
+    <loc>https://taoliujun.github.io/blog/web-api-CSS_Font_Loading_API/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -101,6 +83,15 @@
   </url>
   
   <url>
+    <loc>https://taoliujun.github.io/blog/github-actions-intro/</loc>
+    
+    <lastmod>2024-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/github-actions-examples/</loc>
     
     <lastmod>2024-03-05</lastmod>
@@ -119,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/github-actions-intro/</loc>
+    <loc>https://taoliujun.github.io/blog/github-actions-learn/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -129,15 +120,6 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/github-actions-quickstart/</loc>
-    
-    <lastmod>2024-03-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/github-actions-learn/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -182,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/react-usetransition/</loc>
+    <loc>https://taoliujun.github.io/blog/react-usedeferredvalue/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -191,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/react-usedeferredvalue/</loc>
+    <loc>https://taoliujun.github.io/blog/react-usetransition/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -236,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Badging_API/</loc>
+    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -245,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
+    <loc>https://taoliujun.github.io/blog/web-api-Badging_API/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -281,6 +263,15 @@
   </url>
   
   <url>
+    <loc>https://taoliujun.github.io/blog/web-api-CSS_Custom_Highlight_API/</loc>
+    
+    <lastmod>2024-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/web-api-readme/</loc>
     
     <lastmod>2024-03-05</lastmod>
@@ -300,6 +291,24 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/write-components-elegantly-using-radix/</loc>
+    
+    <lastmod>2024-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/ast-in-css-module-auto-match/</loc>
+    
+    <lastmod>2024-03-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/changesets-in-monorepo/</loc>
     
     <lastmod>2024-03-05</lastmod>
     
@@ -401,14 +410,14 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/Badging/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/Background-Tasks/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/Background-Tasks/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/Badging/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -437,6 +446,13 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/CSS-Custom-Highlight/</loc>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tags/CSS-Font-Loading/</loc>
     <lastmod>2024-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
