@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - CSS Typed Object Model | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="JavaScript,webapi,CSS Typed OM," />
   
 
   <script>
@@ -145,115 +145,145 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 37 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - CSS Typed Object Model</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-06
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/69">https://github.com/taoliujun/blog/issues/69</a></p>
+<!--hexo
+
+---
+url: web-api-CSS_Typed_OM_API
+tags:
+  - webapi
+  - CSS Typed OM
+---
+
+-->
+
+<h1 id="CSS-Typed-OM"><a href="#CSS-Typed-OM" class="headerlink" title="CSS Typed OM"></a>CSS Typed OM</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API">https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API</a></p>
+</blockquote>
+<p><strong>CSS Typed OM</strong>全称<code>CSS Typed Object Model</code>，提供了一系列访问和操作CSS值的方法。</p>
+<p>在以往，使用<code>HTMLElement.style</code>管理元素的样式，它只是一个<code>string</code>类型，管理很笨拙，可读性也差。而本API将CSS值解析为可读性很高的对象，据此可以科学的管理它。</p>
+<blockquote>
+<p>和<code>HTMLElement.style</code>相比，本API更有可读性，性能更高。</p>
+</blockquote>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>有公用类型<code>CSSStyleValue</code>和若干特殊类型如<code>CSSImageValue</code>、<code>CSSKeywordValue</code>等组成。</p>
+<h3 id="CSSStyleValue"><a href="#CSSStyleValue" class="headerlink" title="CSSStyleValue"></a>CSSStyleValue</h3><p>它是所有CSS值类型的公用类型，提供了<code>parse</code>方法将一个字符串解析成样式对象，例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回 CSSStyleValue 类型</span></span><br><span class="line"><span class="title class_">CSSStyleValue</span>.<span class="title function_">parse</span>(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;#f00&#x27;</span>);</span><br><span class="line"><span class="comment">// 返回 CSSTransformValue 类型</span></span><br><span class="line"><span class="title class_">CSSStyleValue</span>.<span class="title function_">parse</span>(<span class="string">&#x27;transform&#x27;</span>, <span class="string">&#x27;translate(30px, 20px) rotate(45deg)&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSSKeywordValue"><a href="#CSSKeywordValue" class="headerlink" title="CSSKeywordValue"></a>CSSKeywordValue</h3><p>CSS保留关键字类型如<code>initial</code>，例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回 CSSKeywordValue &#123;value: &#x27;normal&#x27;&#125; 类型，因为normal是保留关键字。</span></span><br><span class="line">$0.<span class="title function_">computedStyleMap</span>().<span class="title function_">get</span>(<span class="string">&#x27;font-style&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他类型见MDN"><a href="#其他类型见MDN" class="headerlink" title="其他类型见MDN"></a>其他类型见MDN</h3><h3 id="StylePropertyMapReadOnly"><a href="#StylePropertyMapReadOnly" class="headerlink" title="StylePropertyMapReadOnly"></a>StylePropertyMapReadOnly</h3><p>提供<code>get</code>、<code>getAll</code>等方法读取样式。</p>
+<h3 id="StylePropertyMap"><a href="#StylePropertyMap" class="headerlink" title="StylePropertyMap"></a>StylePropertyMap</h3><p>继承于<code>StylePropertyMapReadOnly</code>，提供<code>append</code>、<code>set</code>等方法操作样式，如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将元素的文本颜色设置为红色</span></span><br><span class="line">$0.<span class="property">attributeStyleMap</span>.<span class="title function_">set</span>(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;red&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法和属性"><a href="#方法和属性" class="headerlink" title="方法和属性"></a>方法和属性</h2><h3 id="computedStyleMap"><a href="#computedStyleMap" class="headerlink" title="computedStyleMap"></a>computedStyleMap</h3><p><code>HTMLelement.computedStyleMap()</code>返回<code>StylePropertyMapReadOnly</code>类型。</p>
+<h3 id="attributeStyleMap"><a href="#attributeStyleMap" class="headerlink" title="attributeStyleMap"></a>attributeStyleMap</h3><p><code>HTMLElement.attributeStyleMap</code>返回<code>StylePropertyMap</code>类型。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/CSS_Typed_OM_API/index.html">https://taoliujun.github.io/example/web-api/CSS_Typed_OM_API/index.html</a></p>
+<ol>
+<li>在例子中，打印出元素所有的样式，或打印出指定的样式：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/50ce9bcd-62e4-42de-9368-81c6017b6476" alt="image"></p>
+<ol start="2">
+<li>改变元素的颜色样式：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/7893da8e-63f7-4810-8a93-9ad5cc36cb22" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-learn/">
-          <span>2. GitHub Actions - Learn GitHub Actions</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-quickstart/">
-          <span>1. GitHub Actions - Quickstart</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-intro/">
-          <span>0. GitHub Actions - Intro</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/write-components-elegantly-using-radix/">
-          <span>从Radix看如何优雅写组件</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-promise/">
-          <span>整理ES6：Promise的忽略点和几个方法的区别</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/what-is-es6/">
-          <span>整理ES6：ES6是什么？</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/CSS-Typed-OM/">
+              #CSS Typed OM
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
     
-      <a href="/blog/archives/2023/page/2/">上一页</a>
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-CSS_Properties_and_Values_API/" target="_self">Web API - CSS Properties and Values</a>
+      </div>
     
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
