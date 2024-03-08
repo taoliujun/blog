@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - Clipboard | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="JavaScript,webapi,Clipboard," />
   
 
   <script>
@@ -145,173 +145,134 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 39 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - Clipboard</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-07
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/72">https://github.com/taoliujun/blog/issues/72</a></p>
+<!--hexo
+
+---
+url: web-api-Clipboard_API
+tags:
+  - webapi
+  - Clipboard
+---
+
+-->
+
+<h1 id="Clipboard"><a href="#Clipboard" class="headerlink" title="Clipboard"></a>Clipboard</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API">https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API</a></p>
+</blockquote>
+<p><strong>Clipboard</strong>提供了对系统剪切板的读取、写入方法。</p>
+<blockquote>
+<p>不要再使用<code>document.execCommand()</code>了。</p>
+</blockquote>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="Clipboard-1"><a href="#Clipboard-1" class="headerlink" title="Clipboard"></a>Clipboard</h3><p>使用<code>Navigator.cliboard</code>可得到<code>Clipboard</code>接口实例，提供了<code>read</code>和<code>write</code>方法。另外，<code>readText</code>和<code>writeText</code>方法是一对读取写入文本信息的快捷方法。</p>
+<h3 id="ClipboardItem"><a href="#ClipboardItem" class="headerlink" title="ClipboardItem"></a>ClipboardItem</h3><p>剪切板数据对象，包含了数据类型<code>type</code>（如<code>image/png</code>）和数据流<code>blob</code>。</p>
+<h2 id="方法和属性"><a href="#方法和属性" class="headerlink" title="方法和属性"></a>方法和属性</h2><p>略，见示例。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Clipboard_API/index.html">https://taoliujun.github.io/example/web-api/Clipboard_API/index.html</a></p>
+<ol>
+<li>复制输入框的文本到系统剪切板中、或从系统剪切板中读取：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/007c9e39-b66b-4910-ad55-e4391c4088bd" alt="image"></p>
+<ol start="2">
+<li>复制canvas的图像数据到剪切板、或从剪切板中读取：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/852608b5-dc86-4c24-9748-55004fee34ce" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-operator/">
-          <span>整理ES6：运算符</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-symbol/">
-          <span>整理ES6：聊一聊Symbol </span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-set/">
-          <span>整理ES6：Set真的挺好的</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-map/">
-          <span>整理ES6：Map真的挺好的</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-proxy/">
-          <span>整理ES6：Proxy的应用场景</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/es6-reflect/">
-          <span>整理ES6：Reflect和Object的关系</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-runs/">
-          <span>6. GitHub Actions - Managing workflow runs</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-jobs/">
-          <span>5. GitHub Actions - Using jobs</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-workflows/">
-          <span>4. GitHub Actions - Using workflows</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-examples/">
-          <span>3. GitHub Actions - Examples</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        07-05
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/Clipboard/">
+              #Clipboard
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
     
-      <a href="/blog/archives/2023/">上一页</a>
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-CSS_Object_Model/" target="_self">Web API - CSSOM (CSS_Object_Model)</a>
+      </div>
     
-    
-      <a href="/blog/archives/2023/page/3/">下一页</a>
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
