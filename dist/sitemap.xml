@@ -2,106 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://taoliujun.github.io/blog/web-api-CSS_Object_Model/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Clipboard_API/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/react-usetransition/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/react-zustand/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/tsconfig-json/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/snapshot-impact-on-coverage/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/typescript-means/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Badging_API/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Battery_Status_API/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Beacon_API/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://taoliujun.github.io/blog/web-api-Broadcast_Channel_API/</loc>
+    <loc>https://taoliujun.github.io/blog/web-api-Cookie_Store_API/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -128,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://taoliujun.github.io/blog/web-api-CSS_Object_Model/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/web-api-CSS_Properties_and_Values_API/</loc>
     
     <lastmod>2024-03-08</lastmod>
@@ -138,6 +48,15 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/web-api-CSS_Typed_OM_API/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Clipboard_API/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -272,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/github-actions-intro/</loc>
+    <loc>https://taoliujun.github.io/blog/github-actions-jobs/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -281,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/github-actions-jobs/</loc>
+    <loc>https://taoliujun.github.io/blog/github-actions-intro/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -326,15 +245,6 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/react-performance%20optimization/</loc>
-    
-    <lastmod>2024-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://taoliujun.github.io/blog/github-actions-workflows/</loc>
     
     <lastmod>2024-03-08</lastmod>
@@ -344,7 +254,106 @@
   </url>
   
   <url>
+    <loc>https://taoliujun.github.io/blog/react-performance%20optimization/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://taoliujun.github.io/blog/react-usedeferredvalue/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/react-usetransition/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/react-zustand/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/snapshot-impact-on-coverage/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tsconfig-json/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/typescript-means/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Background_Tasks_API/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Badging_API/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Battery_Status_API/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Beacon_API/</loc>
+    
+    <lastmod>2024-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/web-api-Broadcast_Channel_API/</loc>
     
     <lastmod>2024-03-08</lastmod>
     
@@ -425,14 +434,14 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/typescript/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/jest/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/jest/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/typescript/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -446,14 +455,14 @@
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/Badging/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/Background-Tasks/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://taoliujun.github.io/blog/tags/Background-Tasks/</loc>
+    <loc>https://taoliujun.github.io/blog/tags/Badging/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -517,6 +526,13 @@
   
   <url>
     <loc>https://taoliujun.github.io/blog/tags/Clipboard/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://taoliujun.github.io/blog/tags/CookieStore/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

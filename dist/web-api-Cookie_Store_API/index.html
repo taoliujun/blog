@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023/12 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - CookieStore | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="JavaScript,webapi,CookieStore," />
   
 
   <script>
@@ -145,71 +145,132 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 40 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - CookieStore</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-07
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/75">https://github.com/taoliujun/blog/issues/75</a></p>
+<!--hexo
+
+---
+url: web-api-Cookie_Store_API
+tags:
+  - webapi
+  - CookieStore
+---
+
+-->
+
+<h1 id="CookieStore"><a href="#CookieStore" class="headerlink" title="CookieStore"></a>CookieStore</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Cookie_Store_API">https://developer.mozilla.org/en-US/docs/Web/API/Cookie_Store_API</a></p>
+</blockquote>
+<p><strong>CookieStore</strong>提供了对cookie的读取写入。相比<code>document.cookies</code>管理cookie的笨拙，本API更为明了。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="CookieStore-1"><a href="#CookieStore-1" class="headerlink" title="CookieStore"></a>CookieStore</h3><p>使用<code>window.cookieStore</code>可获取本接口实例，提供了<code>get</code>、<code>set</code>、<code>getAll</code>、<code>delete</code>方法管理cookie，并支持cookie的所有特性如domain、path、expires等。</p>
+<p>且还提供了<code>change</code>、<code>delete</code>事件监听。</p>
+<h3 id="CookieStoreManager"><a href="#CookieStoreManager" class="headerlink" title="CookieStoreManager"></a>CookieStoreManager</h3><p>订阅cookie变动。</p>
+<h2 id="方法和属性"><a href="#方法和属性" class="headerlink" title="方法和属性"></a>方法和属性</h2><p>略，见示例。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Cookie_Store_API/index.html">https://taoliujun.github.io/example/web-api/Cookie_Store_API/index.html</a></p>
+<ol>
+<li>写入、读取永久的cookie：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/d72df988-15d3-4214-ae9a-a6184cb5ba3e" alt="image"></p>
+<ol start="2">
+<li>写入、读取会过期的cookie：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/9a89eb49-7a7f-40f3-b523-6ce5bead38cd" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-sample-eslint-in-pull-request/">
-          <span>7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-28
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/react-zustand/">
-          <span>React公共状态利器 - Zustand</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-12
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/changesets-in-monorepo/">
-          <span>在monorepo中使用changesets</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-08
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/CookieStore/">
+              #CookieStore
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-Clipboard_API/" target="_self">Web API - Clipboard</a>
+      </div>
     
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
