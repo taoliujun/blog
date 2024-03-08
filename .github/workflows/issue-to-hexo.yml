@@ -28,9 +28,9 @@ jobs:
                       src/pnpm-lock.yaml
                       .github/actions/issue-to-hexo/pnpm-lock.yaml
 
-            # - name: install dependencies
-            #   working-directory: src
-            #   run: pnpm install
+            - name: install dependencies
+              working-directory: src
+              run: pnpm install
 
             - name: install dependencies
               working-directory: .github/actions/issue-to-hexo
@@ -41,8 +41,8 @@ jobs:
               with:
                   issue_number: ${{ github.event.inputs.issue_number }}
 
-            # - name: hexo build
-            #   run: pnpm run build
+            - name: hexo build
+              run: pnpm run build
 
             - name: create Pull Request
               uses: peter-evans/create-pull-request@v6
