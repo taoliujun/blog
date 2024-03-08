@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023/9 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - Credential Management | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="JavaScript,webapi,Credential Management," />
   
 
   <script>
@@ -145,43 +145,141 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 41 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - Credential Management</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-07
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/JavaScript/">
+            JavaScript
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/77">https://github.com/taoliujun/blog/issues/77</a></p>
+<!--hexo
+
+---
+url: web-api-Credential_Management_API
+tags:
+  - webapi
+  - Credential Management
+---
+
+-->
+
+<h1 id="Credential-Management"><a href="#Credential-Management" class="headerlink" title="Credential Management"></a>Credential Management</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API">https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API</a></p>
+</blockquote>
+<p><strong>Credential Management</strong>用于管理网页的登录凭证如如密码、秘钥对。比如在第一次登录时保存密码凭证，以后读取该凭证后自动登录，省去用户重复输入账号密码的步骤（尽管可能还需要用户在浏览器弹出框里选择要登录的用户）。</p>
+<p>在一些浏览器如chrome的Password Manager配置<code>chrome://password-manager/settings</code>中，有一个选项<strong>Offer to save passwords</strong>：</p>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/11785f82-c37c-450a-9711-a46cf2eb6346" alt="image"></p>
+<p>是否允许保存密码。它在打开后，有两个作用，一是允许代码调用<code>credentials.store</code>存储凭证信息；二是允许浏览器智能的为你存储网页的登录凭证，即便该网页并未显式调用<code>credentials.store</code>。它的效果如下：</p>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/3469d848-16cc-4439-871a-5d574d1ab34f" alt="image"></p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="Credential"><a href="#Credential" class="headerlink" title="Credential"></a>Credential</h3><p>基础凭证接口，本身不能直接使用。</p>
+<h3 id="PasswordCredential"><a href="#PasswordCredential" class="headerlink" title="PasswordCredential"></a>PasswordCredential</h3><p>密码凭证接口，继承于<code>Credential</code>，用于存储、读取密码类型的凭证。</p>
+<h3 id="FederatedCredential"><a href="#FederatedCredential" class="headerlink" title="FederatedCredential"></a>FederatedCredential</h3><p>联合凭证接口，比如接入google联合登录凭证。</p>
+<h3 id="CredentialsContainer"><a href="#CredentialsContainer" class="headerlink" title="CredentialsContainer"></a>CredentialsContainer</h3><p><code>Navigator.credentials</code>获取该接口实例，提供<code>create</code>、<code>get</code>、<code>store</code>等方法来创建、读取、存储凭证。<code>create</code>接口一般不直接使用，而直接用<code>PasswordCredential</code>这种具体的接口去创建凭证。</p>
+<h2 id="方法和属性"><a href="#方法和属性" class="headerlink" title="方法和属性"></a>方法和属性</h2><p>略，见示例。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Credential_Management_API/index.html">https://taoliujun.github.io/example/web-api/Credential_Management_API/index.html</a></p>
+<ol>
+<li>输入账号密码，点击登录，提示是否存储密码凭证：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/9b476376-3c0e-4467-b42b-5d8685186839" alt="image"></p>
+<ol start="2">
+<li>读取密码凭证并打印：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/69de9bd3-08eb-4f67-91e7-86f1c94d16f9" alt="image"></p>
+<ol start="3">
+<li>如果有多个凭证，需要用户手动选择使用哪个凭证：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/9b4859ba-0ebe-4f3f-945a-50f654e78ee9" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/tsconfig-json/">
-          <span>关于tsconfig.json，最后更新2023/11月...</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        09-04
-      </div>
-    </header>
-  </article>
+
   
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/Credential-Management/">
+              #Credential Management
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-Cookie_Store_API/" target="_self">Web API - CookieStore</a>
+      </div>
     
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
