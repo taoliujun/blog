@@ -45,9 +45,10 @@ jobs:
               run: pnpm run build
 
             - name: create Pull Request
-              uses: peter-evans/create-pull-request@v5
+              uses: peter-evans/create-pull-request@v6
               with:
                   delete-branch: true
                   title: 'New blog for issue #${{ github.event.inputs.issue_number }}'
                   base: master
                   branch: feat/new-blog-by-action
+                  branch-suffix: timestamp
