@@ -8,12 +8,12 @@
   
   
   
-  <title>标签: webapi | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - Device Orientation | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Web API,webapi,Device Orientation," />
   
 
   <script>
@@ -145,173 +145,159 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>当前位于 1/2 页</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - Device Orientation</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-11
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/Web-API/">
+            Web API
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        
-          <span>标签 : webapi</span>
-        
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/81">https://github.com/taoliujun/blog/issues/81</a></p>
+<!--hexo
+
+---
+url: web-api-Device_orientation_events
+tags:
+  - webapi
+  - Device Orientation
+---
+
+-->
+
+<h1 id="Device-Orientation"><a href="#Device-Orientation" class="headerlink" title="Device Orientation"></a>Device Orientation</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events">https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events</a></p>
+</blockquote>
+<p><strong>Device Orientation</strong>用于获取设备的方向、和运动信息。移动设备的加速度传感器、陀螺仪、指南针等组件为浏览器提供了一系列运动信息，可以监听事件获取到相关信息。</p>
+<blockquote>
+<p>三轴指的是手机沿着北方向竖向平放在桌子上，左右是X轴，上下是Y轴，高低是Z轴。</p>
+</blockquote>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>下面的接口里的数据概念有所类似但又有细节差异，使用时仔细参考官方文档。</p>
+<h3 id="DeviceMotionEvent"><a href="#DeviceMotionEvent" class="headerlink" title="DeviceMotionEvent"></a>DeviceMotionEvent</h3><p>设备的加速度和旋转速率的变化事件。包含以下信息：</p>
+<ul>
+<li><code>acceleration</code>，加速度，不包括重力计算。</li>
+<li><code>accelerationIncludingGravity</code>，加速度，包括重力计算。</li>
+<li><code>interval</code>，获取数据的频率，单位毫秒。</li>
+<li><code>rotationRate</code>，三个轴上的速率。</li>
+</ul>
+<h3 id="DeviceMotionEventAcceleration"><a href="#DeviceMotionEventAcceleration" class="headerlink" title="DeviceMotionEventAcceleration"></a>DeviceMotionEventAcceleration</h3><p>设备在三个轴上的加速度量的变化事件。包含以下信息：</p>
+<ul>
+<li><code>z</code>，Z轴变化量。</li>
+<li><code>x</code>，X轴变化量。</li>
+<li><code>y</code>，Y轴变化量。</li>
+</ul>
+<h3 id="DeviceMotionEventRotationRate"><a href="#DeviceMotionEventRotationRate" class="headerlink" title="DeviceMotionEventRotationRate"></a>DeviceMotionEventRotationRate</h3><p>设备在三个轴的旋转速率的变化事件。包含以下信息：</p>
+<ul>
+<li><code>alpha</code>，Z轴速率，即每秒变化量。</li>
+<li><code>beta</code>，X轴速率。</li>
+<li><code>gamma</code>，Y轴速率。</li>
+</ul>
+<h3 id="DeviceOrientationEvent"><a href="#DeviceOrientationEvent" class="headerlink" title="DeviceOrientationEvent"></a>DeviceOrientationEvent</h3><p>设备物理方向的变化事件。包含了以下信息：</p>
+<ul>
+<li><code>absolute</code>，数据信息是否是绝对量（地球坐标）。</li>
+<li><code>alpha</code>，Z轴变化量。</li>
+<li><code>beta</code>，X轴变化量。</li>
+<li><code>gamma</code>，Y轴变化量。</li>
+</ul>
+<h2 id="方法和属性"><a href="#方法和属性" class="headerlink" title="方法和属性"></a>方法和属性</h2><h3 id="Event-devicemotion"><a href="#Event-devicemotion" class="headerlink" title="Event.devicemotion"></a>Event.devicemotion</h3><p>事件监听，返回<code>DeviceMotionEvent</code>。</p>
+<h3 id="Event-deviceorientation"><a href="#Event-deviceorientation" class="headerlink" title="Event.deviceorientation"></a>Event.deviceorientation</h3><p>事件监听，返回<code>DeviceOrientationEvent</code></p>
+<h3 id="Event-deviceorientationabsolute"><a href="#Event-deviceorientationabsolute" class="headerlink" title="Event.deviceorientationabsolute"></a>Event.deviceorientationabsolute</h3><p>事件监听，返回<code>DeviceOrientationEvent</code></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Device_orientation_events/index.html">https://taoliujun.github.io/example/web-api/Device_orientation_events/index.html</a></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Document_Picture-in-Picture_API/">
-          <span>Web API - Document Picture-in-Picture</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-11
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Device_orientation_events/">
-          <span>Web API - Device Orientation</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-11
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Document_Object_Model/">
-          <span>Web API - DOM</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-11
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Device_Memory_API/">
-          <span>Web API - Device Memory</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-11
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Credential_Management_API/">
-          <span>Web API - Credential Management</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-07
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Cookie_Store_API/">
-          <span>Web API - CookieStore</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-07
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Clipboard_API/">
-          <span>Web API - Clipboard</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-07
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Object_Model/">
-          <span>Web API - CSSOM (CSS_Object_Model)</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-06
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Typed_OM_API/">
-          <span>Web API - CSS Typed Object Model</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-06
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Properties_and_Values_API/">
-          <span>Web API - CSS Properties and Values</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-05
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/Device-Orientation/">
+              #Device Orientation
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-Document_Object_Model/" target="_self">Web API - DOM</a>
+      </div>
     
     
-      <a href="/blog/tags/webapi/page/2/">下一页</a>
+      <div class="nav-next">
+        下一篇:
+        <a href="/blog/web-api-Document_Picture-in-Picture_API/" target="_self">Web API - Document Picture-in-Picture</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
