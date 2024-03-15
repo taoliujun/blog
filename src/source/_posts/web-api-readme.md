@@ -69,5 +69,29 @@ tags:
 - [x] #81，[Device Orientation Events](https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events) 访问设备的物理方向。
 - [x] #82，[Document Picture-in-Picture API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API) 画中画。*experimental*
 
+### E
+
+- [ ] [EditContext API](https://developer.mozilla.org/en-US/docs/Web/API/EditContext_API) 富文本交互 *Experimental*
+- [ ] [Encoding API](https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API) 字符编码解码
+- [ ] [Encrypted Media Extensions](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API) 支持数字版权内容
+- [x] #84，[EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API) 颜色吸管 *Experimental*
+
+### F
+
+- [ ] [FedCM API](https://developer.mozilla.org/en-US/docs/Web/API/FedCM_API) *Experimental*
+- [ ] [Fenced Frame API](https://developer.mozilla.org/en-US/docs/Web/API/Fenced_frame_API) *Experimental*
+- [ ] [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 发起网络请求，代替XMLHttpRequest
+- [x] #85，[File API](https://developer.mozilla.org/en-US/docs/Web/API/File_API) 访问用户选择的文件
+- [x] #86，[File System API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API) 访问、写入操作系统上的文件
+- [ ] [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) 虚拟文件系统
+- [ ] [Force Touch Events](https://developer.mozilla.org/en-US/docs/Web/API/Force_Touch_events) Non-standard
+- [x] #87，[Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) 元素全屏
+
+### G
+
+- [ ] [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) 访问手柄设备
+- [x] #88，[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)  访问地理位置
+- [ ] [Geometry Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/Geometry_interfaces) 几何形状
+
 
 

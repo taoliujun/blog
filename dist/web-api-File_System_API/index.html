@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2024 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - File System | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Web API,webapi,File System," />
   
 
   <script>
@@ -145,173 +145,174 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 50 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - File System</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-12
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/Web-API/">
+            Web API
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2024</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/86">https://github.com/taoliujun/blog/issues/86</a></p>
+<!--hexo
+
+---
+url: web-api-File_System_API
+tags:
+  - webapi
+  - File System
+---
+
+-->
+
+<h1 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_API">https://developer.mozilla.org/en-US/docs/Web/API/File_System_API</a></p>
+</blockquote>
+<p><strong>File System</strong>可读取、写入用户选择的文件、目录。</p>
+<blockquote>
+<p>和<code>File</code>的交互有所不同，本API不依赖<code>&lt;input type=&quot;file&quot; /&gt;</code>元素。</p>
+</blockquote>
+<h2 id="OPFS-origin-private-file-system-Concept"><a href="#OPFS-origin-private-file-system-Concept" class="headerlink" title="OPFS(origin private file system) Concept"></a>OPFS(origin private file system) Concept</h2><p>以往，只能读取、写入用户手动选择的文件或目录，这是安全性上必须考虑的。但如果要批量写入很多文件，这些交互操作会频繁且耗时。OPFS提供了新的可能性，允许在私有域文件系统中直接操作文件，这个文件系统和用户的文件系统是隔离的，用户看不到它，它也不能访问用户的文件系统。</p>
+<p>对于用户选择的文件，也可以通过<code>createSyncAccessHandle()</code>授权为<code>OPFS</code>。</p>
+<ul>
+<li>OPFS在Web Worker中运行。</li>
+<li>OPFS就像是<code>Storage</code>、<code>IndexedDB</code>。</li>
+<li>清空浏览器的Storage，也会清除掉OPFS。</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="FileSystemHandle"><a href="#FileSystemHandle" class="headerlink" title="FileSystemHandle"></a>FileSystemHandle</h3><p>文件系统的基本接口，开发者不直接使用它。文件和目录的访问接口均继承于此。其中一部分属性、方法：</p>
+<ul>
+<li><code>kind</code>，文件类型是file或directory。</li>
+<li><code>name</code>，文件名。</li>
+<li><code>queryPermission()</code>，查询操作的授权。</li>
+<li><code>requestPermission()</code>，请求操作的授权。</li>
+</ul>
+<h3 id="FileSystemFileHandle"><a href="#FileSystemFileHandle" class="headerlink" title="FileSystemFileHandle"></a>FileSystemFileHandle</h3><p>访问文件的接口。除继承<code>FileSystemHandle</code>的属性方法，还有：</p>
+<ul>
+<li><code>getFile()</code>，获取到文件对象。</li>
+<li><code>createWritable()</code>，请求写入权限，返回<code>FileSystemWritableFileStream</code>。</li>
+<li><code>createSyncAccessHandle()</code>，返回当前文件句柄的OPFS。</li>
+</ul>
+<h3 id="FileSystemDirectoryHandle"><a href="#FileSystemDirectoryHandle" class="headerlink" title="FileSystemDirectoryHandle"></a>FileSystemDirectoryHandle</h3><p>访问目录的接口。除继承<code>FileSystemHandle</code>的属性方法，还有：</p>
+<ul>
+<li><code>getDirectoryHandle()</code>，获取到指定名称的子目录对象。</li>
+<li><code>getFileHandle()</code>，获取指定名称的文件对象。</li>
+<li><code>removeEntry()</code>，移除指定名称的子目录或文件。</li>
+<li>迭代器<code>entries</code>、<code>keys</code>、<code>values</code>用于遍历目录内的条目。</li>
+</ul>
+<h3 id="FileSystemSyncAccessHandle"><a href="#FileSystemSyncAccessHandle" class="headerlink" title="FileSystemSyncAccessHandle"></a>FileSystemSyncAccessHandle</h3><p>访问OPFS的接口。部分属性方法有：</p>
+<ul>
+<li><code>close</code>，释放句柄，禁止继续操作。</li>
+<li><code>flush</code>，将写入的数据，保存到磁盘里。</li>
+<li><code>write</code>，写入数据。</li>
+<li><code>read</code>，读取数据。</li>
+</ul>
+<h3 id="FileSystemWritableFileStream"><a href="#FileSystemWritableFileStream" class="headerlink" title="FileSystemWritableFileStream"></a>FileSystemWritableFileStream</h3><p>写入文件的接口。部分属性方法有：</p>
+<ul>
+<li><code>write</code>，写入数据。</li>
+<li><code>close</code>，关闭且保存到磁盘。</li>
+</ul>
+<h2 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h2><h3 id="window-showOpenFilePicker-options"><a href="#window-showOpenFilePicker-options" class="headerlink" title="window.showOpenFilePicker(options)"></a>window.showOpenFilePicker(options)</h3><p>选择可读取文件的对话框，返回<code>FileSystemFileHandle</code>。</p>
+<p>入参支持多选文件、目录入口、目录定位、类型筛选等。</p>
+<h3 id="window-showSaveFilePicker"><a href="#window-showSaveFilePicker" class="headerlink" title="window.showSaveFilePicker()"></a>window.showSaveFilePicker()</h3><p>选择可写入文件的对话框，返回<code>FileSystemFileHandle</code>。该接口实例已经拥有了写入权限。</p>
+<h3 id="window-showDirectoryPicker"><a href="#window-showDirectoryPicker" class="headerlink" title="window.showDirectoryPicker()"></a>window.showDirectoryPicker()</h3><p>选择可读取目录的对话框，返回<code>FileSystemDirectoryHandle</code>。</p>
+<h3 id="DataTransferItem-getAsFileSystemHandle"><a href="#DataTransferItem-getAsFileSystemHandle" class="headerlink" title="DataTransferItem.getAsFileSystemHandle()"></a>DataTransferItem.getAsFileSystemHandle()</h3><p>拖拽文件或目录，返回<code>FileSystemFileHandle</code>或<code>FileSystemDirectoryHandle</code>。</p>
+<h3 id="StorageManager-getDirectory"><a href="#StorageManager-getDirectory" class="headerlink" title="StorageManager.getDirectory()"></a>StorageManager.getDirectory()</h3><p>通过<code>navigator.storage.getDirectory()</code>返回<code>OPFS</code>。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/File_System_API/index.html">https://taoliujun.github.io/example/web-api/File_System_API/index.html</a></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Cookie_Store_API/">
-          <span>Web API - CookieStore</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-07
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Clipboard_API/">
-          <span>Web API - Clipboard</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-07
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Object_Model/">
-          <span>Web API - CSSOM (CSS_Object_Model)</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-06
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Typed_OM_API/">
-          <span>Web API - CSS Typed Object Model</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-06
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Properties_and_Values_API/">
-          <span>Web API - CSS Properties and Values</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-05
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Font_Loading_API/">
-          <span>Web API - CSS Font Loading</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-04
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-CSS_Custom_Highlight_API/">
-          <span>Web API - CSS Custom Highlight</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-04
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Broadcast_Channel_API/">
-          <span>Web API - Broadcast Channel</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-01
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Battery_Status_API/">
-          <span>Web API - Battery Status</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        03-01
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/web-api-Background_Tasks_API/">
-          <span>Web API - Background Tasks</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        02-29
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/File-System/">
+              #File System
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
     
-      <a href="/blog/archives/2024/">上一页</a>
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-File_API/" target="_self">Web API - File</a>
+      </div>
     
     
-      <a href="/blog/archives/2024/page/3/">下一页</a>
+      <div class="nav-next">
+        下一篇:
+        <a href="/blog/web-api-Fullscreen_API/" target="_self">Web API - Fullscreen</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
