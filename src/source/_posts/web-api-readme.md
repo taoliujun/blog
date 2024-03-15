@@ -25,8 +25,10 @@ tags:
 
 > 以 https://developer.mozilla.org/en-US/docs/Web/API 为基础，只实践W3C Recommendation状态的API。
 
-## 目录
+## 目录见
 
+
+<!--hexo-->
 ### A
 
 - [ ] [Audio Output Devices API](https://developer.mozilla.org/en-US/docs/Web/API/Audio_Output_Devices_API) 选择音频播放设备。*Experimental*
@@ -92,6 +94,45 @@ tags:
 - [ ] [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API) 访问手柄设备
 - [x] #88，[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)  访问地理位置
 - [ ] [Geometry Interfaces](https://developer.mozilla.org/en-US/docs/Web/API/Geometry_interfaces) 几何形状
+<!--hexo-->
 
+### H
+- [ ] [HTML DOM](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API) DOM操作，包括form data、canvas、video等
+- [ ] [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) 拖放
+- [ ] [HTML Sanitizer API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API) 安全的HTML字符串 *Experimental*
+- [ ] [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) 浏览器会话记录
+- [ ] [Houdini API](https://developer.mozilla.org/en-US/docs/Web/API/Houdini_APIs) 扩展CSS的样式和布局
 
+### I
+- [ ] [Idle Detection API](https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API) *Experimental*
+- [ ] [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API) 拍照，调用设备捕获图像 *Experimental*
+- [ ] [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) 客户端数据库
+- [ ] [Ink API](https://developer.mozilla.org/en-US/docs/Web/API/Ink_API) 调用系统的笔触合成功能 *Experimental*
+- [ ] [Input Device Capabilities API](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities_API) *Experimental*
+- [ ] [Insertable Streams for MediaStreamTrack API](https://developer.mozilla.org/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) 操作媒体流，比如合成音频、往视频里加一个帽子
+- [ ] [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 监听元素是否出现在视口
+
+### K
+- [ ] [Keyboard API](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard_API) 访问物理键盘的信息、如布局等 *Experimental*
+
+### L
+- [ ] [Launch Handler API](https://developer.mozilla.org/en-US/docs/Web/API/Launch_Handler_API) 获取PWA的启动方式 *Experimental*
+- [ ] [Local Font Access API](https://developer.mozilla.org/en-US/docs/Web/API/Local_Font_Access_API) 访问用户本地安装的字体列表 *Experimental*
+
+### M
+- [ ] [Media Capabilities API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API) 获取设备的解码、编码能力，以及实时反馈
+- [ ] [Media Capture and Streams](https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API) 媒体捕捉和媒体流
+- [ ] [Media Session API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API) 获取设备对媒体的控制
+- [ ] [Media Source Extensions](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API) 创建媒体流 *Experimental*
+- [ ] [MediaStream Recording](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API) 录制媒体流
+
+### N
+- [ ] [Navigation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API) 对`History`和`Location`的扩展，可以拦截管理浏览器导航 *Experimental*
+- [ ] [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) 访问网络连接信息 *Experimental*
+<!--hexo-->
+
+O-T
+<!--hexo-->
+
+U-Z
 
