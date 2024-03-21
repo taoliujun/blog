@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023/12 | TaoLiuJun&#39;s Blog</title>
+  <title>Web API - HTML Drag And Drop | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Web API,webapi,Drag Drop," />
   
 
   <script>
@@ -145,71 +145,167 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 52 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web API - HTML Drag And Drop</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-20
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/Web-API/">
+            Web API
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/91">https://github.com/taoliujun/blog/issues/91</a></p>
+<!--hexo
+
+---
+url: web-api-HTML_Drag_and_Drop_API
+tags:
+  - webapi
+  - Drag Drop
+---
+
+-->
+
+<h1 id="HTML-Drag-And-Drop"><a href="#HTML-Drag-And-Drop" class="headerlink" title="HTML Drag And Drop"></a>HTML Drag And Drop</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API</a></p>
+</blockquote>
+<p><strong>HTML Drag And Drop</strong>允许在浏览器中拖放元素。</p>
+<p><strong>为方便描述，假设可拖动的元素为A，可被放置的元素是B。</strong></p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="DataTransfer"><a href="#DataTransfer" class="headerlink" title="DataTransfer"></a>DataTransfer</h3><p>拖放过程的数据对象接口，由<code>Event.dataTransfer</code>暴露，它有如下属性：</p>
+<h4 id="dropEffect"><a href="#dropEffect" class="headerlink" title="dropEffect"></a>dropEffect</h4><p>拖放过程中，在B上给用户的反馈，通常在<code>dragenter</code>事件中设置该属性，有几个值：</p>
+<ul>
+<li>copy，生成A副本，通常的反馈表现是将光标变成一个<code>+</code>的标志。</li>
+<li>move，移动A，通常的反馈表现是将光标变成一个<code>箭头</code>的标志。</li>
+<li>link，建立A的链接，通常的反馈表现是将光标变成一个<code>左镜像箭头</code>的标志。</li>
+<li>none，禁止拖放，通常的反馈表现是将源项变成灰色。</li>
+</ul>
+<blockquote>
+<p>除了<code>none</code>会禁止放置行为，其他值仅仅会产生视觉表现，实际的放置行为由<code>drop</code>事件的回调函数里决定。</p>
+</blockquote>
+<h4 id="effectAllowed"><a href="#effectAllowed" class="headerlink" title="effectAllowed"></a>effectAllowed</h4><p>拖放过程中，在A上给用户的反馈，通常在<code>dragstart</code>事件中设置该属性，有几个值：</p>
+<ul>
+<li>none，不允许拖放。</li>
+<li>copy，生成A副本。</li>
+<li>link，可以在新地方建立与A的链接。</li>
+<li>move，可移动A。</li>
+<li>copyLink，允许 copy 或者 link 操作。</li>
+<li>copyMove，允许 copy 或者 move 操作。</li>
+<li>linkMove，允许 link 或者 move 操作。</li>
+<li>all，允许所有的操作。</li>
+</ul>
+<h4 id="files"><a href="#files" class="headerlink" title="files"></a>files</h4><p>拖放的文件列表，返回<code>File[]</code>，此功能可用于将文件拖动到浏览器。</p>
+<h4 id="items"><a href="#items" class="headerlink" title="items"></a>items</h4><p>拖放操作中，数据传输项的列表，返回<code>DataTransferItemList</code>。</p>
+<h4 id="types"><a href="#types" class="headerlink" title="types"></a>types</h4><p>拖放的数据格式，和<code>items</code>的数据顺序是一一对应的。</p>
+<p>还包括了一些方法：</p>
+<h4 id="setData-x2F-getData-x2F-clearData"><a href="#setData-x2F-getData-x2F-clearData" class="headerlink" title="setData&#x2F;getData&#x2F;clearData"></a>setData&#x2F;getData&#x2F;clearData</h4><p>设置、读取、清除拖拽的数据。</p>
+<h4 id="setDragImage"><a href="#setDragImage" class="headerlink" title="setDragImage"></a>setDragImage</h4><p>设置拖动中跟随鼠标的图片，默认是A的半透明图像。</p>
+<h3 id="DataTransferItem"><a href="#DataTransferItem" class="headerlink" title="DataTransferItem"></a>DataTransferItem</h3><p>一个拖动项接口。</p>
+<h3 id="DataTransferItemList"><a href="#DataTransferItemList" class="headerlink" title="DataTransferItemList"></a>DataTransferItemList</h3><p>拖动项集合接口。</p>
+<h3 id="DragEvent"><a href="#DragEvent" class="headerlink" title="DragEvent"></a>DragEvent</h3><p>拖动事件接口。</p>
+<h2 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h2><p>&#x2F;&#x2F;</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>元素拖放过程中有一系列事件，为方便描述，假设可拖动的元素为A，可被放置的元素是B。</p>
+<h3 id="dragstart"><a href="#dragstart" class="headerlink" title="dragstart"></a>dragstart</h3><p>A的拖动行为开始。</p>
+<h3 id="drag"><a href="#drag" class="headerlink" title="drag"></a>drag</h3><p>A被拖动中，它会被连续触发。</p>
+<h3 id="dragenter"><a href="#dragenter" class="headerlink" title="dragenter"></a>dragenter</h3><p>A被拖动进了B。</p>
+<h3 id="dragover"><a href="#dragover" class="headerlink" title="dragover"></a>dragover</h3><p>A被拖动中，在B的区域内，它会被连续触发。</p>
+<h3 id="dragleave"><a href="#dragleave" class="headerlink" title="dragleave"></a>dragleave</h3><p>A被拖动离开了B。</p>
+<h3 id="drop"><a href="#drop" class="headerlink" title="drop"></a>drop</h3><p>A放在了B中。</p>
+<h3 id="dragend"><a href="#dragend" class="headerlink" title="dragend"></a>dragend</h3><p>A的拖动行为停止，比如放开了鼠标。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/HTML_Drag_and_Drop_API/index.html">https://taoliujun.github.io/example/web-api/HTML_Drag_and_Drop_API/index.html</a></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-sample-eslint-in-pull-request/">
-          <span>7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-28
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/react-zustand/">
-          <span>React公共状态利器 - Zustand</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-12
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/changesets-in-monorepo/">
-          <span>在monorepo中使用changesets</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-08
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/Drag-Drop/">
+              #Drag Drop
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
     
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-Geolocation_API/" target="_self">Web API - Geolocation</a>
+      </div>
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/blog/web-api-Intersection_Observer_API/" target="_self">Web Api - Intersection Observer</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
