@@ -25,7 +25,7 @@ tags:
 
 > 以 https://developer.mozilla.org/en-US/docs/Web/API 为基础，只实践W3C Recommendation状态的API。
 
-## 目录见
+## 目录见下
 
 
 <!--hexo-->
@@ -98,7 +98,7 @@ tags:
 
 ### H
 - [ ] [HTML DOM](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API) DOM操作，包括form data、canvas、video等
-- [ ] [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) 拖放
+- [x] #91 ，[HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) 拖放
 - [ ] [HTML Sanitizer API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API) 安全的HTML字符串 *Experimental*
 - [ ] [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) 浏览器会话记录
 - [ ] [Houdini API](https://developer.mozilla.org/en-US/docs/Web/API/Houdini_APIs) 扩展CSS的样式和布局
@@ -110,7 +110,7 @@ tags:
 - [ ] [Ink API](https://developer.mozilla.org/en-US/docs/Web/API/Ink_API) 调用系统的笔触合成功能 *Experimental*
 - [ ] [Input Device Capabilities API](https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities_API) *Experimental*
 - [ ] [Insertable Streams for MediaStreamTrack API](https://developer.mozilla.org/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) 操作媒体流，比如合成音频、往视频里加一个帽子
-- [ ] [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 监听元素是否出现在视口
+- [x] #92，[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) 监听元素是否出现在视口
 
 ### K
 - [ ] [Keyboard API](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard_API) 访问物理键盘的信息、如布局等 *Experimental*

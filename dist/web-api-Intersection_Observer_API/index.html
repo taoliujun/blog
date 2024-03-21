@@ -8,12 +8,12 @@
   
   
   
-  <title>归档: 2023/12 | TaoLiuJun&#39;s Blog</title>
+  <title>Web Api - Intersection Observer | TaoLiuJun&#39;s Blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Web API,webapi,Intersection Observer," />
   
 
   <script>
@@ -145,71 +145,176 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>Wow! 一共有 52 篇文章</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>Web Api - Intersection Observer</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2024-03-20
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/blog/categories/Web-API/">
+            Web API
+          </a>
+      </span>
+    
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        <span>2023</span>
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <p>原文链接：<a target="_blank" rel="noopener" href="https://github.com/taoliujun/blog/issues/92">https://github.com/taoliujun/blog/issues/92</a></p>
+<!--hexo
+
+---
+url: web-api-Intersection_Observer_API
+tags:
+  - webapi
+  - Intersection Observer
+---
+
+-->
+
+<h1 id="Intersection-Observer"><a href="#Intersection-Observer" class="headerlink" title="Intersection Observer"></a>Intersection Observer</h1><blockquote>
+<p>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</a></p>
+</blockquote>
+<p><strong>Intersection Observer</strong>用于检测目标元素与祖先元素或顶级文档的视口相交情况的变化。主要用于：</p>
+<ul>
+<li>图片懒加载。</li>
+<li>无限滚动。</li>
+<li>元素可见度埋点。</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="IntersectionObserver"><a href="#IntersectionObserver" class="headerlink" title="IntersectionObserver"></a>IntersectionObserver</h3><p>相交观察器接口，实例化的时候接受一个回调函数，和一个配置项。</p>
+<blockquote>
+<p>观察是异步的，所以回调函数执行时获取的相交信息，不是实时的。</p>
+</blockquote>
+<p>回调函数包含了两个入参：</p>
+<ul>
+<li><p>entries，<code>IntersectionObserverEntry</code>接口集合。</p>
+</li>
+<li><p>observer，本实例。</p>
+</li>
+<li><p>配置项包含属性：</p>
+</li>
+<li><p>root，必须是被观察元素的祖先元素，或<code>null</code>表示为顶级文档。被观察元素将与该元素相交。</p>
+</li>
+<li><p>rootMargin，计算交叉时偏移。默认为<code>0 0 0 0</code>。</p>
+</li>
+<li><p>threshold，相交比例阈值，0-1，表示相交比例达到多少时会触发回调函数，默认为<code>0</code>。</p>
+</li>
+</ul>
+<p>本接口实例返回了一系列属性，如<code>root</code>、<code>rootMargin</code>等，意义同入参配置项。还返回了一系列方法如下：</p>
+<ul>
+<li>observe，加入一个被观察元素。</li>
+<li>unobserve，移除一个被观察元素。</li>
+<li>disconnect，停止观察。</li>
+<li>takeRecords，返回被观察者集合的相交信息。</li>
+</ul>
+<h3 id="IntersectionObserverEntry"><a href="#IntersectionObserverEntry" class="headerlink" title="IntersectionObserverEntry"></a>IntersectionObserverEntry</h3><p>某一时刻的相交信息，包含了一系列属性：</p>
+<ul>
+<li>boundingClientRect，被观察者的边界信息。</li>
+<li>intersectionRect，相交区域。</li>
+<li>intersectionRatio，相交比例。</li>
+<li>isIntersecting，是否相交。</li>
+<li>rootBounds，根元素的边界信息。</li>
+<li>target，被观察者元素。</li>
+<li>time，交叉触发时间差。</li>
+</ul>
+<h2 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h2><p>&#x2F;&#x2F;</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>&#x2F;&#x2F;</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例：<a href="https://taoliujun.github.io/example/web-api/Intersection_Observer_API/index.html">https://taoliujun.github.io/example/web-api/Intersection_Observer_API/index.html</a></p>
+<ol>
+<li>在高度400的父观察元素中，放3个高度300的被观察元素，触发阈值是<code>[0,1]</code>，表示被观察者的相交区域比例在0或1发生变化的时候，都会触发回到函数，初始化日志：</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/7c93addb-c0b1-4705-873d-fcd150550e22" alt="image"></p>
+<p>元素1全部可见，元素2是0.33的区域可见，元素3则完全不可见。</p>
+<ol>
+<li>滚动一点，元素1触发了1阈值。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/791e2220-8837-4784-9139-094b9d6db4eb" alt="image"></p>
+<ol start="3">
+<li>再滚动一点，元素1没有触发0阈值，所以日志中没有它；元素2触发了1阈值；元素3触发了0阈值。</li>
+</ol>
+<p><img src="https://github.com/taoliujun/blog/assets/5689134/28587ac6-29d7-4693-90fb-844d3b4f4239" alt="image"></p>
+
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/github-actions-sample-eslint-in-pull-request/">
-          <span>7. GitHub Actions - 在pull request中执行eslint检测的工作流例子</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-28
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/react-zustand/">
-          <span>React公共状态利器 - Zustand</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-12
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/blog/changesets-in-monorepo/">
-          <span>在monorepo中使用changesets</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        12-08
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/blog/tags/webapi/">
+              #webapi
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/blog/tags/Intersection-Observer/">
+              #Intersection Observer
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/blog/web-api-HTML_Drag_and_Drop_API/" target="_self">Web API - HTML Drag And Drop</a>
+      </div>
     
     
   </nav>
+
+   
+
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
